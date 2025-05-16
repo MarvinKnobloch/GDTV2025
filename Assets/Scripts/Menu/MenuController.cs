@@ -80,7 +80,7 @@ public class MenuController : MonoBehaviour
         else
         {
             if (Player.Instance == null) return;
-            if (GameManager.Instance.playerUI.dialogBox.activeSelf == true) return;
+            //if (GameManager.Instance.playerUI.dialogBox.activeSelf == true) return;
 
             //if (GameManager.Instance.playerUI.messageBox.activeSelf == true) GameManager.Instance.playerUI.MessageBoxDisable();
             //else if (GameManager.Instance.playerUI.shop.activeSelf == true) GameManager.Instance.playerUI.DeactivateShop();
