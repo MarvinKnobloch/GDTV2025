@@ -11,6 +11,15 @@ public class BossAttackBase : MonoBehaviour
     public virtual void ShootProjectile(int projectileIndex)
     { }
 
+    public virtual void AttackMovement()
+    { }
+
+    public virtual void StartAttack()
+    { }
+
+    public virtual void FinishAttack()
+    { }
+
     public IEnumerator ShootProjectiles()
     {
         for (int i = 0; i < ProjectilesToShoot; i++)
