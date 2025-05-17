@@ -38,7 +38,9 @@ public class BossBase : MonoBehaviour
             for (int i = 0; i < bossAttacks.Count; i++)
             {
                 _currentAttack = bossAttacks[i];
+                _currentAttack.StartAttack();
                 yield return StartCoroutine(bossAttacks[i].ShootProjectiles());
+                _currentAttack.FinishAttack();
                 yield return new WaitForSeconds(TimeBetweenAttacks);
             }
         }

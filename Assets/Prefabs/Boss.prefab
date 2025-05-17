@@ -332,13 +332,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ac2b4a608df5e44b8c062518184895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilesToShoot: 11
+  ProjectilesToShoot: 20
   SecondsBetweenProjectiles: 0.25
   ProjectilePrefabs:
   - {fileID: 5324997864933902000, guid: e13f86a4d81cbc3439c62106f81c71ed, type: 3}
   TopWaypoint: {fileID: 0}
   BottomWaypoint: {fileID: 0}
   MovementSpeed: 6
+  _time: 0
 --- !u!61 &6681337173686054301
 BoxCollider2D:
   m_ObjectHideFlags: 0
