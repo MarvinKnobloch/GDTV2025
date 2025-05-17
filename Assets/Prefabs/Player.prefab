@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   groundIntoAirOffset: 0.1
   groundCheckLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1544
   playerGroundDrag: -2
   jumpStrength: 10
   maxJumpCount: 2
@@ -136,6 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf2b3e97dd19834696f8e3b4416b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
+  isBoss: 0
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &5507815630000086644
 BoxCollider2D:
   m_ObjectHideFlags: 0
