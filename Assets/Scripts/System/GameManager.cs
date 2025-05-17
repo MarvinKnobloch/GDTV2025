@@ -52,13 +52,13 @@ public class GameManager : MonoBehaviour
     }
     public void ActivateCursor()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
     public void DeactivateCursor()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
     //public bool LoadProgress(GameManager.OverworldSaveNames saveName)
     //{

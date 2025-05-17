@@ -326,8 +326,39 @@ Transform:
   m_GameObject: {fileID: 952093486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -3.7, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalPosition: {x: -0.1, y: -3.9, z: 0}
+  m_LocalScale: {x: 30, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1022067126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022067127}
+  m_Layer: 0
+  m_Name: ArenaCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1022067127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022067126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 3.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -464,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -503,11 +534,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
---- !u!4 &1894984208 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-  m_PrefabInstance: {fileID: 1894984207}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4955111147304342656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,17 +542,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1548433695773716525, guid: 925b698d57ccd504e9ae4a5e3841776e, type: 3}
+      propertyPath: orthographic size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1856080440174183118, guid: 925b698d57ccd504e9ae4a5e3841776e, type: 3}
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 7762185682470864995, guid: 925b698d57ccd504e9ae4a5e3841776e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7762185682470864995, guid: 925b698d57ccd504e9ae4a5e3841776e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 7762185682470864995, guid: 925b698d57ccd504e9ae4a5e3841776e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -580,14 +610,14 @@ PrefabInstance:
     - target: {fileID: 2936165696673010044, guid: e9c943c0436a8164f85232f1a2baf983, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 1894984208}
+      objectReference: {fileID: 1022067127}
     - target: {fileID: 5417509188284476857, guid: e9c943c0436a8164f85232f1a2baf983, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5417509188284476857, guid: e9c943c0436a8164f85232f1a2baf983, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5417509188284476857, guid: e9c943c0436a8164f85232f1a2baf983, type: 3}
       propertyPath: m_LocalPosition.z
@@ -637,3 +667,4 @@ SceneRoots:
   - {fileID: 1241531764}
   - {fileID: 1894984207}
   - {fileID: 952093489}
+  - {fileID: 1022067127}

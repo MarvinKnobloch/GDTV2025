@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [NonSerialized] public BoxCollider2D playerCollider;
     [NonSerialized] public Health health;
     [NonSerialized] private SpriteRenderer spriteRenderer;
+    [NonSerialized] private Camera cam;
+    private Transform playerArm;
 
     [Header("Movement")]
     public float movementSpeed;
@@ -95,6 +97,8 @@ public class Player : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         health = GetComponent<Health>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        cam = Camera.main;
+        playerArm = transform.GetChild(0).transform;
 
         baseGravityScale = rb.gravityScale;
 
@@ -167,6 +171,7 @@ public class Player : MonoBehaviour
         if (menuController.gameIsPaused) return;
 
         ReadMovementInput();
+        GunRotation();
         //playerInteraction.InteractionUpdate();
 
         switch (state)
@@ -196,6 +201,26 @@ public class Player : MonoBehaviour
     private void ReadMovementInput()
     {
         moveDirection.x = moveInput.ReadValue<Vector2>().x;
+    }
+    private void GunRotation()
+    {
+        Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, -cam.transform.position.z));
+        mousePosition.z = 0;
+
+        Vector2 direction = ((Vector2)mousePosition - (Vector2)playerArm.transform.position).normalized;
+        if (faceRight) 
+        {
+            direction *= -1;
+            Debug.Log(direction);
+            if (direction.x < 0.75f) direction.x = 0.75f;
+        }
+        else
+        {
+            if (direction.x < 0.75f) direction.x = 0.75f;
+        }
+
+
+        playerArm.transform.right = direction;
     }
     public void SwitchToGround(bool onlyResetValues)
     {
