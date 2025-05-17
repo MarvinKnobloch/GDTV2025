@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour, IPoolingList
 {
     private Rigidbody2D rb;
     private Vector2 direction;
-    private Vector2 oldPosition;
+    public Vector2 oldPosition;
 
     [Header("ProjectileValues")]
     [SerializeField] private float lifetime = 2f;
