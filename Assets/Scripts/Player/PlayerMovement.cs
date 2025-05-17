@@ -65,6 +65,11 @@ public class PlayerMovement
         if (player.moveDirection.x > 0 && player.faceRight == true) flip();
         if (player.moveDirection.x < 0 && player.faceRight == false) flip();
     }
+    public void RotatePlayerToMouse()
+    {
+        if (player.mousePosition.x > player.transform.position.x && player.faceRight == true) flip();
+        if (player.mousePosition.x < player.transform.position.x && player.faceRight == false) flip();
+    }
     private void flip()
     {
         player.faceRight = !player.faceRight;

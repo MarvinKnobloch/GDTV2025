@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
 
     [Header("Other")]
     public Transform projectileSpawnPosition;
+    [NonSerialized] public Vector3 mousePosition;
+    public bool rotateWithMouse;
 
 
     //Animations
@@ -193,24 +195,27 @@ public class Player : MonoBehaviour
                 break;
             case States.Ground:
                 playerCollision.GroundCheck();
-                playerMovement.RotatePlayer();
+                if(rotateWithMouse) playerMovement.RotatePlayerToMouse();
+                else playerMovement.RotatePlayer();
                 break;
             case States.GroundIntoAir:
                 playerMovement.JumpIsPressed();
                 playerMovement.GroundIntoAirTransition();
                 playerCollision.AirCheck();
-                playerMovement.RotatePlayer();
+                if (rotateWithMouse) playerMovement.RotatePlayerToMouse();
+                else playerMovement.RotatePlayer();
                 break;
             case States.Air:
                 playerMovement.JumpIsPressed();
                 playerCollision.AirCheck();
-                playerMovement.RotatePlayer();
+                if (rotateWithMouse) playerMovement.RotatePlayerToMouse();
+                else playerMovement.RotatePlayer();
                 break;
             case States.Dash:
                 playerMovement.DashTime();
                 break;
             case States.Fly:
-                playerMovement.RotatePlayer();
+                playerMovement.RotatePlayerToMouse();
                 break;
         }
     }
@@ -221,7 +226,7 @@ public class Player : MonoBehaviour
     }
     private void GunRotation()
     {
-        Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, -cam.transform.position.z));
+        mousePosition = cam.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, -cam.transform.position.z));
         mousePosition.z = 0;
 
         attackDirection = ((Vector2)mousePosition - (Vector2)playerArm.transform.position).normalized;
