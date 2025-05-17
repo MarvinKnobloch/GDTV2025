@@ -119,6 +119,9 @@ MonoBehaviour:
   maxDashCount: 2
   iFramesDuration: 1
   iFramesBlinkSpeed: 0.1
+  attackCooldown: 0.2
+  attackDamage: 1
+  playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
   projectileSpawnPosition: {fileID: 5019787506880255950}
   state: 0
 --- !u!114 &7275883768611437086

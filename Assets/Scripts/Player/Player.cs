@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -58,6 +57,11 @@ public class Player : MonoBehaviour
     [NonSerialized] public bool iFramesBlink;
     [NonSerialized] public bool iframesActive;
 
+    [Header("Attack")]
+    public float attackCooldown;
+    public GameObject playerProjectile;
+    [NonSerialized] public Vector2 attackDirection;
+
     [Header("Other")]
     public Transform projectileSpawnPosition;
 
@@ -73,6 +77,7 @@ public class Player : MonoBehaviour
 
     [NonSerialized] public PlayerMovement playerMovement = new PlayerMovement();
     [NonSerialized] public PlayerCollision playerCollision = new PlayerCollision();
+    [NonSerialized] public PlayerAbilities playerAbilities = new PlayerAbilities();
     //[NonSerialized] public PlayerInteraction playerInteraction = new PlayerInteraction();
 
     [Space]
@@ -104,6 +109,7 @@ public class Player : MonoBehaviour
 
         playerMovement.player = this;
         playerCollision.player = this;
+        playerAbilities.player = this;
         //playerInteraction.player = this;
 
     }
@@ -131,14 +137,12 @@ public class Player : MonoBehaviour
         {
             controls.Player.Jump.performed += playerMovement.JumpInput;
             controls.Player.Dash.performed += playerMovement.DashInput;
-            //controls.Player.Attack.performed += playerAttack.AttackInput;
             //controls.Player.Interact.performed += playerInteraction.InteractInput;
         }
         else
         {
             controls.Player.Jump.performed -= playerMovement.JumpInput;
             controls.Player.Dash.performed -= playerMovement.DashInput;
-            //controls.Player.Attack.performed -= playerAttack.AttackInput;
             //controls.Player.Interact.performed -= playerInteraction.InteractInput;
         }
     }
@@ -166,12 +170,11 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        //if (controls.Player.ElementAbility2.WasPerformedThisFrame()) health.TakeDamage(1, false);
-
         if (menuController.gameIsPaused) return;
 
         ReadMovementInput();
         GunRotation();
+        playerAbilities.AttackInput();
         //playerInteraction.InteractionUpdate();
 
         switch (state)
@@ -207,20 +210,12 @@ public class Player : MonoBehaviour
         Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, -cam.transform.position.z));
         mousePosition.z = 0;
 
-        Vector2 direction = ((Vector2)mousePosition - (Vector2)playerArm.transform.position).normalized;
-        if (faceRight) 
-        {
-            direction *= -1;
-            Debug.Log(direction);
-            if (direction.x < 0.75f) direction.x = 0.75f;
-        }
-        else
-        {
-            if (direction.x < 0.75f) direction.x = 0.75f;
-        }
+        attackDirection = ((Vector2)mousePosition - (Vector2)playerArm.transform.position).normalized;
 
+        if (faceRight) attackDirection *= -1;
+        if (attackDirection.x < 0.75f) attackDirection.x = 0.75f;
 
-        playerArm.transform.right = direction;
+        playerArm.transform.right = attackDirection;
     }
     public void SwitchToGround(bool onlyResetValues)
     {
@@ -255,14 +250,16 @@ public class Player : MonoBehaviour
 
         currentAnimator.CrossFadeInFixedTime(newstate, 0.1f);
     }
-    //public void CreatePrefab(GameObject obj, Transform spawnPosition, Quaternion rotation)
-    //{
-    //    GameObject prefab = ObjectPooling.SpawnObject(obj, spawnPosition.transform.position, rotation, ObjectPooling.ProjectileType.Player);
-    //    //GameObject projectile = Instantiate(obj, spawnPosition.position, Quaternion.identity);
+    public void CreatePrefab(GameObject obj, Transform spawnPosition, Quaternion rotation)
+    {
+        GameObject prefab = PoolingSystem.SpawnObject(obj, spawnPosition.transform.position, rotation, PoolingSystem.ProjectileType.Player);
+        //GameObject projectile = Instantiate(obj, spawnPosition.position, Quaternion.identity);
 
-    //    if (faceRight) prefab.transform.Rotate(0, 180, 0);
-    //    else prefab.transform.Rotate(0, 0, 0);
-    //}
+        prefab.transform.right = attackDirection;
+
+        if (faceRight) prefab.transform.Rotate(0, 180, 0);
+        //else prefab.transform.Rotate(0, 0, 0);
+    }
     public void IFramesStart()
     {
         iframesActive = true;
