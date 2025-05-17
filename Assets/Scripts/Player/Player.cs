@@ -62,8 +62,12 @@ public class Player : MonoBehaviour
     public GameObject playerProjectile;
     [NonSerialized] public Vector2 attackDirection;
 
+    //Fly
+    [NonSerialized] public bool isFlying;
+
     [Header("Other")]
     public Transform projectileSpawnPosition;
+
 
     //Animations
     [NonSerialized] public Animator currentAnimator;
@@ -91,6 +95,7 @@ public class Player : MonoBehaviour
         Death,
         Attack,
         Emtpy,
+        Fly,
     }
     private void Awake()
     {
@@ -137,12 +142,14 @@ public class Player : MonoBehaviour
         {
             controls.Player.Jump.performed += playerMovement.JumpInput;
             controls.Player.Dash.performed += playerMovement.DashInput;
+            controls.Player.Fly.performed += playerMovement.FlyInput;
             //controls.Player.Interact.performed += playerInteraction.InteractInput;
         }
         else
         {
             controls.Player.Jump.performed -= playerMovement.JumpInput;
             controls.Player.Dash.performed -= playerMovement.DashInput;
+            controls.Player.Fly.performed -= playerMovement.FlyInput;
             //controls.Player.Interact.performed -= playerInteraction.InteractInput;
         }
     }
@@ -165,6 +172,9 @@ public class Player : MonoBehaviour
                 break;
             case States.Dash:
                 playerMovement.DashMovement();
+                break;
+            case States.Fly:
+                playerMovement.FlyMovement();
                 break;
         }
     }
@@ -199,11 +209,15 @@ public class Player : MonoBehaviour
             case States.Dash:
                 playerMovement.DashTime();
                 break;
+            case States.Fly:
+                playerMovement.RotatePlayer();
+                break;
         }
     }
     private void ReadMovementInput()
     {
         moveDirection.x = moveInput.ReadValue<Vector2>().x;
+        moveDirection.y = moveInput.ReadValue<Vector2>().y;
     }
     private void GunRotation()
     {
@@ -241,6 +255,14 @@ public class Player : MonoBehaviour
         rb.gravityScale = baseGravityScale;
 
         state = States.Air;
+    }
+    public void SwitchToFly()
+    {
+        rb.gravityScale = 0;
+        currentDashCount = 0;
+        rb.linearVelocity = Vector2.zero;
+
+        state = States.Fly;
     }
     public void ChangeAnimationState(string newstate)
     {

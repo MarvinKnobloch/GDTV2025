@@ -158,6 +158,9 @@ public class PlayerMovement
             case Player.States.Attack:
                 StartDash();
                 break;
+            case Player.States.Fly:
+                StartDash();
+                break;
         }
     }
     private void StartDash()
@@ -184,7 +187,30 @@ public class PlayerMovement
         dashTimer += Time.deltaTime;
         if (dashTimer >= player.dashTime)
         {
-            player.SwitchToAir();
+            if (player.isFlying) player.SwitchToFly();
+            else player.SwitchToAir();
         }
+    }
+    public void FlyInput(InputAction.CallbackContext ctx)
+    {
+        bool pressed = ctx.ReadValueAsButton();
+        if (pressed)
+        {
+            player.isFlying = !player.isFlying;
+            if(player.isFlying == true)
+            {
+                player.SwitchToFly();
+            }
+            else
+            {
+                player.SwitchToAir();
+            }
+        }
+    }
+    public void FlyMovement()
+    {
+        player.playerVelocity.Set(player.moveDirection.x * player.movementSpeed, player.moveDirection.y * player.movementSpeed);
+
+        player.rb.linearVelocity = player.playerVelocity;
     }
 }
