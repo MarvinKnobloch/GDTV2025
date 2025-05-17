@@ -218,4 +218,14 @@ public class PlayerMovement
 
         player.rb.linearVelocity = player.playerVelocity;
     }
+    public void JumpPad(float jumpPadStrength)
+    {
+        player.jumpPerformed = false;
+        player.currentJumpCount = player.maxJumpCount;
+
+        player.rb.linearVelocity = Vector2.zero;
+        player.rb.AddForce(new Vector2(0, jumpPadStrength), ForceMode2D.Impulse);
+
+        player.SwitchGroundIntoAir();
+    }
 }

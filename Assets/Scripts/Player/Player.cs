@@ -269,6 +269,7 @@ public class Player : MonoBehaviour
 
         state = States.Fly;
     }
+    public void JumpPad(float jumpPadStrength) => playerMovement.JumpPad(jumpPadStrength);
     public void ChangeAnimationState(string newstate)
     {
         if (currentstate == newstate) return;

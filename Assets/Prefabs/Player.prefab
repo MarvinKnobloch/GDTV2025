@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8009338881340062006}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   attackCooldown: 0.2
   playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
   projectileSpawnPosition: {fileID: 5019787506880255950}
+  rotateWithMouse: 0
   state: 0
 --- !u!114 &7275883768611437086
 MonoBehaviour:
