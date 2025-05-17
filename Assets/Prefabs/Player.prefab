@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7275883768611437086}
   - component: {fileID: 5507815630000086644}
   - component: {fileID: 8009338881340062006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -121,6 +121,10 @@ MonoBehaviour:
   iFramesBlinkSpeed: 0.1
   attackCooldown: 0.2
   playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  platformDropStrength: -3
   projectileSpawnPosition: {fileID: 5019787506880255950}
   rotateWithMouse: 0
   state: 0

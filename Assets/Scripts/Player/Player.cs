@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -64,6 +65,12 @@ public class Player : MonoBehaviour
 
     //Fly
     [NonSerialized] public bool isFlying;
+
+    [Header("Platform")]
+    [SerializeField] private LayerMask platformLayer;
+    public float platformDropStrength;
+    [NonSerialized] public GameObject currentOneWayPlatform;
+    //Platform
 
     [Header("Other")]
     public Transform projectileSpawnPosition;
@@ -126,7 +133,7 @@ public class Player : MonoBehaviour
         playerUI = GameManager.Instance.playerUI;
 
         state = States.Air;
-        //if (health != null) health.dieEvent.AddListener(OnDeath);
+        if (health != null) health.dieEvent.AddListener(OnDeath);
     }
     private void OnEnable()
     {
@@ -195,6 +202,7 @@ public class Player : MonoBehaviour
                 break;
             case States.Ground:
                 playerCollision.GroundCheck();
+                playerMovement.PlatformDropInput();
                 if(rotateWithMouse) playerMovement.RotatePlayerToMouse();
                 else playerMovement.RotatePlayer();
                 break;
@@ -322,7 +330,6 @@ public class Player : MonoBehaviour
     private void OnDeath()
     {
         //animation
-        //playerAttack.state = PlayerAttack.States.Empty;
         rb.linearVelocity = Vector2.zero;
         ChangeAnimationState(deathState);
         state = States.Death;

@@ -92,7 +92,6 @@ public class Health : MonoBehaviour
 
         if (isBoss)
         {
-            Debug.Log("damage");
             playerUI.BossHealthUIUpdate(Value, MaxValue);
         }
 

@@ -228,4 +228,13 @@ public class PlayerMovement
 
         player.SwitchGroundIntoAir();
     }
+    public void PlatformDropInput()
+    {
+        if(player.moveDirection.y < 0 && player.currentOneWayPlatform != null)
+        {
+            player.rb.AddForce(new Vector2(0, player.platformDropStrength), ForceMode2D.Impulse);
+            player.currentOneWayPlatform.layer = 11;
+            player.currentOneWayPlatform.GetComponent<Collider2D>().isTrigger = true;
+        }
+    }
 }
