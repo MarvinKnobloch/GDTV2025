@@ -45,23 +45,23 @@ public class Projectile : MonoBehaviour, IPoolingList
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Enemy hit check
+        // Hit Check
         if (Utility.LayerCheck(other, enemyHitLayer))
         {
             if (other.TryGetComponent(out Health health))
             {
                 if (other.gameObject == Player.Instance.gameObject)
                 {
-                    //health.PlayerTakeDamage(damage, false, false);
+                    health.PlayerTakeDamage(damage, false);
                 }
                 else
                 {
-                    //health.EnemyTakeDamage(damage);
+                    health.EnemyTakeDamage(damage);
                 }
             }
             PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
         }
-        // Collide
+        // Terrain Collision
         else if (Utility.LayerCheck(other, collideLayer))
         {
             {

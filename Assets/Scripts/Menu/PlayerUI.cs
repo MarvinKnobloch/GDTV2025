@@ -10,30 +10,30 @@ using static GameManager;
 public class PlayerUI : MonoBehaviour
 {
     private Controls controls;
-    private bool playCurrenySound;
+    //private bool playCurrenySound;
 
     [Header("Interaction")]
     [SerializeField] private GameObject interactionField;
     [SerializeField] private TextMeshProUGUI interactionText;
 
     [Header("Health")]
-    [SerializeField] private Image healthbar;
+    //[SerializeField] private Image healthbar;
     [SerializeField] private TextMeshProUGUI healthText;
 
-    [Header("Energy")]
-    [SerializeField] private Image energybar;
-    [SerializeField] private TextMeshProUGUI energyText;
+    //[Header("Energy")]
+    //[SerializeField] private Image energybar;
+    //[SerializeField] private TextMeshProUGUI energyText;
 
-    [Header("Currency")]
-    [SerializeField] private TextMeshProUGUI currencyText;
+    //[Header("Currency")]
+    //[SerializeField] private TextMeshProUGUI currencyText;
 
-    [Header("MessageBox")]
-    public GameObject messageBox;
-    [SerializeField] private TextMeshProUGUI messageBoxText;
-    [SerializeField] private TextMeshProUGUI messageBoxCloseText;
+    //[Header("MessageBox")]
+    //public GameObject messageBox;
+    //[SerializeField] private TextMeshProUGUI messageBoxText;
+    //[SerializeField] private TextMeshProUGUI messageBoxCloseText;
 
-    [Header("DialogBox")]
-    public GameObject dialogBox;
+    //[Header("DialogBox")]
+    //public GameObject dialogBox;
 
     [Header("BossHealth")]
     [SerializeField] private GameObject bossHealthbarObject;
@@ -55,7 +55,7 @@ public class PlayerUI : MonoBehaviour
         interactionField.SetActive(false);
         interactionField.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
-        playCurrenySound = true;
+        //playCurrenySound = true;
     }
     public void HandleInteractionBox(bool state)
     {
@@ -67,23 +67,23 @@ public class PlayerUI : MonoBehaviour
     }
     public void HealthUIUpdate(int current, int max)
     {
-        healthbar.fillAmount = (float)current / max;
-        healthText.text = current + "/" + max;
+        //healthbar.fillAmount = (float)current / max;
+        healthText.text = current.ToString(); // + "/" + max;
     }
-    public void EnergyUIUpdate(int current, int max)
-    {
-        energybar.fillAmount = (float)current / max;
-        energyText.text = current + "/" + max;
-    }
-    public void PlayerCurrencyUpdate(int amount)
-    {
-        GameManager.Instance.playerCurrency += amount;
-        currencyText.text = GameManager.Instance.playerCurrency.ToString();
+    //public void EnergyUIUpdate(int current, int max)
+    //{
+    //    energybar.fillAmount = (float)current / max;
+    //    energyText.text = current + "/" + max;
+    //}
+    //public void PlayerCurrencyUpdate(int amount)
+    //{
+    //    GameManager.Instance.playerCurrency += amount;
+    //    currencyText.text = GameManager.Instance.playerCurrency.ToString();
 
-        PlayerPrefs.SetInt("PlayerCurrency", GameManager.Instance.playerCurrency);
+    //    PlayerPrefs.SetInt("PlayerCurrency", GameManager.Instance.playerCurrency);
 
-        if(amount > 0 && playCurrenySound) AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.utilityFiles[(int)AudioManager.UtilitySounds.CurrencyGain]);
-    }
+    //    if(amount > 0 && playCurrenySound) AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.utilityFiles[(int)AudioManager.UtilitySounds.CurrencyGain]);
+    //}
 
     public void ToggleBossHealth(bool activate)
     {

@@ -1,16 +1,133 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [NonSerialized] public PlayerUI playerUI;
+
+    //Values
+    [Header("Values")]
+    [SerializeField] private int maxHealth = 1;
+    private int currentHealth;
+    private int baseHealth;
+
+    [Header("Boss")]
+    [SerializeField] private bool isBoss;
+
+    [HideInInspector]
+    public UnityEvent dieEvent;
+    [HideInInspector]
+    public UnityEvent hitEvent;
+
+    public int Value
     {
-        
+        get { return currentHealth; }
+        set { currentHealth = Math.Min(Math.Max(0, value), maxHealth); }
     }
 
-    // Update is called once per frame
-    void Update()
+    public int MaxValue
     {
-        
+        get { return maxHealth; }
+        set { maxHealth = Math.Max(0, value); currentHealth = Math.Min(value, currentHealth); }
+    }
+
+    void Start()
+    {
+        if (gameObject == Player.Instance.gameObject)
+        {
+            playerUI = GameManager.Instance.playerUI;
+
+            //baseHealth = MaxValue;
+            //CalculatePlayerHealth();
+
+            Value = MaxValue;
+            playerUI.HealthUIUpdate(Value, MaxValue);
+        }
+        else
+        {
+            Value = MaxValue;
+
+            if (isBoss)
+            {
+                playerUI = GameManager.Instance.playerUI;
+                playerUI.ToggleBossHealth(true);
+                playerUI.BossHealthUIUpdate(Value, MaxValue);
+            }
+        }
+
+    }
+    public void PlayerTakeDamage(int amount, bool ignoreIFrames)
+    {
+        if (amount == 0)
+            return;
+        if (Value <= 0)
+            return;
+
+        if (ignoreIFrames == false)
+            if (Player.Instance.iframesActive)
+                return;
+
+        Value -= amount;
+        playerUI.HealthUIUpdate(Value, MaxValue);
+
+
+        if (Value > 0)
+            Player.Instance.IFramesStart();
+
+        //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerGetHitSounds[Player.Instance.currentElementNumber]);
+
+        CheckForDeath();
+    }
+
+    public void EnemyTakeDamage(int amount)
+    {
+        if (amount == 0)
+            return;
+        if (Value <= 0)
+            return;
+
+        Value -= amount;
+
+        if (isBoss)
+        {
+            Debug.Log("damage");
+            playerUI.BossHealthUIUpdate(Value, MaxValue);
+        }
+
+        CheckForDeath();
+
+        if (Value > 0)
+        {
+            hitEvent?.Invoke();
+        }
+
+    }
+    private void CheckForDeath()
+    {
+        if (Value <= 0)
+        {
+            StopAllCoroutines();
+
+            dieEvent?.Invoke();
+        }
+    }
+    //public void Heal(int amount)
+    //{
+    //    if (amount == 0)
+    //        return;
+
+    //    Value += amount;
+
+    //    if (gameObject == Player.Instance.gameObject)
+    //        playerUI.HealthUIUpdate(Value, MaxValue);
+    //    else
+    //        EnemyHealthbarUpdate();
+    //}
+    public void CalculatePlayerHealth()
+    {
+        MaxValue = baseHealth; // + PlayerPrefs.GetInt(Upgrades.StatsUpgrades.BonusHealth.ToString());
+        playerUI.HealthUIUpdate(Value, MaxValue);
     }
 }
