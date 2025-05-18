@@ -33,7 +33,11 @@ public class BossAttackDirection : BossAttackBase
             _currentTargetIndex = (_currentTargetIndex + 1) % TargetPoints.Count;
         }
 
-        transform.position = Vector3.Lerp(transform.position, TargetPoints[_currentTargetIndex].position, DashSpeed * Time.fixedDeltaTime);
+        transform.position = Vector3.Lerp(
+            transform.position,
+            TargetPoints[_currentTargetIndex].position,
+            DashSpeed * Time.fixedDeltaTime
+        );
     }
 
     IEnumerator MeleeCoroutine()
