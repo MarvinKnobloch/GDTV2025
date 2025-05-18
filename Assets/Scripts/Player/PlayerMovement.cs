@@ -221,6 +221,7 @@ public class PlayerMovement
     }
     public void JumpPad(float jumpPadStrength)
     {
+        player.isFlying = false;
         player.jumpPerformed = false;
         player.currentJumpCount = player.maxJumpCount;
 

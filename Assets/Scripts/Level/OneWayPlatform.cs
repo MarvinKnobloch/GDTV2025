@@ -13,6 +13,12 @@ public class OneWayPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Player.Instance.currentOneWayPlatform = gameObject;
+
+            if (Player.Instance.playerVelocity.y > 0)
+            {
+                gameObject.layer = 11;
+                platformCollider.isTrigger = true;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
