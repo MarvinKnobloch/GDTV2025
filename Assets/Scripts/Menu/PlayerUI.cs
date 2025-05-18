@@ -20,9 +20,8 @@ public class PlayerUI : MonoBehaviour
     //[SerializeField] private Image healthbar;
     [SerializeField] private TextMeshProUGUI healthText;
 
-    //[Header("Energy")]
-    //[SerializeField] private Image energybar;
-    //[SerializeField] private TextMeshProUGUI energyText;
+    [Header("Energy")]
+    [SerializeField] private Image energybar;
 
     //[Header("Currency")]
     //[SerializeField] private TextMeshProUGUI currencyText;
@@ -38,6 +37,9 @@ public class PlayerUI : MonoBehaviour
     [Header("BossHealth")]
     [SerializeField] private GameObject bossHealthbarObject;
     [SerializeField] private Image bossHealthbar;
+
+    [Header("GameOver")]
+    [SerializeField] private GameObject gameOverScreen;
 
     private float timer;
 
@@ -70,11 +72,11 @@ public class PlayerUI : MonoBehaviour
         //healthbar.fillAmount = (float)current / max;
         healthText.text = current.ToString(); // + "/" + max;
     }
-    //public void EnergyUIUpdate(int current, int max)
-    //{
-    //    energybar.fillAmount = (float)current / max;
-    //    energyText.text = current + "/" + max;
-    //}
+    public void EnergyUIUpdate(int current, int max)
+    {
+        energybar.fillAmount = (float)current / max;
+    }
+
     //public void PlayerCurrencyUpdate(int amount)
     //{
     //    GameManager.Instance.playerCurrency += amount;
@@ -92,6 +94,11 @@ public class PlayerUI : MonoBehaviour
     public void BossHealthUIUpdate(int current, int max)
     {
         bossHealthbar.fillAmount = (float)current / max;
+    }
+    public void GameOver()
+    {
+        GameManager.Instance.menuController.gameIsPaused = true;
+        gameOverScreen.SetActive(true);
     }
     //public void MessageBoxEnable(string text)
     //{
