@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     public float dashStrength;
     public int maxDashCount;
     [NonSerialized] public int currentDashCount;
+    public bool iframesWhileDash;
 
     [Header("IFrames")]
     public float iFramesDuration;
@@ -330,10 +331,12 @@ public class Player : MonoBehaviour
     private void OnDeath()
     {
         //animation
+
         rb.linearVelocity = Vector2.zero;
         ChangeAnimationState(deathState);
         state = States.Death;
 
+        playerUI.GameOver();
         //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.utilityFiles[(int)AudioManager.UtilitySounds.PlayerDeath]);
     }
     public void RestartGame()

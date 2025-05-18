@@ -64,6 +64,10 @@ public class Health : MonoBehaviour
             return;
         if (Value <= 0)
             return;
+        if (Player.Instance.iframesWhileDash)
+        {
+            if (Player.Instance.state == Player.States.Dash) return;
+        }
 
         if (ignoreIFrames == false)
             if (Player.Instance.iframesActive)

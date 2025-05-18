@@ -39,6 +39,9 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private GameObject bossHealthbarObject;
     [SerializeField] private Image bossHealthbar;
 
+    [Header("GameOver")]
+    [SerializeField] private GameObject gameOverScreen;
+
     private float timer;
 
     private void Awake()
@@ -92,6 +95,11 @@ public class PlayerUI : MonoBehaviour
     public void BossHealthUIUpdate(int current, int max)
     {
         bossHealthbar.fillAmount = (float)current / max;
+    }
+    public void GameOver()
+    {
+        GameManager.Instance.menuController.gameIsPaused = true;
+        gameOverScreen.SetActive(true);
     }
     //public void MessageBoxEnable(string text)
     //{
