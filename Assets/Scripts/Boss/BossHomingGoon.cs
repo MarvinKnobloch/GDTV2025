@@ -1,15 +1,23 @@
 using UnityEngine;
 
-public class BossHomingGoon : MonoBehaviour
+public class BossHomingGoon : MonoBehaviour, IPoolingList
 {
     public float MovementSpeed = 1f;
 
     private Health _health;
 
-    void Start()
+    public PoolingSystem.PoolObjectInfo poolingList { get; set; }
+
+    void OnEnable()
     {
         TryGetComponent(out _health);
-        _health.dieEvent.AddListener(() => Destroy(gameObject));
+        _health.Value = _health.MaxValue;
+        _health.dieEvent.AddListener(() => Die());
+    }
+
+    void OnDisable()
+    {
+        _health.dieEvent.RemoveListener(() => Die());
     }
 
     void FixedUpdate()
@@ -26,7 +34,12 @@ public class BossHomingGoon : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<Health>().PlayerTakeDamage(1, false);
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
     }
 }

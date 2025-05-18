@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 430306580018154158}
   - component: {fileID: 313461002983936120}
   - component: {fileID: 6232084568411690046}
+  - component: {fileID: 2710451865132360374}
   - component: {fileID: 1717918413115248483}
   - component: {fileID: 7954958637418407917}
   - component: {fileID: 7487456303798365983}
@@ -276,9 +277,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossAttacks:
   - {fileID: 7954958637418407917}
+  - {fileID: 2710451865132360374}
   - {fileID: 7487456303798365983}
   - {fileID: 1717918413115248483}
   TimeBetweenAttacks: 1
+--- !u!114 &2710451865132360374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128387390681003642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed32d4e6fd04202448632218c6a90217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilesToShoot: 1
+  SecondsBetweenProjectiles: 4
+  ProjectilePrefabs: []
+  Goons:
+  - GoonPrefab: {fileID: 6195261893853084714, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
+    SpawnPosition: {fileID: 0}
+  - GoonPrefab: {fileID: 4352886160715857346, guid: 9651c9ab17f87744cb086f8795f1aa45, type: 3}
+    SpawnPosition: {fileID: 0}
+  TimeBetweenSpawn: 2
+  DashToSpawnSpeed: 4
 --- !u!114 &1717918413115248483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +363,6 @@ MonoBehaviour:
   TopWaypoint: {fileID: 0}
   BottomWaypoint: {fileID: 0}
   MovementSpeed: 6
-  _time: 0
 --- !u!61 &6681337173686054301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -370,7 +393,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
