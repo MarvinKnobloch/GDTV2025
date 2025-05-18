@@ -147,7 +147,7 @@ public class PlayerMovement
     private void DashInputPerformed()
     {
         if (player.menuController.gameIsPaused) return;
-        if (player.currentDashCount >= player.maxDashCount) return;
+        if (player.EnergyValue < player.dashCosts) return;
 
         switch (player.state)
         {
@@ -170,7 +170,8 @@ public class PlayerMovement
     }
     private void StartDash()
     {
-        player.currentDashCount++;
+        player.EnergyUpdate(-player.dashCosts);
+
         player.rb.linearVelocity = Vector2.zero;
         player.rb.gravityScale = 0;
 

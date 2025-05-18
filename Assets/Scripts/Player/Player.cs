@@ -47,9 +47,23 @@ public class Player : MonoBehaviour
     [Header("Dash")]
     public float dashTime;
     public float dashStrength;
-    public int maxDashCount;
-    [NonSerialized] public int currentDashCount;
+    public int dashCosts;
+    [SerializeField] private int maxEnergy;
+    private int currentEnergy;
+    [SerializeField] private float energyRestoreInterval;
     public bool iframesWhileDash;
+
+    public int EnergyValue
+    {
+        get { return currentEnergy; }
+        set { currentEnergy = Math.Min(Math.Max(0, value), maxEnergy); }
+    }
+
+    public int EnergyMaxValue
+    {
+        get { return maxEnergy; }
+        set { maxEnergy = Math.Max(0, value); currentEnergy = Math.Min(value, currentEnergy); }
+    }
 
     [Header("IFrames")]
     public float iFramesDuration;
@@ -135,6 +149,9 @@ public class Player : MonoBehaviour
 
         state = States.Air;
         if (health != null) health.dieEvent.AddListener(OnDeath);
+
+        EnergyUpdate(EnergyMaxValue);
+        InvokeRepeating("EnergyInterval", energyRestoreInterval, energyRestoreInterval);
     }
     private void OnEnable()
     {
@@ -248,7 +265,6 @@ public class Player : MonoBehaviour
     public void SwitchToGround(bool onlyResetValues)
     {
         rb.gravityScale = baseGravityScale;
-        currentDashCount = 0;
         currentJumpCount = 0;
 
         jumpPerformed = false;
@@ -273,7 +289,6 @@ public class Player : MonoBehaviour
     public void SwitchToFly()
     {
         rb.gravityScale = 0;
-        currentDashCount = 0;
         rb.linearVelocity = Vector2.zero;
 
         state = States.Fly;
@@ -327,6 +342,15 @@ public class Player : MonoBehaviour
         spriteRenderer.color = Color.white;
         iframesActive = false;
 
+    }
+    private void EnergyInterval()
+    {
+        EnergyUpdate(1);
+    }
+    public void EnergyUpdate(int amount)
+    {
+        EnergyValue += amount;
+        playerUI.EnergyUIUpdate(EnergyValue, EnergyMaxValue);
     }
     private void OnDeath()
     {

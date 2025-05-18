@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18782809d206664ba4385992418e6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 9
   maxFallSpeed: -20
   groundIntoAirOffset: 0.1
   groundCheckLayer:
@@ -114,9 +114,12 @@ MonoBehaviour:
   jumpStrength: 10
   maxJumpCount: 2
   maxJumpTime: 0.3
-  dashTime: 0.3
-  dashStrength: 15
-  maxDashCount: 2
+  dashTime: 0.2
+  dashStrength: 20
+  dashCosts: 20
+  maxEnergy: 40
+  energyRestoreInterval: 0.15
+  iframesWhileDash: 0
   iFramesDuration: 1
   iFramesBlinkSpeed: 0.1
   attackCooldown: 0.2
