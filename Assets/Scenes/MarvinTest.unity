@@ -762,6 +762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4562881892622998734, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
+      propertyPath: rotateWithMouse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

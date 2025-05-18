@@ -104,14 +104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18782809d206664ba4385992418e6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 9
+  movementSpeed: 8
   maxFallSpeed: -20
   groundIntoAirOffset: 0.1
   groundCheckLayer:
     serializedVersion: 2
     m_Bits: 1544
   playerGroundDrag: -2
-  jumpStrength: 10
+  jumpStrength: 11
   maxJumpCount: 2
   maxJumpTime: 0.3
   dashTime: 0.2
