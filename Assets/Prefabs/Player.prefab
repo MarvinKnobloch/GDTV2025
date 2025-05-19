@@ -122,14 +122,14 @@ MonoBehaviour:
   iframesWhileDash: 0
   iFramesDuration: 1
   iFramesBlinkSpeed: 0.1
-  attackCooldown: 0.2
+  attackCooldown: 0.3
   playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
   platformLayer:
     serializedVersion: 2
     m_Bits: 1024
   platformDropStrength: -3
   projectileSpawnPosition: {fileID: 5019787506880255950}
-  rotateWithMouse: 0
+  rotateWithMouse: 1
   state: 0
 --- !u!114 &7275883768611437086
 MonoBehaviour:
@@ -300,7 +300,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 7000e3d2447db0b40ad0781cd506ce64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
