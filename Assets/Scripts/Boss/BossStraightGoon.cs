@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BossHomingGoon : MonoBehaviour, IPoolingList
+public class BossStraightGoon : MonoBehaviour, IPoolingList
 {
     public float MovementSpeed = 1f;
     public float Lifetime = 10f;
@@ -25,11 +25,7 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
 
     void FixedUpdate()
     {
-        var dx = Player.Instance.transform.position.x - transform.position.x;
-        var x = Player.Instance.transform.position.x + (dx * 4);
-        var y = Player.Instance.transform.position.y;
-
-        transform.position = Vector2.MoveTowards(transform.position, new(x, y), MovementSpeed * Time.fixedDeltaTime);
+        transform.position += MovementSpeed * Time.fixedDeltaTime * transform.right;
     }
 
     IEnumerator ProjectileDisable()
@@ -38,7 +34,7 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
         Die();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

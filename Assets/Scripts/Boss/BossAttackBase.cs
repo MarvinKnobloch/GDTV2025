@@ -6,7 +6,7 @@ public class BossAttackBase : MonoBehaviour
 {
     public int ProjectilesToShoot = 1;
     public float SecondsBetweenProjectiles = 0.1f;
-    public List<GameObject> ProjectilePrefabs = new List<GameObject>();
+    public List<GameObject> ProjectilePrefabs = new();
 
     public virtual void ShootProjectile(int projectileIndex)
     { }

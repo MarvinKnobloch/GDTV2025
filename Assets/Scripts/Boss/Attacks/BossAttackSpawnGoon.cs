@@ -7,6 +7,7 @@ public class BossAttackSpawnGoon : BossAttackBase
     public List<BossAttackGoonData> Goons;
     public float TimeBetweenSpawn = 2f;
     public float DashToSpawnSpeed = 1f;
+    public bool MoveToSpawn = true;
 
     private float _timeSinceLastSpawn = 0f;
     private int _currentGoonIndex = 0;
@@ -27,6 +28,8 @@ public class BossAttackSpawnGoon : BossAttackBase
             _timeSinceLastSpawn = 0f;
             _currentGoonIndex = (_currentGoonIndex + 1) % Goons.Count;
         }
+
+        if (!MoveToSpawn) return;
 
         transform.position = Vector3.Lerp(
             transform.position,
