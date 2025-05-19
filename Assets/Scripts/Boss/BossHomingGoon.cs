@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class BossHomingGoon : MonoBehaviour, IPoolingList
 {
     public float MovementSpeed = 1f;
+    public float Lifetime = 10f;
 
     private Health _health;
 
@@ -13,6 +15,7 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
         TryGetComponent(out _health);
         _health.Value = _health.MaxValue;
         _health.dieEvent.AddListener(() => Die());
+        StartCoroutine(ProjectileDisable());
     }
 
     void OnDisable()
@@ -27,6 +30,12 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
         var y = Player.Instance.transform.position.y;
 
         transform.position = Vector2.MoveTowards(transform.position, new(x, y), MovementSpeed * Time.fixedDeltaTime);
+    }
+
+    IEnumerator ProjectileDisable()
+    {
+        yield return new WaitForSeconds(Lifetime);
+        Die();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

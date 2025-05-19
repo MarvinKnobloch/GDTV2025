@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class BossStraightGoon : MonoBehaviour, IPoolingList
 {
     public float MovementSpeed = 1f;
+    public float Lifetime = 10f;
 
     private Health _health;
 
@@ -13,6 +15,7 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
         TryGetComponent(out _health);
         _health.Value = _health.MaxValue;
         _health.dieEvent.AddListener(() => Die());
+        StartCoroutine(ProjectileDisable());
     }
 
     void OnDisable()
@@ -23,6 +26,12 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     void FixedUpdate()
     {
         transform.position += MovementSpeed * Time.fixedDeltaTime * transform.right;
+    }
+
+    IEnumerator ProjectileDisable()
+    {
+        yield return new WaitForSeconds(Lifetime);
+        Die();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

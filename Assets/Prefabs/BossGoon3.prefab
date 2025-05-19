@@ -103,3 +103,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
+  Lifetime: 5

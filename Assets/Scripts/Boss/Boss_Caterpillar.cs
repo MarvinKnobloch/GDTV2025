@@ -40,7 +40,6 @@ public class Boss_Caterpillar : BossBase
                     (_currentAttack as BossAttackCaterpillarMove).IsHead = true;
                     (tailAttack as BossAttackCaterpillarMove).IsHead = false;
                     (tailAttack as BossAttackCaterpillarMove).TailSlots = (_currentAttack as BossAttackCaterpillarMove).TailSlots;
-                    (tailAttack as BossAttackCaterpillarMove).CurrentSlot = (_currentAttack as BossAttackCaterpillarMove).CurrentSlot;
                 }
 
                 if (_currentAttack is BossAttackSpawnGoon)
@@ -62,6 +61,11 @@ public class Boss_Caterpillar : BossBase
 
                 if (shouldTailAttack)
                 {
+                    if (tailAttack is BossAttackCaterpillarMove)
+                    {
+                        (tailAttack as BossAttackCaterpillarMove).CurrentSlot = (_currentAttack as BossAttackCaterpillarMove).CurrentSlot;
+                    }
+
                     tailAttack.StartAttack();
                     StartCoroutine(tailAttack.ShootProjectiles());
                 }

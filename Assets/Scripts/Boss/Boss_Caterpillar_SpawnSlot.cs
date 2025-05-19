@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Boss_Caterpillar_SpawnSlot : MonoBehaviour
 {
-    public List<Transform> SpawnSlots;
-    public int HeadSlotIndex = 0;
-    public int TailSlotIndex = 0;
+    [NonSerialized] public List<Transform> SpawnSlots;
+    [NonSerialized] public int HeadSlotIndex = 0;
+    [NonSerialized] public int TailSlotIndex = 0;
 
     public Transform GetSpawnSlot()
     {

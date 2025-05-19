@@ -841,9 +841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c71eb531988dce43b1efef9b760455d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnSlots: []
-  HeadSlotIndex: 0
-  TailSlotIndex: 0
 --- !u!4 &1306251285
 Transform:
   m_ObjectHideFlags: 0
