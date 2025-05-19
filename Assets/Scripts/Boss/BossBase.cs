@@ -8,8 +8,8 @@ public class BossBase : MonoBehaviour
     public List<BossAttackBase> bossAttacks = new List<BossAttackBase>();
     public float TimeBetweenAttacks = 1f;
 
-    private bool _attacking = true;
-    private BossAttackBase _currentAttack;
+    protected bool _attacking = true;
+    protected BossAttackBase _currentAttack;
 
     void Start()
     {
