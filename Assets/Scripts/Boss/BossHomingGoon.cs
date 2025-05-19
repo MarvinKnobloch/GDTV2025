@@ -17,7 +17,7 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
 
     void OnDisable()
     {
-        _health.dieEvent.RemoveListener(() => Die());
+        _health.dieEvent.RemoveAllListeners();
     }
 
     void FixedUpdate()
@@ -29,7 +29,7 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
         transform.position = Vector2.MoveTowards(transform.position, new(x, y), MovementSpeed * Time.fixedDeltaTime);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

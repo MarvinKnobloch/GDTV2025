@@ -67,6 +67,13 @@ public class PoolingSystem : MonoBehaviour
     }
     public static void ReturnObjectToPool(GameObject obj, PoolObjectInfo poolObjectInfo)
     {
+        if (poolObjectInfo.inactiveObjects.Contains(obj))
+        { 
+            Debug.Log("Object is multiple times in the list");
+            obj.SetActive(false);
+            return;
+        }
+
         poolObjectInfo.inactiveObjects.Add(obj);
         obj.SetActive(false);
     }

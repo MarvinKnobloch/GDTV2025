@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5108138318789059434}
   - component: {fileID: 8829625919202372788}
   m_Layer: 7
-  m_Name: BossGoon
+  m_Name: Bees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.37518638, g: 0.6226415, b: 0.229085, a: 1}
+  m_Color: {r: 0.745283, g: 0.7071136, b: 0.03867035, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf2b3e97dd19834696f8e3b4416b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1
   isBoss: 0
   dieEvent:
     m_PersistentCalls:
