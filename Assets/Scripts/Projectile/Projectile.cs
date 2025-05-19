@@ -28,6 +28,10 @@ public class Projectile : MonoBehaviour, IPoolingList
         oldPosition = transform.position;
         StartCoroutine(ProjectileDisable());
     }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
     private void FixedUpdate()
     {
         rb.linearVelocityY = 0;
@@ -64,9 +68,7 @@ public class Projectile : MonoBehaviour, IPoolingList
         // Terrain Collision
         else if (Utility.LayerCheck(other, collideLayer))
         {
-            {
-                PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
-            }
+            PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
         }
     }
 }

@@ -14,10 +14,20 @@ public class Boss2 : MonoBehaviour
     [SerializeField] private int beeGunStartDelay;
     [SerializeField] private Transform[] beeGunSpawns;
 
+    [Header("Honey")]
+    [SerializeField] private GameObject leftHoney;
+    [SerializeField] private GameObject rightHoney;
+    private int activeHoneyCount;
+    private bool switchSpawn;
+    [SerializeField] private float honeyDropInterval;
+    [SerializeField] private float honeyDropStartDelay;
+    [SerializeField] private GameObject honeyPrefab;
+
     void Start()
     {
         InvokeRepeating("SpawnWall", movingWallStartDelay, movingWallInterval);
         InvokeRepeating("SpawnBeeGun", beeGunStartDelay, beeGunIntervall);
+        InvokeRepeating("SpawnHoneyDrop", honeyDropStartDelay, honeyDropInterval);
     }
 
     private void SpawnWall()
@@ -35,5 +45,45 @@ public class Boss2 : MonoBehaviour
         beeGun.gameObject.transform.position = beeGunSpawns[spawn].position;
         beeGun.gameObject.SetActive(true);
     }
+    public void TriggerBossAndHoney(int number)
+    {
+        if (number == 1)
+        {
+            activeHoneyCount++;
+            leftHoney.SetActive(true); 
+        }
+        else if (number == 2) 
+        {
+            activeHoneyCount++;
 
+            rightHoney.SetActive(true); 
+        }
+
+        if(activeHoneyCount >= 2)
+        {
+            //SpawnBoss;
+        }
+
+    }
+    private void SpawnHoneyDrop()
+    {
+        if (activeHoneyCount == 0) return;
+
+        switchSpawn = !switchSpawn;
+        if (activeHoneyCount == 1)
+        {
+            if (leftHoney.activeSelf == true) HoneySpawn(leftHoney);
+            else HoneySpawn(rightHoney);
+        }
+        else
+        {
+            if (switchSpawn) HoneySpawn(leftHoney);
+            else HoneySpawn(rightHoney);
+        }
+    }
+    private void HoneySpawn(GameObject side)
+    {
+        GameObject prefab = PoolingSystem.SpawnObject(honeyPrefab, side.transform.GetChild(0).transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+        prefab.transform.right = transform.right;
+    }
 }
