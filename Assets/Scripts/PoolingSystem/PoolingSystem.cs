@@ -69,7 +69,7 @@ public class PoolingSystem : MonoBehaviour
     {
         if (poolObjectInfo.inactiveObjects.Contains(obj))
         { 
-            Debug.Log("Object is multiple times in the list");
+            //Debug.Log("Object is multiple times in the list");
             obj.SetActive(false);
             return;
         }

@@ -10,7 +10,7 @@ public class BeeHive : MonoBehaviour
 
     [SerializeField] private Transform[] spawnPositions;
 
-    [SerializeField] private Boss2 boss2;
+    [SerializeField] private BeeBossController beeBossController;
     [SerializeField] private int hiveNumber;
 
     private void Start()
@@ -31,7 +31,7 @@ public class BeeHive : MonoBehaviour
     {
         health.dieEvent.RemoveAllListeners();
         CancelInvoke();
-        boss2.TriggerBossAndHoney(hiveNumber);
+        beeBossController.TriggerBossAndHoney(hiveNumber);
         Destroy(gameObject);
     }
 }

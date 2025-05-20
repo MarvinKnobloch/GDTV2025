@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Boss2 : MonoBehaviour
+public class BeeBossController : MonoBehaviour
 {
     [Header("MovingWall")]
     [SerializeField] private MovingWall movingWall;
@@ -22,6 +22,10 @@ public class Boss2 : MonoBehaviour
     [SerializeField] private float honeyDropInterval;
     [SerializeField] private float honeyDropStartDelay;
     [SerializeField] private GameObject honeyPrefab;
+
+    [Header("Boss")]
+    [SerializeField] private GameObject beeBoss;
+
 
     void Start()
     {
@@ -61,7 +65,8 @@ public class Boss2 : MonoBehaviour
 
         if(activeHoneyCount >= 2)
         {
-            //SpawnBoss;
+            CancelInvoke("SpawnBeeGun");
+            beeBoss.SetActive(true);
         }
 
     }

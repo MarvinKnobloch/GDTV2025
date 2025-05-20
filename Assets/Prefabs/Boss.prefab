@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   isBoss: 1
+  showBossHealthOnStart: 1
   dieEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -303,6 +304,7 @@ MonoBehaviour:
     SpawnPosition: {fileID: 0}
   TimeBetweenSpawn: 2
   DashToSpawnSpeed: 4
+  MoveToSpawn: 1
 --- !u!114 &1717918413115248483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +346,7 @@ MonoBehaviour:
   SecondsBetweenProjectiles: 0.1
   ProjectilePrefabs:
   - {fileID: 5324997864933902000, guid: e13f86a4d81cbc3439c62106f81c71ed, type: 3}
+  ProjectileToUse: 0
 --- !u!114 &7487456303798365983
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
 
     [Header("Boss")]
     [SerializeField] private bool isBoss;
+    [SerializeField] private bool showBossHealthOnStart;
 
     [HideInInspector]
     public UnityEvent dieEvent;
@@ -52,8 +53,12 @@ public class Health : MonoBehaviour
             if (isBoss)
             {
                 playerUI = GameManager.Instance.playerUI;
-                playerUI.ToggleBossHealth(true);
-                playerUI.BossHealthUIUpdate(Value, MaxValue);
+
+                if (showBossHealthOnStart)
+                {
+                    playerUI.ToggleBossHealth(true);
+                    playerUI.BossHealthUIUpdate(Value, MaxValue);
+                }
             }
         }
 
