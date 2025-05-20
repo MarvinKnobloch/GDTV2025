@@ -5,7 +5,8 @@ using UnityEngine;
 public class BossBase : MonoBehaviour
 {
     [Header("Combat")]
-    public List<BossAttackBase> bossAttacks = new List<BossAttackBase>();
+    public BossPhaseManager PhaseManager;
+    public Health Health;
     public float TimeBetweenAttacks = 1f;
 
     protected bool _attacking = true;
@@ -13,6 +14,7 @@ public class BossBase : MonoBehaviour
 
     void Start()
     {
+        Health.hitEvent.AddListener(() => PhaseManager.CheckForTransition(Health));
         StartCoroutine(AttackCoroutine());
     }
 
@@ -35,11 +37,12 @@ public class BossBase : MonoBehaviour
     {
         while (_attacking)
         {
-            for (int i = 0; i < bossAttacks.Count; i++)
+            var phase = PhaseManager.CurrentPhase;
+            for (int i = 0; i < phase.BossAttacks.Count; i++)
             {
-                _currentAttack = bossAttacks[i];
+                _currentAttack = phase.BossAttacks[i];
                 _currentAttack.StartAttack();
-                yield return StartCoroutine(bossAttacks[i].ShootProjectiles());
+                yield return StartCoroutine(phase.BossAttacks[i].ShootProjectiles());
                 _currentAttack.FinishAttack();
                 yield return new WaitForSeconds(TimeBetweenAttacks);
             }

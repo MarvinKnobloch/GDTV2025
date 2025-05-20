@@ -19,7 +19,7 @@ public class BossAttackCaterpillarMove : BossAttackBase
         if (IsHead)
         {
             CurrentSlot = _random.Next(HeadSlots.Count);
-            transform.position = HeadSlots[CurrentSlot].position;
+            transform.parent.position = HeadSlots[CurrentSlot].position;
 
             if (spawnSlot != null)
             {
