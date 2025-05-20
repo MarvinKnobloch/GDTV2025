@@ -54,6 +54,12 @@ public class BeeGun : MonoBehaviour
     IEnumerator GunDisable()
     {
         yield return new WaitForSeconds(gunUptime);
+        GunOff();
+    }
+    public void GunOff()
+    {
+        StopAllCoroutines();
         gameObject.SetActive(false);
     }
+
 }

@@ -26,7 +26,6 @@ public class BeeBossController : MonoBehaviour
     [Header("Boss")]
     [SerializeField] private GameObject beeBoss;
 
-
     void Start()
     {
         InvokeRepeating("SpawnWall", movingWallStartDelay, movingWallInterval);
@@ -66,6 +65,7 @@ public class BeeBossController : MonoBehaviour
         if(activeHoneyCount >= 2)
         {
             CancelInvoke("SpawnBeeGun");
+            beeGun.GunOff();
             beeBoss.SetActive(true);
         }
 

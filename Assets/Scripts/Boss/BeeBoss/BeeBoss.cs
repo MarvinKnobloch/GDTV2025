@@ -9,6 +9,13 @@ public class BeeBoss : MonoBehaviour
     [SerializeField] private Transform flyInStart;
     [SerializeField] private float flyInSpeed;
 
+    [Header("Attack")]
+    [SerializeField] private float attackDuration;
+    [SerializeField] private float attackInterval;
+    [SerializeField] private GameObject stingerPrefab;
+    [SerializeField] private float attackAngle;
+    private float attackTimer;
+
     [Header("SwitchSideValues")]
     [SerializeField] private Transform rightArenaPosition;
     [SerializeField] private Transform leftArenaPosition;
@@ -18,12 +25,16 @@ public class BeeBoss : MonoBehaviour
     [Header("Values")]
     [SerializeField] private float timeBetweenActions;
 
+    [Header("BeesPhaseTwo")]
+    [SerializeField] private Transform[] beesSpawnPoints;
+    [SerializeField] private GameObject beesPrefab;
+
     private Collider2D bossCollider;
     private Health health;
     private Vector2 currentStartPosition;
     private Vector2 currentEndPosition;
     private float currentFlySpeed;
-    private int currentAction;
+    private bool isLeft;
 
     //CurceMovement;
     private Vector3 positionAB;
@@ -38,6 +49,13 @@ public class BeeBoss : MonoBehaviour
     {
         EnterFight,
         Idle,
+        Attack,
+        MoveToLeft,
+        MoveToRight,
+    }
+    public NextAction nextAction;
+    public enum NextAction
+    {
         MoveToLeft,
         MoveToRight,
         Attack,
@@ -70,6 +88,9 @@ public class BeeBoss : MonoBehaviour
             case State.MoveToRight:
                 CurceMovement();
                 break;
+            case State.Attack:
+                BossAttack();
+                break;
         }
     }
 
@@ -85,6 +106,7 @@ public class BeeBoss : MonoBehaviour
                     GameManager.Instance.playerUI.ToggleBossHealth(true);
                     GameManager.Instance.playerUI.BossHealthUIUpdate(health.Value, health.MaxValue);
                     bossCollider.enabled = true;
+                    nextAction = NextAction.Attack;
                     SwitchToIdle();
                     break;
             }
@@ -100,18 +122,31 @@ public class BeeBoss : MonoBehaviour
 
         if (Vector2.Distance(transform.position, currentEndPosition) < 0.5f)
         {
-            switch (state)
-            {
-                case State.MoveToLeft:
-                    currentAction = 1;
-                    SwitchToIdle();
-                    break;
-                case State.MoveToRight:
-                    currentAction = 0;
-                    SwitchToIdle();
-                    break;
-            }
+            SwitchToIdle();
         }
+    }
+    private void BossAttack()
+    {
+        attackTimer += Time.deltaTime;
+        if(attackTimer >= attackInterval)
+        {
+            attackTimer = 0;
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+
+            float randomAngle = Random.Range(-attackAngle, attackAngle);
+            if(isLeft) prefab.transform.Rotate(0, 0, 210 + randomAngle, Space.World);  //right angle
+            else prefab.transform.Rotate(0, 0, -30 + randomAngle, Space.World);       //left angle
+
+            //prefab.transform.right = transform.right;
+        }
+        //bullet spawn
+
+        timer += Time.deltaTime;
+        if(timer >= attackDuration)
+        {
+            SwitchToIdle();
+        }
+
     }
     private void WaitForNextMove()
     {
@@ -120,26 +155,57 @@ public class BeeBoss : MonoBehaviour
         {
             timer = 0;
 
-            if(currentAction == 0)
+            switch (nextAction)
             {
-                currentStartPosition = transform.position;
-                currentEndPosition = leftArenaPosition.position;
-                currentFlySpeed = switchSideSpeed;
-                state = State.MoveToLeft;
-            }
-            else if(currentAction == 1)
-            {
-                currentStartPosition = transform.position;
-                currentEndPosition = rightArenaPosition.position;
-                currentFlySpeed = switchSideSpeed;
-                state = State.MoveToRight;
+                case NextAction.MoveToLeft:
+                    currentStartPosition = transform.position;
+                    currentEndPosition = leftArenaPosition.position;
+                    currentFlySpeed = switchSideSpeed;
+
+                    nextAction = NextAction.Attack;
+                    state = State.MoveToLeft;
+                    break;
+                case NextAction.MoveToRight:
+                    currentStartPosition = transform.position;
+                    currentEndPosition = rightArenaPosition.position;
+                    currentFlySpeed = switchSideSpeed;
+
+                    state = State.MoveToRight;
+                    nextAction = NextAction.Attack;
+                    break;
+                case NextAction.Attack:
+
+                    if(isLeft == false)
+                    {
+                        nextAction = NextAction.MoveToLeft;
+                    }
+                    else
+                    {
+                        nextAction = NextAction.MoveToRight;
+                    }
+                    isLeft = !isLeft;
+
+                    SpawnBees();
+                    state = State.Attack;
+                    break;
             }
         }
     }
     private void SwitchToIdle()
     {
         interpoleAmount = 0;
+        attackTimer = 0;
         timer = 0;
+
         state = State.Idle;
+    }
+    private void SpawnBees()
+    {
+        for (int i = 0; i < beesSpawnPoints.Length; i++)
+        {
+            GameObject prefab = PoolingSystem.SpawnObject(beesPrefab, beesSpawnPoints[i].position + Vector3.up * 3, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+
+            prefab.GetComponent<ChargeBees>().SetBeeValues(beesSpawnPoints[i].position, attackDuration + timeBetweenActions + i);
+        }
     }
 }
