@@ -10,6 +10,13 @@ public class Boss_Caterpillar : BossBase
 
     void Start()
     {
+        Health.hitEvent.AddListener(() => PhaseManager.CheckForTransition(Health));
+        StartCoroutine(HeadTailAttackCoroutine());
+    }
+
+    public void PhaseTransition()
+    {
+        StopAllCoroutines();
         StartCoroutine(HeadTailAttackCoroutine());
     }
 
@@ -17,12 +24,13 @@ public class Boss_Caterpillar : BossBase
     {
         while (_attacking)
         {
-            for (int i = 0; i < bossAttacks.Count; i++)
+            var phase = PhaseManager.CurrentPhase;
+            for (int i = 0; i < phase.BossAttacks.Count; i++)
             {
                 //
                 // -- PREPARATION --
                 //
-                _currentAttack = bossAttacks[i];
+                _currentAttack = phase.BossAttacks[i];
                 var attackType = _currentAttack.GetType();
                 var tailAttack = Tail.AddComponent(attackType) as BossAttackBase;
                 var shouldTailAttack = tailAttack is not BossAttackSpawnGoon;
@@ -70,7 +78,7 @@ public class Boss_Caterpillar : BossBase
                     StartCoroutine(tailAttack.ShootProjectiles());
                 }
 
-                yield return StartCoroutine(bossAttacks[i].ShootProjectiles());
+                yield return StartCoroutine(phase.BossAttacks[i].ShootProjectiles());
 
                 _currentAttack.FinishAttack();
 

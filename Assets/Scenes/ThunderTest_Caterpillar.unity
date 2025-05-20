@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &86247618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6736315197650747960, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ad47ffb78e0854cad17f8ba37ff488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410371628
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +601,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102224326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1728142453687198354, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372df4914536fab4989daf62ef63af6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1207427387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1119,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847339718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2391825072463041349, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ad47ffb78e0854cad17f8ba37ff488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1894984207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1518,6 +1551,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1728142453687198354, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'Phases.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1847339718}
+    - target: {fileID: 1728142453687198354, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'Phases.Array.data[1]'
+      value: 
+      objectReference: {fileID: 86247618}
     - target: {fileID: 2575839298642843803, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.62
@@ -1562,6 +1603,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: CaterpillarBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 3309505166274176898, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808461228445883589, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'HeadSlots.Array.data[0]'
+      value: 
+      objectReference: {fileID: 656231355}
+    - target: {fileID: 5808461228445883589, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'HeadSlots.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1813999736}
+    - target: {fileID: 5808461228445883589, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'HeadSlots.Array.data[2]'
+      value: 
+      objectReference: {fileID: 487786943}
+    - target: {fileID: 5808461228445883589, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'TailSlots.Array.data[0]'
+      value: 
+      objectReference: {fileID: 410371629}
+    - target: {fileID: 5808461228445883589, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'TailSlots.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1290860338}
+    - target: {fileID: 5808461228445883589, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'TailSlots.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1648523261}
     - target: {fileID: 6165112961436859568, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
       propertyPath: 'HeadSlots.Array.data[0]'
       value: 
@@ -1586,6 +1655,38 @@ PrefabInstance:
       propertyPath: 'TailSlots.Array.data[2]'
       value: 
       objectReference: {fileID: 1648523261}
+    - target: {fileID: 8550102781132199066, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'HeadSlots.Array.data[0]'
+      value: 
+      objectReference: {fileID: 656231355}
+    - target: {fileID: 8550102781132199066, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'HeadSlots.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1813999736}
+    - target: {fileID: 8550102781132199066, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'HeadSlots.Array.data[2]'
+      value: 
+      objectReference: {fileID: 487786943}
+    - target: {fileID: 8550102781132199066, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'TailSlots.Array.data[0]'
+      value: 
+      objectReference: {fileID: 410371629}
+    - target: {fileID: 8550102781132199066, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'TailSlots.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1290860338}
+    - target: {fileID: 8550102781132199066, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: 'TailSlots.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1648523261}
+    - target: {fileID: 8594988071551273903, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: PhaseManager
+      value: 
+      objectReference: {fileID: 1102224326}
+    - target: {fileID: 9018330379792294156, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
