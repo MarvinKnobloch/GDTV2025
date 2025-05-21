@@ -1,9 +1,11 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss3Controller : MonoBehaviour
 {
+    [SerializeField] private Boss3 boss3;
 
     [Header("BombBees")]
     [SerializeField] private float bombBeesInterval;
@@ -18,6 +20,11 @@ public class Boss3Controller : MonoBehaviour
     [SerializeField] private BeeCarry barrelBeeCarry;
     [SerializeField] private Transform[] barrelDropPositions;
     private List<Transform> barrelDropList = new List<Transform>();
+
+    [Header("Phase2Transition")]
+    [SerializeField] private GameObject barrelsPrefab;
+    [SerializeField] private GameObject[] allPlatforms;
+    [SerializeField] private GameObject playerPhase2Spawn;
 
     private bool secondSpawnWave;
     void Start()
@@ -73,5 +80,43 @@ public class Boss3Controller : MonoBehaviour
         }
         int randomPosition = Random.Range(0, barrelDropList.Count);
         barrelBeeCarry.SetSpawnValues(barrelDropList[randomPosition].position.x);
+    }
+
+    public void CancelPhase1Events()
+    {
+        CancelInvoke();
+    }
+    public void TriggerPhase2Barrels()
+    {
+        for (int i = 0; i < barrelDropPositions.Length; i++)
+        {
+            GameObject prefab = PoolingSystem.SpawnObject(barrelsPrefab, barrelDropPositions[i].position + Vector3.up * 20, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+        }
+        StartCoroutine(SetPhase2());
+    }
+    IEnumerator SetPhase2()
+    {
+        yield return new WaitForSeconds(1.2f);
+        GameManager.Instance.menuController.gameIsPaused = true;
+
+        for (int i = 0; i < allPlatforms.Length; i++)
+        {
+            allPlatforms[i].SetActive(false);
+        }
+
+        Player.Instance.playerCollider.enabled = false;
+        Player.Instance.transform.position = playerPhase2Spawn.transform.position;
+        Player.Instance.SwitchToFly();
+
+        if(Player.Instance.faceRight == true)
+        {
+            Player.Instance.faceRight = false;
+            Vector3 localScale;
+            localScale = Player.Instance.transform.localScale;
+            localScale.x *= -1;
+            Player.Instance.transform.localScale = localScale;
+        }
+
+        boss3.Phase2Start();
     }
 }

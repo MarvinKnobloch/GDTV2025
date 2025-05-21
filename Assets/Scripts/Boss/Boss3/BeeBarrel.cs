@@ -40,7 +40,7 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
                 }
             }
 
-            if(hitPlayer == false)
+            if(hitPlayer == false && explosionProjectilesCount > 0)
             {
                 for (int i = 0; i < explosionProjectilesCount; i++)
                 {

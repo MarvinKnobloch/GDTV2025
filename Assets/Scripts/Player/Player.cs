@@ -168,14 +168,14 @@ public class Player : MonoBehaviour
         {
             controls.Player.Jump.performed += playerMovement.JumpInput;
             controls.Player.Dash.performed += playerMovement.DashInput;
-            controls.Player.Fly.performed += playerMovement.FlyInput;
+            //controls.Player.Fly.performed += playerMovement.FlyInput;
             //controls.Player.Interact.performed += playerInteraction.InteractInput;
         }
         else
         {
             controls.Player.Jump.performed -= playerMovement.JumpInput;
             controls.Player.Dash.performed -= playerMovement.DashInput;
-            controls.Player.Fly.performed -= playerMovement.FlyInput;
+            //controls.Player.Fly.performed -= playerMovement.FlyInput;
             //controls.Player.Interact.performed -= playerInteraction.InteractInput;
         }
     }

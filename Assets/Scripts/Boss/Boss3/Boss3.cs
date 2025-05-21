@@ -1,9 +1,14 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Boss3 : MonoBehaviour
 {
     [Header("Values")]
     [SerializeField] private float timeBetweenActions;
+    [SerializeField] private int phaseTreshold;
+    [SerializeField] private Boss3Controller boss3Controller;
 
     [Header("BasicAttack")]
     [SerializeField] private float attackDuration;
@@ -30,7 +35,14 @@ public class Boss3 : MonoBehaviour
     [SerializeField] private int sideAttackCount;
     private int currentSideAttackCount;
 
+    [Header("Phase2Transition")]
+    [SerializeField] private float phase2FlyOutSpeed;
+    [SerializeField] private float phase2TriggerTime;
+    [SerializeField] private float phase2FlyInSpeed;
+    private bool phase2;
+
     private Health health;
+    private Collider2D bossCollider;
     private Vector2 currentStartPosition;
     private Vector2 currentEndPosition;
     private float currentFlySpeed;
@@ -53,10 +65,14 @@ public class Boss3 : MonoBehaviour
         FlyDown,
         SideAttack,
         FlyUp,
+        FlyOutOfScreen,
+        Empty,
+        Phase2FlyIn,
     }
     private void Awake()
     {
         health = GetComponent<Health>();
+        bossCollider = GetComponent<Collider2D>();
         transform.position = rightArenaPosition.position;
     }
     private void Update()
@@ -80,6 +96,14 @@ public class Boss3 : MonoBehaviour
                 break;
             case State.FlyUp:
                 MoveTowards();
+                break;
+            case State.FlyOutOfScreen:
+                MoveTowards();
+                break;
+            case State.Phase2FlyIn:
+                MoveTowards();
+                break;
+                case State.Empty:
                 break;
         }
     }
@@ -136,6 +160,13 @@ public class Boss3 : MonoBehaviour
                     state = State.SideAttack;
                     break;
                 case State.FlyUp:
+                    SwitchToIdle();
+                    break;
+                case State.FlyOutOfScreen:
+                    state = State.Empty;
+                    break;
+                case State.Phase2FlyIn:
+                    Phase2StartFight();
                     SwitchToIdle();
                     break;
             }
@@ -233,13 +264,61 @@ public class Boss3 : MonoBehaviour
 
     private void SwitchToIdle()
     {
+
         fliped = false;
         currentSideAttackCount = 0;
         interpoleAmount = 0;
         attackTimer = 0;
         timer = 0;
 
-        state = State.Idle;
+        if (health.Value <= phaseTreshold && phase2 == false)
+        {
+            phase2 = true;
+            bossCollider.enabled = false;
+            boss3Controller.CancelPhase1Events();
+
+            currentEndPosition = transform.position + Vector3.up * 20;
+            currentFlySpeed = phase2FlyOutSpeed;
+
+            GameManager.Instance.playerUI.ToggleBossHealth(false);
+            StartCoroutine(TriggerPhase2Barrels());
+            state = State.FlyOutOfScreen;
+        }
+        else
+        {
+            state = State.Idle;
+        }
+
+    }
+    IEnumerator TriggerPhase2Barrels()
+    {
+        yield return new WaitForSeconds(phase2TriggerTime);
+        boss3Controller.TriggerPhase2Barrels();
+    }
+    public void Phase2Start()
+    {
+        transform.position = rightArenaPosition.position + Vector3.right * 10;
+        currentEndPosition = rightArenaPosition.position;
+        currentFlySpeed = phase2FlyInSpeed;
+
+        if (isLeft)
+        {
+            isLeft = !isLeft;
+            Vector3 localScale;
+            localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
+        state = State.Phase2FlyIn;
+    }
+    public void Phase2StartFight()
+    {
+        GameManager.Instance.menuController.gameIsPaused = false;
+        health.Value = health.MaxValue;
+        GameManager.Instance.playerUI.BossHealthUIUpdate(health.Value, health.MaxValue);
+        GameManager.Instance.playerUI.ToggleBossHealth(true);
+        bossCollider.enabled = true;
+        Player.Instance.playerCollider.enabled = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
