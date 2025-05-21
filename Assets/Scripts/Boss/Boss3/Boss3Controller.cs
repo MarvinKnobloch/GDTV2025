@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class Boss3Controller : MonoBehaviour
 {
+
+    [Header("BombBees")]
+    [SerializeField] private float bombBeesInterval;
+    [SerializeField] private float bombBeesDelay;
+    [SerializeField] private BeeCarry bombBeeCarry;
     [SerializeField] private Transform[] platformPositions;
     private List<Transform> platformList = new List<Transform>();
 
-    [Header("BombBees")]
-    [SerializeField] private float bombbeesInterval;
-    [SerializeField] private float bombbeesDelay;
-    [SerializeField] private BeeCarry beeCarry;
+    [Header("BarrelBees")]
+    [SerializeField] private float barrelBeesInterval;
+    [SerializeField] private float barrelBeesDelay;
+    [SerializeField] private BeeCarry barrelBeeCarry;
+    [SerializeField] private Transform[] barrelDropPositions;
+    private List<Transform> barrelDropList = new List<Transform>();
 
     private bool secondSpawnWave;
     void Start()
     {
         AddPlatforms();
 
-        InvokeRepeating("SpawnBombBee", bombbeesDelay, bombbeesInterval);
+        foreach (Transform obj in barrelDropPositions)
+        {
+            barrelDropList.Add(obj);
+        }
+
+        InvokeRepeating("SpawnBombBee", bombBeesDelay, bombBeesInterval);
+        InvokeRepeating("SpawnBarrelBee", barrelBeesDelay, barrelBeesInterval);
     }
 
     private void SpawnBombBee()
     {
-        if(beeCarry.gameObject.activeSelf == true)
+        if(bombBeeCarry.gameObject.activeSelf == true)
         {
-            Debug.Log("Bee still active");
+            Debug.Log("BombBee still active");
             return;
         }
 
@@ -40,7 +53,7 @@ public class Boss3Controller : MonoBehaviour
         }
 
         int randomPlatform = Random.Range(0, platformList.Count);
-        beeCarry.SetSpawnValues(platformList[randomPlatform].position.x);
+        bombBeeCarry.SetSpawnValues(platformList[randomPlatform].position.x);
 
         platformList.Remove(platformList[randomPlatform]);
     }
@@ -50,5 +63,15 @@ public class Boss3Controller : MonoBehaviour
         {
             platformList.Add(obj);
         }
+    }
+    private void SpawnBarrelBee()
+    {
+        if (barrelBeeCarry.gameObject.activeSelf == true)
+        {
+            Debug.Log("BarrelBee still active");
+            return;
+        }
+        int randomPosition = Random.Range(0, barrelDropList.Count);
+        barrelBeeCarry.SetSpawnValues(barrelDropList[randomPosition].position.x);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class Projectile : MonoBehaviour, IPoolingList
     [Header("ProjectileValues")]
     [SerializeField] private float lifetime = 2f;
     public float projectileSpeed;
+    [NonSerialized] public float randomSpeed;
     [SerializeField] private LayerMask collideLayer;
 
     [Header("EnemyValues")]
@@ -35,7 +37,7 @@ public class Projectile : MonoBehaviour, IPoolingList
     private void FixedUpdate()
     {
         rb.linearVelocityY = 0;
-        rb.transform.Translate(transform.right * projectileSpeed * Time.deltaTime, Space.World);
+        rb.transform.Translate(transform.right * (projectileSpeed + randomSpeed) * Time.deltaTime, Space.World);
 
         direction = ((Vector2)transform.position - oldPosition).normalized;
         oldPosition = transform.position;
