@@ -9,4 +9,11 @@ public class DamageZone : MonoBehaviour
             Player.Instance.health.PlayerTakeDamage(1, false);
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Player.Instance.health.PlayerTakeDamage(1, false);
+        }
+    }
 }
