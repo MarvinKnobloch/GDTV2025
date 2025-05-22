@@ -21,6 +21,18 @@ PrefabInstance:
       value: BossGoon3
       objectReference: {fileID: 0}
     - target: {fileID: 8624535501490232217, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624535501490232217, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624535501490232217, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624535501490232217, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -78,6 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3768841035553478455, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
+    - {fileID: 5108138318789059434, guid: 783029d832f12e547a252da5ff8a1431, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

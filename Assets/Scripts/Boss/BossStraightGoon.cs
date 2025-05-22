@@ -6,21 +6,16 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     public float MovementSpeed = 1f;
     public float Lifetime = 10f;
 
-    private Health _health;
-
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
     void OnEnable()
     {
-        TryGetComponent(out _health);
-        _health.Value = _health.MaxValue;
-        _health.dieEvent.AddListener(() => Die());
         StartCoroutine(ProjectileDisable());
     }
 
     void OnDisable()
     {
-        _health.dieEvent.RemoveAllListeners();
+        Die();
     }
 
     void FixedUpdate()
@@ -34,7 +29,7 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
         Die();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

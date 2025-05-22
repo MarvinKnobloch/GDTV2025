@@ -4,11 +4,10 @@ using UnityEngine;
 public class BossPhaseManager : MonoBehaviour
 {
     public List<BossPhase> Phases = new();
+    public int CurrentPhaseIndex = 0;
 
-    private int _currentPhaseIndex = 0;
-
-    public BossPhase CurrentPhase => Phases[_currentPhaseIndex];
-    public BossPhase NextPhase => _currentPhaseIndex < Phases.Count - 1 ? Phases[_currentPhaseIndex + 1] : null;
+    public BossPhase CurrentPhase => Phases[CurrentPhaseIndex];
+    public BossPhase NextPhase => CurrentPhaseIndex < Phases.Count - 1 ? Phases[CurrentPhaseIndex + 1] : null;
 
     public void CheckForTransition(Health health)
     {
@@ -18,7 +17,7 @@ public class BossPhaseManager : MonoBehaviour
         )
         {
             CurrentPhase.TransitionEvent?.Invoke();
-            _currentPhaseIndex++;
+            CurrentPhaseIndex++;
         }
     }
 }

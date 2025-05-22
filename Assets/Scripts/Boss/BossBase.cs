@@ -25,11 +25,13 @@ public class BossBase : MonoBehaviour
 
     void OnDestroy()
     {
+        StopAllCoroutines();
         _attacking = false;
     }
 
     void OnDisable()
     {
+        StopAllCoroutines();
         _attacking = false;
     }
 
