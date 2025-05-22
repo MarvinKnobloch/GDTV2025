@@ -26,13 +26,8 @@ public class PlayerUI : MonoBehaviour
     //[Header("Currency")]
     //[SerializeField] private TextMeshProUGUI currencyText;
 
-    //[Header("MessageBox")]
-    //public GameObject messageBox;
-    //[SerializeField] private TextMeshProUGUI messageBoxText;
-    //[SerializeField] private TextMeshProUGUI messageBoxCloseText;
-
-    //[Header("DialogBox")]
-    //public GameObject dialogBox;
+    [Header("DialogBox")]
+    public GameObject dialogBox;
 
     [Header("BossHealth")]
     [SerializeField] private GameObject bossHealthbarObject;
@@ -100,25 +95,6 @@ public class PlayerUI : MonoBehaviour
         GameManager.Instance.menuController.gameIsPaused = true;
         gameOverScreen.SetActive(true);
     }
-    //public void MessageBoxEnable(string text)
-    //{
-    //    GameManager.Instance.ActivateCursor();
-
-    //    GameManager.Instance.menuController.TimeScaleToZero();
-    //    GameManager.Instance.menuController.gameIsPaused = true;
-
-    //    messageBox.SetActive(true);
-    //    messageBoxText.text = text;
-    //    messageBoxCloseText.text = "Close (<color=green>" + controls.Player.Interact.GetBindingDisplayString() + "</color>)"; 
-    //}
-    //public void MessageBoxDisable()
-    //{
-    //    GameManager.Instance.DeactivateCursor();
-
-    //    GameManager.Instance.menuController.ResetTimeScale();
-    //    GameManager.Instance.menuController.gameIsPaused = false;
-    //    messageBox.SetActive(false);
-    //}
 
     //public void ActivateShop()
     //{

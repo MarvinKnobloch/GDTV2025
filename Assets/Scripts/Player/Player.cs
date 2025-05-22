@@ -97,15 +97,15 @@ public class Player : MonoBehaviour
     [NonSerialized] public string currentstate;
     const string deathState = "Death";
 
-    ////Interaction
-    //[NonSerialized] public List<IInteractables> interactables = new List<IInteractables>();
-    //[NonSerialized] public IInteractables currentInteractable;
-    //public IInteractables closestInteraction;
+    //Interaction
+    [NonSerialized] public List<IInteractables> interactables = new List<IInteractables>();
+    [NonSerialized] public IInteractables currentInteractable;
+    public IInteractables closestInteraction;
 
     [NonSerialized] public PlayerMovement playerMovement = new PlayerMovement();
     [NonSerialized] public PlayerCollision playerCollision = new PlayerCollision();
     [NonSerialized] public PlayerAbilities playerAbilities = new PlayerAbilities();
-    //[NonSerialized] public PlayerInteraction playerInteraction = new PlayerInteraction();
+    [NonSerialized] public PlayerInteraction playerInteraction = new PlayerInteraction();
 
     [Space]
     public States state;
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
         playerMovement.player = this;
         playerCollision.player = this;
         playerAbilities.player = this;
-        //playerInteraction.player = this;
+        playerInteraction.player = this;
 
     }
     private void Start()
@@ -169,14 +169,14 @@ public class Player : MonoBehaviour
             controls.Player.Jump.performed += playerMovement.JumpInput;
             controls.Player.Dash.performed += playerMovement.DashInput;
             //controls.Player.Fly.performed += playerMovement.FlyInput;
-            //controls.Player.Interact.performed += playerInteraction.InteractInput;
+            controls.Player.Interact.performed += playerInteraction.InteractInput;
         }
         else
         {
             controls.Player.Jump.performed -= playerMovement.JumpInput;
             controls.Player.Dash.performed -= playerMovement.DashInput;
             //controls.Player.Fly.performed -= playerMovement.FlyInput;
-            //controls.Player.Interact.performed -= playerInteraction.InteractInput;
+            controls.Player.Interact.performed -= playerInteraction.InteractInput;
         }
     }
     private void FixedUpdate()
@@ -379,4 +379,5 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.menuController.gameIsPaused = false;
     }
+    public void AttackTimeReset() => playerAbilities.AttackTimeReset();
 }

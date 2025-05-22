@@ -18,4 +18,5 @@ public class PlayerAbilities
             }
         }
     }
+    public void AttackTimeReset() => attackTimer = 0;
 }
