@@ -9,6 +9,7 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
     [SerializeField] private int explosionProjectilesCount;
     [SerializeField] private float projectileRandomSpeed;
     [SerializeField] private float projectileRandomAngle;
+    [SerializeField] private float minAngle;
 
     private bool hitPlayer;
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
@@ -39,7 +40,7 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
                 }
             }
 
-            if(hitPlayer == false)
+            if(hitPlayer == false && explosionProjectilesCount > 0)
             {
                 for (int i = 0; i < explosionProjectilesCount; i++)
                 {
@@ -49,6 +50,14 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
                     barrelprojectiles.GetComponent<Projectile>().randomSpeed = randomSpeed;
 
                     float randomAngle = Random.Range(-projectileRandomAngle, projectileRandomAngle);
+                    if(randomAngle >= 0)
+                    {
+                        if (randomAngle < minAngle) randomAngle = minAngle;
+                    }
+                    else
+                    {
+                        if(randomAngle > -minAngle) randomAngle = -minAngle;
+                    }
                     barrelprojectiles.transform.Rotate(0, 0, 90 + randomAngle);
 
                     //barrelprojectiles.transform.right = transform.up;

@@ -1,0 +1,556 @@
+fileFormatVersion: 2
+guid: c2f1ff4607a21a74b8157070fd116876
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7892401469382194911
+    second: spriteSheetWaspGatlin_0
+  - first:
+      213: 5530261605230323205
+    second: spriteSheetWaspGatlin_1
+  - first:
+      213: 5082051367668703909
+    second: spriteSheetWaspGatlin_2
+  - first:
+      213: 8648853918121150420
+    second: spriteSheetWaspGatlin_3
+  - first:
+      213: -7385609849395011399
+    second: spriteSheetWaspGatlin_4
+  - first:
+      213: -6111297562642179903
+    second: spriteSheetWaspGatlin_5
+  - first:
+      213: -2070702056441748147
+    second: spriteSheetWaspGatlin_6
+  - first:
+      213: -6293523634715760767
+    second: spriteSheetWaspGatlin_7
+  - first:
+      213: 5494128941810992321
+    second: spriteSheetWaspGatlin_8
+  - first:
+      213: -1764267926259532347
+    second: spriteSheetWaspGatlin_9
+  - first:
+      213: 1501609213869325762
+    second: spriteSheetWaspGatlin_10
+  - first:
+      213: -2850278854611485040
+    second: spriteSheetWaspGatlin_11
+  - first:
+      213: 2266354612017320099
+    second: spriteSheetWaspGatlin_12
+  - first:
+      213: 1585686702133759324
+    second: spriteSheetWaspGatlin_13
+  - first:
+      213: 904485066668715709
+    second: spriteSheetWaspGatlin_14
+  - first:
+      213: 6938192715799811372
+    second: spriteSheetWaspGatlin_15
+  - first:
+      213: 4730854679836654893
+    second: spriteSheetWaspGatlin_16
+  - first:
+      213: -888044572482027234
+    second: spriteSheetWaspGatlin_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 700
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3801
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b8f2a1f5633724ba27a32f279709b8
+      internalID: -1784427257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_1
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 3801
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e2dd778a9a62c4981d5f3c9c13fcb4
+      internalID: -845315203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_2
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 3801
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa3902ebbc01004f90f2d14eacb256f
+      internalID: -153847236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_3
+      rect:
+        serializedVersion: 2
+        x: 3351
+        y: 3801
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0979a64cd017d4d9b26f947a73e341
+      internalID: -418042811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2534
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f37f097a06be5b4c9b406252ed19920
+      internalID: -970736859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_5
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 2534
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f2b657311442a4eb693b14b0bb18e2
+      internalID: 2016133444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_6
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 2534
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad11b1245bd44cd4aa600018e82ebab8
+      internalID: -1487581933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_7
+      rect:
+        serializedVersion: 2
+        x: 3351
+        y: 2534
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b5d84e42811b24cafc9b61c8eff50e
+      internalID: 271609685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1267
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89cf71c4701fbb349ac2a614870ca512
+      internalID: -678625110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_9
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1267
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da27fd763cfa6d4e8dd2bcb733c9af5
+      internalID: 1191941315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_10
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 1267
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7458cd8c9abb9cd4097541cbadc390be
+      internalID: 919293192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_11
+      rect:
+        serializedVersion: 2
+        x: 3351
+        y: 1267
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a624248ffc582d4d818f145231c2c96
+      internalID: 408457972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d544d7fadb581d4c89b7c6f3c1b0bdb
+      internalID: -160455664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_13
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 0
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d78f0d3a2e41e1408226aa611f4cb8f
+      internalID: -1518033061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_14
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 0
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a059c7fc638c3c478f2336657660462
+      internalID: -241391069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetWaspGatlin_15
+      rect:
+        serializedVersion: 2
+        x: 3351
+        y: 0
+        width: 1117
+        height: 1267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638ebc6a8a5de42489cd893a71c8e684
+      internalID: 1943588825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 41e8530bc18695441ac40be9e72b1f45
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1117.0,"y":1267.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
+    nameFileIdTable:
+      spriteSheetWaspGatlin_0: -1784427257
+      spriteSheetWaspGatlin_1: -845315203
+      spriteSheetWaspGatlin_10: 919293192
+      spriteSheetWaspGatlin_11: 408457972
+      spriteSheetWaspGatlin_12: -160455664
+      spriteSheetWaspGatlin_13: -1518033061
+      spriteSheetWaspGatlin_14: -241391069
+      spriteSheetWaspGatlin_15: 1943588825
+      spriteSheetWaspGatlin_2: -153847236
+      spriteSheetWaspGatlin_3: -418042811
+      spriteSheetWaspGatlin_4: -970736859
+      spriteSheetWaspGatlin_5: 2016133444
+      spriteSheetWaspGatlin_6: -1487581933
+      spriteSheetWaspGatlin_7: 271609685
+      spriteSheetWaspGatlin_8: -678625110
+      spriteSheetWaspGatlin_9: 1191941315
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
