@@ -6,7 +6,9 @@ using static UnityEngine.Rendering.DebugUI;
 public class Boss3 : MonoBehaviour
 {
     [Header("Values")]
-    [SerializeField] private float timeBetweenActions;
+    [SerializeField] private float phase1IdleTime;
+    [SerializeField] private float phase2IdleTime;
+    private float timeBetweenActions;
     [SerializeField] private int phaseTreshold;
     [SerializeField] private Boss3Controller boss3Controller;
 
@@ -39,7 +41,28 @@ public class Boss3 : MonoBehaviour
     [SerializeField] private float phase2FlyOutSpeed;
     [SerializeField] private float phase2TriggerTime;
     [SerializeField] private float phase2FlyInSpeed;
+    [SerializeField] private Transform phase2StartPosition;
+    [SerializeField] private float phase2FlySpeed;
     private bool phase2;
+    private int currentPhase2Action;
+    private bool skipPhase2Stuff;
+    private int phase2AttackCycle;
+
+    [Header("Phase2BaseAttack")]
+    [SerializeField] private float phase2BaseAttackInverval;
+    [SerializeField] private int phase2BaseAttackCount;
+
+    [Header("Phase2ChargeBeens")]
+    [SerializeField] private float chargeBeesDelay;
+    [SerializeField] private float timeBeetweenChargeBees;
+    [SerializeField] private Boss3ChargeBee[] chargeBeesStack1;
+    [SerializeField] private Boss3ChargeBee[] chargeBeesStack2;
+    [SerializeField] private float chargeBeesSpeed;
+
+    [Header("Phase2Shoot")]
+    [SerializeField] private float phase2ShootDelay;
+    [SerializeField] private int phase2ShootBulletAmount;
+    [SerializeField] private int phase2ShootAngle;
 
     private Health health;
     private Collider2D bossCollider;
@@ -68,17 +91,23 @@ public class Boss3 : MonoBehaviour
         FlyOutOfScreen,
         Empty,
         Phase2FlyIn,
+        Phase2FlyDown,
+        Phase2Idle,
+        Phase2FlyUp,
     }
     private void Awake()
     {
         health = GetComponent<Health>();
         bossCollider = GetComponent<Collider2D>();
         transform.position = rightArenaPosition.position;
+        timeBetweenActions = phase1IdleTime;
     }
     private void Update()
     {
         switch (state)
         {
+            case State.Empty:
+                break;
             case State.Idle:
                 WaitForNextMove();
                 break;
@@ -103,7 +132,16 @@ public class Boss3 : MonoBehaviour
             case State.Phase2FlyIn:
                 MoveTowards();
                 break;
-                case State.Empty:
+            case State.Phase2FlyDown:
+                MoveTowards();
+                Phase2BaseAttack();
+                break;
+            case State.Phase2FlyUp:
+                MoveTowards();
+                Phase2BaseAttack();
+                break;
+            case State.Phase2Idle:
+                WaitForNextMove();
                 break;
         }
     }
@@ -113,40 +151,71 @@ public class Boss3 : MonoBehaviour
         if (timer > timeBetweenActions)
         {
             timer = 0;
-            int nextAttack = UnityEngine.Random.Range(0, 3);
-            //int nextAttack = UnityEngine.Random.Range(1, 2);
 
-            if(nextAttack == 0)
+            if(phase2 == false)
             {
-                state = State.Attack;
+                Phase1Actions();
             }
-            else if(nextAttack == 1)
+            else
             {
-                if (isLeft) currentEndPosition = rightArenaPosition.position;
-                else currentEndPosition = leftArenaPosition.position;
-                currentStartPosition = transform.position;
-
-                state = State.SwitchSide;
-            }
-            else if(nextAttack == 2)
-            {
-                int position = UnityEngine.Random.Range(0, 2);
-                if (isLeft) 
-                {
-                    if (position == 0) currentEndPosition = leftSideTop.position;
-                    else currentEndPosition = leftSideBottom.position;
-                }
-                else
-                {
-                    if (position == 0) currentEndPosition = rightSideTop.position;
-                    else currentEndPosition = rightSideBottom.position;
-                }
-                currentStartPosition = transform.position;
-                currentFlySpeed = flyDownSpeed;
-
-                state = State.FlyDown;
+                Phase2Actions();
             }
         }
+    }
+    private void Phase1Actions()
+    {
+        int nextAttack = Random.Range(0, 3);
+        //int nextAttack = UnityEngine.Random.Range(1, 2);
+
+        if (nextAttack == 0)
+        {
+            state = State.Attack;
+        }
+        else if (nextAttack == 1)
+        {
+            if (isLeft) currentEndPosition = rightArenaPosition.position;
+            else currentEndPosition = leftArenaPosition.position;
+            currentStartPosition = transform.position;
+
+            state = State.SwitchSide;
+        }
+        else if (nextAttack == 2)
+        {
+            int position = Random.Range(0, 2);
+            if (isLeft)
+            {
+                if (position == 0) currentEndPosition = leftSideTop.position;
+                else currentEndPosition = leftSideBottom.position;
+            }
+            else
+            {
+                if (position == 0) currentEndPosition = rightSideTop.position;
+                else currentEndPosition = rightSideBottom.position;
+            }
+            currentStartPosition = transform.position;
+            currentFlySpeed = flyDownSpeed;
+
+            state = State.FlyDown;
+        }
+    }
+    private void Phase2Actions()
+    {
+        if(currentPhase2Action == 0)
+        {
+            attackTimer = 10;
+            currentPhase2Action++;
+            currentEndPosition = rightSideBottom.position + Vector3.up * -1f;
+            state = State.Phase2FlyDown;
+        }
+        else if(currentPhase2Action == 1)
+        {
+            attackTimer = 10;
+            currentPhase2Action--;
+            currentEndPosition = phase2StartPosition.position;
+            state = State.Phase2FlyUp;
+        }
+        currentStartPosition = transform.position;
+        currentFlySpeed = phase2FlySpeed;
     }
     private void MoveTowards()
     {
@@ -160,14 +229,26 @@ public class Boss3 : MonoBehaviour
                     state = State.SideAttack;
                     break;
                 case State.FlyUp:
-                    SwitchToIdle();
+                    SwitchToIdle(phase1IdleTime);
                     break;
                 case State.FlyOutOfScreen:
                     state = State.Empty;
                     break;
                 case State.Phase2FlyIn:
                     Phase2StartFight();
-                    SwitchToIdle();
+                    SwitchToIdle(phase1IdleTime);
+                    break;
+                case State.Phase2FlyDown:
+                    if (phase2AttackCycle == 0)
+                    {
+                        boss3Controller.ToggleBeeCircle();
+                    }
+                    phase2AttackCycle++;
+                    if (phase2AttackCycle >= 2) phase2AttackCycle = 0;
+                    SwitchToIdle(phase2IdleTime);
+                    break;
+                case State.Phase2FlyUp:
+                    SwitchToIdle(phase2IdleTime);
                     break;
             }
         }
@@ -200,7 +281,7 @@ public class Boss3 : MonoBehaviour
         {
             isLeft = !isLeft;
 
-            SwitchToIdle();
+            SwitchToIdle(phase1IdleTime);
         }
     }
     private void BossBaseAttack()
@@ -220,7 +301,7 @@ public class Boss3 : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= attackDuration)
         {
-            SwitchToIdle();
+            SwitchToIdle(phase1IdleTime);
         }
     }
     private void BossSwitchSideAttack()
@@ -262,8 +343,9 @@ public class Boss3 : MonoBehaviour
         }
     }
 
-    private void SwitchToIdle()
+    private void SwitchToIdle(float idleTime)
     {
+        timeBetweenActions = idleTime;
 
         fliped = false;
         currentSideAttackCount = 0;
@@ -286,9 +368,21 @@ public class Boss3 : MonoBehaviour
         }
         else
         {
+            if (phase2 == true)
+            {
+                if(skipPhase2Stuff == false)
+                {
+                    skipPhase2Stuff = true;
+                }
+                else
+                {
+                    Invoke("ChargeBeesDelay", chargeBeesDelay);
+                    StartCoroutine(Phase2ChargeBees());
+                    StartCoroutine(Phase2Shoot());
+                }
+            }
             state = State.Idle;
         }
-
     }
     IEnumerator TriggerPhase2Barrels()
     {
@@ -297,9 +391,10 @@ public class Boss3 : MonoBehaviour
     }
     public void Phase2Start()
     {
-        transform.position = rightArenaPosition.position + Vector3.right * 10;
-        currentEndPosition = rightArenaPosition.position;
+        transform.position = phase2StartPosition.position + Vector3.right * 10;
+        currentEndPosition = phase2StartPosition.position;
         currentFlySpeed = phase2FlyInSpeed;
+        skipPhase2Stuff = false;
 
         if (isLeft)
         {
@@ -320,6 +415,66 @@ public class Boss3 : MonoBehaviour
         bossCollider.enabled = true;
         Player.Instance.playerCollider.enabled = true;
     }
+    private void Phase2BaseAttack()
+    {
+        if (currentSideAttackCount >= phase2BaseAttackCount) return;
+        
+        attackTimer += Time.deltaTime;
+        if (attackTimer > phase2BaseAttackInverval)
+        {
+            attackTimer = 0;
+            currentSideAttackCount++;
+
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+
+            //if (isLeft) prefab.transform.Rotate(0, 0, 0, Space.World);  //right angle
+            prefab.transform.Rotate(0, 0, 180, Space.World);       //left angle
+        }
+    }
+    private void ChargeBeesDelay()
+    {
+        StartCoroutine(Phase2ChargeBees());
+    }
+    IEnumerator Phase2ChargeBees()
+    {
+        SpawnChargeBees(chargeBeesStack1);
+        yield return new WaitForSeconds(timeBeetweenChargeBees);
+        SpawnChargeBees(chargeBeesStack2);
+        yield return new WaitForSeconds(timeBeetweenChargeBees);
+        SpawnChargeBees(chargeBeesStack1);
+        yield return new WaitForSeconds(timeBeetweenChargeBees);
+        SpawnChargeBees(chargeBeesStack2);
+    }
+    private void SpawnChargeBees(Boss3ChargeBee[] bees)
+    {
+        for (int i = 0; i < bees.Length; i++)
+        {
+            bees[i].gameObject.SetActive(true);
+            bees[i].SetValues(chargeBeesSpeed);
+        }
+    }
+    IEnumerator Phase2Shoot()
+    {
+        Phase2ShootLogic();
+        yield return new WaitForSeconds(phase2ShootDelay);
+        Phase2ShootLogic();
+    }
+    private void Phase2ShootLogic()
+    {
+        Vector3 targetDir = Player.Instance.gameObject.transform.position - transform.position;
+
+        float angleEachBullet = phase2ShootAngle / phase2ShootBulletAmount;
+        float startangle = phase2ShootAngle * 0.5f;
+        for (int i = 0; i < phase2ShootBulletAmount; i++)
+        {
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+
+            prefab.transform.right = targetDir;
+            prefab.transform.Rotate(0, 0, transform.rotation.z - startangle + angleEachBullet * i);
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

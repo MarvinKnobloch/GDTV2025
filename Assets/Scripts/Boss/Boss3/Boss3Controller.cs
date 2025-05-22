@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boss3Controller : MonoBehaviour
@@ -25,6 +26,9 @@ public class Boss3Controller : MonoBehaviour
     [SerializeField] private GameObject barrelsPrefab;
     [SerializeField] private GameObject[] allPlatforms;
     [SerializeField] private GameObject playerPhase2Spawn;
+
+    [Header("BeeCircle")]
+    [SerializeField] private GameObject beeCircle;
 
     private bool secondSpawnWave;
     void Start()
@@ -118,5 +122,17 @@ public class Boss3Controller : MonoBehaviour
         }
 
         boss3.Phase2Start();
+
+        //InvokeRepeating("ToggleBeeCircle", beeCircleDelay, beeCircleInterval);
+    }
+    public void ToggleBeeCircle()
+    {
+        beeCircle.SetActive(false);
+        StartCoroutine(ActivateBeeCircle());
+    }
+    IEnumerator ActivateBeeCircle()
+    {
+        yield return null;
+        beeCircle.SetActive(true);
     }
 }
