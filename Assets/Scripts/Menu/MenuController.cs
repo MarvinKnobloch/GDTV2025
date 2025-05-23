@@ -19,10 +19,12 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject confirmController;
     [SerializeField] private Button confirmButton;
     [SerializeField] private TextMeshProUGUI confirmText;
-    [SerializeField] private GameObject difficultySettingsobj;
 
     [SerializeField] private GameObject loadGameButton;
     private float normalFixedDeltaTime;
+
+    [SerializeField] private GameObject resetButton;
+    [SerializeField] private GameObject arenaHubButton;
 
     private void Awake()
     {
@@ -31,7 +33,7 @@ public class MenuController : MonoBehaviour
     }
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.TitelScreen)
         {
             baseMenu = titleMenu;
             baseMenu.SetActive(true);
@@ -49,6 +51,12 @@ public class MenuController : MonoBehaviour
         }
         else
         {
+            if(SceneManager.GetActiveScene().buildIndex == (int)GameScenes.AreaHub)
+            {
+                resetButton.SetActive(false);
+                arenaHubButton.SetActive(false);
+            }
+
             GameManager.Instance.DeactivateCursor();
 
             baseMenu = ingameMenu;
@@ -57,7 +65,7 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if (controls.Menu.MenuEsc.WasPerformedThisFrame())// || Input.GetButtonDown("Menu"))
+        if (controls.Menu.MenuEsc.WasPerformedThisFrame())
         {
             HandleMenu();
         }
@@ -72,7 +80,7 @@ public class MenuController : MonoBehaviour
     }
     public void HandleMenu()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.TitelScreen)
         {
             if (confirmController.activeSelf == true) confirmController.SetActive(false);
             else if (titleMenu.activeSelf == true) return;
@@ -81,10 +89,8 @@ public class MenuController : MonoBehaviour
         else
         {
             if (Player.Instance == null) return;
-            //if (GameManager.Instance.playerUI.dialogBox.activeSelf == true) return;
 
-            //if (GameManager.Instance.playerUI.messageBox.activeSelf == true) GameManager.Instance.playerUI.MessageBoxDisable();
-            //else if (GameManager.Instance.playerUI.shop.activeSelf == true) GameManager.Instance.playerUI.DeactivateShop();
+            if (GameManager.Instance.playerUI.dialogBox.activeSelf == true) return;
             if (confirmController.activeSelf == true) confirmController.SetActive(false);
             else if (ingameMenu.activeSelf == false)
             {
@@ -126,6 +132,10 @@ public class MenuController : MonoBehaviour
     //{
     //    OpenConfirmController(NewGame, "Start new game?");
     //}
+    public void SetBackToArenaHubConfirm()
+    {
+        OpenConfirmController(BackToArenaHub, "Enter Arena Hub?");
+    }
     public void SetBackToMainMenuConfirm()
     {
         OpenConfirmController(BackToMainMenu, "Back to main menu?");
@@ -133,7 +143,7 @@ public class MenuController : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.SetInt("NewGame", 0);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
     public void LoadGame()
     {
@@ -141,7 +151,7 @@ public class MenuController : MonoBehaviour
         gameIsPaused = false;
         Time.timeScale = 1;
         Time.fixedDeltaTime = normalFixedDeltaTime;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
     public void ResetPlayer(bool playSound)
     {
@@ -150,20 +160,29 @@ public class MenuController : MonoBehaviour
         Time.timeScale = 1;
         Time.fixedDeltaTime = normalFixedDeltaTime;
 
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //if (GameManager.Instance.LoadFormCheckpoint)
         //{
         //    SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
         //}
         //else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    private void BackToArenaHub()
+    {
+        AudioManager.Instance.PlayUtilityOneshot((int)AudioManager.UtilitySounds.MenuSelect);
+        gameIsPaused = false;
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = normalFixedDeltaTime;
+        SceneManager.LoadScene((int)GameScenes.AreaHub);
+    }
+
     private void BackToMainMenu()
     {
         AudioManager.Instance.PlayUtilityOneshot((int)AudioManager.UtilitySounds.MenuSelect);
         gameIsPaused = false;
         Time.timeScale = 1;
         Time.fixedDeltaTime = normalFixedDeltaTime;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene((int)GameScenes.TitelScreen);
     }
     public void CloseSelectedMenu()
     {

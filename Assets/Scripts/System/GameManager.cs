@@ -51,10 +51,6 @@ public class GameManager : MonoBehaviour
         }
         if (Player.Instance == null) return;
 
-        //playerUI.PlayerCurrencyUpdate(PlayerPrefs.GetInt("PlayerCurrency"));
-
-        //PlayerPrefs.SetInt("CurrentLevel", SceneManager.GetActiveScene().buildIndex);
-
         //if (SceneManager.GetActiveScene().buildIndex == 1)
         //{
         //    //AudioManager.Instance.SetSong((int)AudioManager.MusicSongs.Tutorial);

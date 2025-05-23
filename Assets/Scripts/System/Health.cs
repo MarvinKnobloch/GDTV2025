@@ -48,18 +48,21 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Value = MaxValue;
-
             if (isBoss)
             {
                 playerUI = GameManager.Instance.playerUI;
 
+                baseHealth = MaxValue;
+                CalculateBossHealth();
+
+                Value = MaxValue;
                 if (showBossHealthOnStart)
                 {
                     playerUI.ToggleBossHealth(true);
                     playerUI.BossHealthUIUpdate(Value, MaxValue);
                 }
             }
+            else Value = MaxValue;
         }
 
     }
@@ -137,5 +140,9 @@ public class Health : MonoBehaviour
     {
         MaxValue = baseHealth + Mathf.RoundToInt(PlayerPrefs.GetInt("PlayerDifficultyHealth"));
         playerUI.HealthUIUpdate(Value, MaxValue);
+    }
+    public void CalculateBossHealth()
+    {
+        MaxValue = Mathf.RoundToInt(baseHealth * (PlayerPrefs.GetFloat("BossHealthMultiplier") * 0.01f));
     }
 }
