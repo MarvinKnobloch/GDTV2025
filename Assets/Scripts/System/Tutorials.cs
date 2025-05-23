@@ -25,7 +25,7 @@ public class Tutorials : MonoBehaviour
     public void MoveTutorial()
     {
         moveText.text = "Use <color=green>" + controls.Player.Move.GetBindingDisplayString(0) + "</color> to move.\n" +
-                        "Hotkey can be changed in the Menu(<color=green>" + controls.Menu.MenuEsc.GetBindingDisplayString(0) + "</color>) -> Settings";
+                        "Hotkey can be changed in the Menu(<color=green>" + controls.Menu.MenuEsc.GetBindingDisplayString(0) + "</color>) -> Settings.";
     }
     public void JumpTutorial()
     {
