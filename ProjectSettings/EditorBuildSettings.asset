@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ArenaHub.unity
     guid: d8f752004da7ad94bbbd25bc774f2b83
+  - enabled: 1
+    path: Assets/Scenes/Boss1.unity
+    guid: 06de3fae99e0b054983d7b9f00518864
+  - enabled: 1
+    path: Assets/Scenes/Boss2.unity
+    guid: 91652a3601ef6bf41a9f8eec28c6f4e0
+  - enabled: 1
+    path: Assets/Scenes/Boss3.unity
+    guid: eff99fe73b1fcaa4c9bd9076c0021283
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
