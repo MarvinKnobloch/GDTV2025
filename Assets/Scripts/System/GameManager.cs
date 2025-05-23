@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     [NonSerialized] public int playerCurrency;
 
+    [SerializeField] private DifficultySettings[] difficultySettings;
+    [SerializeField] private TextMeshProUGUI[] difficultyTexts;
     private void Awake()
     {
         if (Instance == null)
@@ -26,6 +29,18 @@ public class GameManager : MonoBehaviour
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 120;
+
+        if (PlayerPrefs.GetFloat("BossHealthMultiplier") == 0) PlayerPrefs.SetFloat("BossHealthMultiplier", 100);
+
+        for (int i = 0; i < difficultyTexts.Length; i++)
+        {
+            if (i == 0) difficultyTexts[i].text = "<b><u>Explorer</u></b>";
+            else if (i == 1) difficultyTexts[i].text = "<b><u>Average</u></b>";
+            else difficultyTexts[i].text = "<b><u>Gamer</u></b>";
+
+            difficultyTexts[i].text += "\n\n(<color=green>+" + difficultySettings[i].playerBonusHealth + "</color> Player bonus health)\n";
+            difficultyTexts[i].text += "(<color=green>" + difficultySettings[i].bossHealthMultiplier + "% </color> Boss health)\n";
+        }
 
     }
     private void Start()
@@ -85,5 +100,19 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         cinemachineFollow.TrackerSettings.PositionDamping = baseDamping;
+    }
+    public void SetDifficultyValues(int setting)
+    {
+        PlayerPrefs.SetInt("PlayerDifficultyHealth", difficultySettings[setting].playerBonusHealth);
+        PlayerPrefs.SetFloat("BossHealthMultiplier", difficultySettings[setting].bossHealthMultiplier);
+
+        PlayerPrefs.SetInt("CurrentDifficulty", setting);
+        AudioManager.Instance.PlayUtilityOneshot((int)AudioManager.UtilitySounds.MenuSelect);
+    }
+    [Serializable]
+    public class DifficultySettings
+    {
+        public int playerBonusHealth;
+        public float bossHealthMultiplier;
     }
 }

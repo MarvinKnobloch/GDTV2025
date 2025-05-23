@@ -19,6 +19,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject confirmController;
     [SerializeField] private Button confirmButton;
     [SerializeField] private TextMeshProUGUI confirmText;
+    [SerializeField] private GameObject difficultySettingsobj;
 
     [SerializeField] private GameObject loadGameButton;
     private float normalFixedDeltaTime;
@@ -121,27 +122,18 @@ public class MenuController : MonoBehaviour
         ingameMenu.SetActive(false);
         EndPause();
     }
-    public void SetNewGame()
-    {
-        OpenConfirmController(NewGame, "Start new game?");
-    }
+    //public void SetNewGame()
+    //{
+    //    OpenConfirmController(NewGame, "Start new game?");
+    //}
     public void SetBackToMainMenuConfirm()
     {
         OpenConfirmController(BackToMainMenu, "Back to main menu?");
     }
-    private void NewGame()
+    public void NewGame()
     {
         PlayerPrefs.SetInt("NewGame", 0);
-
-        PlayerPrefs.SetFloat("PlayerXSpawn", 6);
-        PlayerPrefs.SetFloat("PlayerYSpawn", 2.5f);
-        PlayerPrefs.SetInt("CurrentLevel", 1);
-
-        AudioManager.Instance.PlayUtilityOneshot((int)AudioManager.UtilitySounds.MenuSelect);
-        gameIsPaused = false;
-        Time.timeScale = 1;
-        Time.fixedDeltaTime = normalFixedDeltaTime;
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
+        SceneManager.LoadScene(1);
     }
     public void LoadGame()
     {
@@ -149,7 +141,7 @@ public class MenuController : MonoBehaviour
         gameIsPaused = false;
         Time.timeScale = 1;
         Time.fixedDeltaTime = normalFixedDeltaTime;
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
+        SceneManager.LoadScene(1);
     }
     public void ResetPlayer(bool playSound)
     {

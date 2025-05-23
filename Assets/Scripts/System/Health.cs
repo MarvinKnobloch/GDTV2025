@@ -40,8 +40,8 @@ public class Health : MonoBehaviour
         {
             playerUI = GameManager.Instance.playerUI;
 
-            //baseHealth = MaxValue;
-            //CalculatePlayerHealth();
+            baseHealth = MaxValue;
+            CalculatePlayerHealth();
 
             Value = MaxValue;
             playerUI.HealthUIUpdate(Value, MaxValue);
@@ -135,7 +135,7 @@ public class Health : MonoBehaviour
     //}
     public void CalculatePlayerHealth()
     {
-        MaxValue = baseHealth; // + PlayerPrefs.GetInt(Upgrades.StatsUpgrades.BonusHealth.ToString());
+        MaxValue = baseHealth + Mathf.RoundToInt(PlayerPrefs.GetInt("PlayerDifficultyHealth"));
         playerUI.HealthUIUpdate(Value, MaxValue);
     }
 }
