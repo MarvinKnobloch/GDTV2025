@@ -45,21 +45,22 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            //AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Menu, true, 0.1f, 1);
-        }
         if (Player.Instance == null) return;
 
-        //if (SceneManager.GetActiveScene().buildIndex == 1)
-        //{
-        //    //AudioManager.Instance.SetSong((int)AudioManager.MusicSongs.Tutorial);
-        //    AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Tutorial, true, 0.1f, 1);
-        //}
-        //else if (SceneManager.GetActiveScene().buildIndex == 2)
-        //{
-        //    AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.FireArea, true, 0.1f, 1);
-        //}
+        if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.TitelScreen)
+        {
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.TitleScreen, true, 0.1f, 1);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.AreaHub)
+        {
+            //AudioManager.Instance.SetSong((int)AudioManager.MusicSongs.Tutorial);
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.ArenaHub, true, 0.1f, 1);
+        }
+        else
+        {
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, true, 0.1f, 5);
+        }
     }
     public void ActivateCursor()
     {

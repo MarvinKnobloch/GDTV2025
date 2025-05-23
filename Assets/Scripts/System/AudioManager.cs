@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource soundSource;
- 
+
     [Space]
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private string masterVolume;
@@ -45,8 +45,9 @@ public class AudioManager : MonoBehaviour
     public enum MusicSongs
     {
         Empty,
-        Menu,
-        Level,
+        TitleScreen,
+        ArenaHub,
+        Boss
     }
     public enum UtilitySounds
     {
@@ -125,7 +126,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayAudioFileOneShot(AudioFiles file)
     {
-        if(soundSource != null) soundSource.PlayOneShot(file.audioClip, file.volume);
+        if (soundSource != null) soundSource.PlayOneShot(file.audioClip, file.volume);
     }
     public void PlayRandomOneShot(AudioFiles[] files)
     {
@@ -168,7 +169,7 @@ public class AudioManager : MonoBehaviour
         {
             StartCoroutine(FadeInMusicVolume(audioFile, fadeInSpeed, 0));
         }
-    } 
+    }
     public IEnumerator FadeInMusicVolume(int audioFile, float fadeinspeed, float startvolume)
     {
         float duration = fadeinspeed;
