@@ -4,6 +4,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System.Collections;
 
 public class MenuController : MonoBehaviour
 {
@@ -143,6 +144,8 @@ public class MenuController : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.SetInt("NewGame", 0);
+        PlayerPrefs.SetInt("BossDefeated", 0);
+        PlayerPrefs.SetInt("ArenaOpen", 0);
         SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
     public void LoadGame()
@@ -206,7 +209,7 @@ public class MenuController : MonoBehaviour
 
         gameIsPaused = true;
         Time.timeScale = 0;
-        Time.fixedDeltaTime = 0;
+        //Time.fixedDeltaTime = 0;   //because of bulletdrop after pause
 
         AudioManager.Instance.PlayUtilityOneshot((int)AudioManager.UtilitySounds.MenuSelect);
     }
@@ -215,11 +218,12 @@ public class MenuController : MonoBehaviour
         GameManager.Instance.DeactivateCursor();
 
         gameIsPaused = false;
-        Time.timeScale = 1;
         Time.fixedDeltaTime = normalFixedDeltaTime;
+        Time.timeScale = 1;
 
         AudioManager.Instance.PlayUtilityOneshot((int)AudioManager.UtilitySounds.MenuSelect);
     }
+
     private void OpenConfirmController(UnityAction buttonEvent, string text)
     {
 

@@ -28,11 +28,11 @@ public class TutorialFadeOut : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && GameManager.Instance.menuController.gameIsPaused == false)
         {
             StopAllCoroutines();
-            if (gameObject.activeSelf == false) return;
-            StartCoroutine(FadeOut());
+
+            if (gameObject.activeSelf == true) StartCoroutine(FadeOut());
         }
     }
     IEnumerator FadeIn()
@@ -51,6 +51,8 @@ public class TutorialFadeOut : MonoBehaviour
     }
     IEnumerator FadeOut()
     {
+        if (gameObject.activeSelf == false) StopAllCoroutines();
+
         while (backgroundColor.a > 0.05f)
         {
             timer -= Time.deltaTime;

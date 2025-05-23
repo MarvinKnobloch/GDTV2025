@@ -3974,6 +3974,7 @@ MonoBehaviour:
   phase2ShootDelay: 4
   phase2ShootBulletAmount: 9
   phase2ShootAngle: 120
+  dialog: {fileID: 11400000, guid: 9b6e0e328c929d84f9c59c4959f0ed9d, type: 2}
   state: 0
 --- !u!114 &1254259303
 MonoBehaviour:
@@ -3987,7 +3988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf2b3e97dd19834696f8e3b4416b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1
   isBoss: 1
   showBossHealthOnStart: 1
   dieEvent:
