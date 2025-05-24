@@ -139,6 +139,7 @@ MonoBehaviour:
   beePrefab: {fileID: 6195261893853084714, guid: cb89b6e7fbf5bae4d8580d85550a666c, type: 3}
   spawnInterval: 9
   spawnAmount: 3
+  colorChangeTime: 0.08
   spawnPositions:
   - {fileID: 3008839014049637861}
   - {fileID: 607874980051856183}
