@@ -1,0 +1,690 @@
+fileFormatVersion: 2
+guid: f6fba01a43c5d3c488a74fbe4a53b0bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5978443094162515533
+    second: spriteSheetHoneyDrip (1)_0
+  - first:
+      213: 1228012515028473360
+    second: spriteSheetHoneyDrip (1)_1
+  - first:
+      213: 4434925312827145955
+    second: spriteSheetHoneyDrip (1)_2
+  - first:
+      213: 691425678433680346
+    second: spriteSheetHoneyDrip (1)_3
+  - first:
+      213: -5382214912726281794
+    second: spriteSheetHoneyDrip (1)_4
+  - first:
+      213: 1348966973279167276
+    second: spriteSheetHoneyDrip (1)_5
+  - first:
+      213: -4819139326416144416
+    second: spriteSheetHoneyDrip (1)_6
+  - first:
+      213: -6385821229079232769
+    second: spriteSheetHoneyDrip (1)_7
+  - first:
+      213: 5190457857778685295
+    second: spriteSheetHoneyDrip (1)_8
+  - first:
+      213: -4595841876729037074
+    second: spriteSheetHoneyDrip (1)_9
+  - first:
+      213: -7338691073686882959
+    second: spriteSheetHoneyDrip (1)_10
+  - first:
+      213: -4344670261343502805
+    second: spriteSheetHoneyDrip (1)_11
+  - first:
+      213: 1813236413425358493
+    second: spriteSheetHoneyDrip (1)_12
+  - first:
+      213: 2077460244248057635
+    second: spriteSheetHoneyDrip (1)_13
+  - first:
+      213: 8274214558980257238
+    second: spriteSheetHoneyDrip (1)_14
+  - first:
+      213: 7125874447022768503
+    second: spriteSheetHoneyDrip (1)_15
+  - first:
+      213: 4617969385188455571
+    second: spriteSheetHoneyDrip (1)_16
+  - first:
+      213: 5106108835461481115
+    second: spriteSheetHoneyDrip (1)_17
+  - first:
+      213: -2439699658171426520
+    second: spriteSheetHoneyDrip (1)_18
+  - first:
+      213: -5778715806294559743
+    second: spriteSheetHoneyDrip (1)_19
+  - first:
+      213: -7410063401806496506
+    second: spriteSheetHoneyDrip (1)_20
+  - first:
+      213: 1004050991684959114
+    second: spriteSheetHoneyDrip (1)_21
+  - first:
+      213: 5273645129186740135
+    second: spriteSheetHoneyDrip (1)_22
+  - first:
+      213: 4355297998999715281
+    second: spriteSheetHoneyDrip (1)_23
+  - first:
+      213: 5640902487589680838
+    second: spriteSheetHoneyDrip (1)_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b95e865ead480da0800000000000000
+      internalID: -5978443094162515533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2332
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016910a40e6ca0110800000000000000
+      internalID: 1228012515028473360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 2332
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee337423150c8d30800000000000000
+      internalID: 4434925312827145955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_3
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 2332
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb7f9fbdff689900800000000000000
+      internalID: 691425678433680346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 2332
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1d3269d088e45b0800000000000000
+      internalID: -5382214912726281794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1749
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23e908a05e78b210800000000000000
+      internalID: 1348966973279167276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_6
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1749
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7b9d5c05afe1db0800000000000000
+      internalID: -4819139326416144416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_7
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1749
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe7599fc610167a0800000000000000
+      internalID: -6385821229079232769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_8
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1749
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f659882ebe5380840800000000000000
+      internalID: 5190457857778685295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_9
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1749
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee73b5b92a4830c0800000000000000
+      internalID: -4595841876729037074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1166
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175309cb95bb72a90800000000000000
+      internalID: -7338691073686882959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_11
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1166
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eba669a61a4b3c0800000000000000
+      internalID: -4344670261343502805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1166
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d96950c39e8e92910800000000000000
+      internalID: 1813236413425358493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_13
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1166
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327d665d51f94dc10800000000000000
+      internalID: 2077460244248057635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1166
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5326f7d4ae3d270800000000000000
+      internalID: 8274214558980257238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 583
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77143d81e0134e260800000000000000
+      internalID: 7125874447022768503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_16
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 583
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39479c350b2561040800000000000000
+      internalID: 4617969385188455571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_17
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 583
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b924a2abeea8cd640800000000000000
+      internalID: 5106108835461481115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_18
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 583
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829dc044612742ed0800000000000000
+      internalID: -2439699658171426520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_19
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 583
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104b0e35790edcfa0800000000000000
+      internalID: -5778715806294559743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetHoneyDrip (1)_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 156
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d7334a89a2a2990800000000000000
+      internalID: -7410063401806496506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 86c34a3da47f2054e955db1e91751e4b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":156.0,"y":583.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spriteSheetHoneyDrip (1)_0: -5978443094162515533
+      spriteSheetHoneyDrip (1)_1: 1228012515028473360
+      spriteSheetHoneyDrip (1)_10: -7338691073686882959
+      spriteSheetHoneyDrip (1)_11: -4344670261343502805
+      spriteSheetHoneyDrip (1)_12: 1813236413425358493
+      spriteSheetHoneyDrip (1)_13: 2077460244248057635
+      spriteSheetHoneyDrip (1)_14: 8274214558980257238
+      spriteSheetHoneyDrip (1)_15: 7125874447022768503
+      spriteSheetHoneyDrip (1)_16: 4617969385188455571
+      spriteSheetHoneyDrip (1)_17: 5106108835461481115
+      spriteSheetHoneyDrip (1)_18: -2439699658171426520
+      spriteSheetHoneyDrip (1)_19: -5778715806294559743
+      spriteSheetHoneyDrip (1)_2: 4434925312827145955
+      spriteSheetHoneyDrip (1)_20: -7410063401806496506
+      spriteSheetHoneyDrip (1)_3: 691425678433680346
+      spriteSheetHoneyDrip (1)_4: -5382214912726281794
+      spriteSheetHoneyDrip (1)_5: 1348966973279167276
+      spriteSheetHoneyDrip (1)_6: -4819139326416144416
+      spriteSheetHoneyDrip (1)_7: -6385821229079232769
+      spriteSheetHoneyDrip (1)_8: 5190457857778685295
+      spriteSheetHoneyDrip (1)_9: -4595841876729037074
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

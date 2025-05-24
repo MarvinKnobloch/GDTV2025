@@ -33,13 +33,13 @@ public class BeeGun : MonoBehaviour
         switch (gunPosition)
         {
             case Position.left:
-                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 90 - angleHalfed);
+                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 245 - angleHalfed);   //90
                 break;
             case Position.top:
-                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 180 - angleHalfed);
+                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 335 - angleHalfed);  //180
                 break;
             case Position.right:
-                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 270 - angleHalfed);
+                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 65 - angleHalfed);
                 break;
         }
 
@@ -48,7 +48,7 @@ public class BeeGun : MonoBehaviour
         {
             timer = 0;
             GameObject prefab = PoolingSystem.SpawnObject(gunProjectile, projectileSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
-            prefab.transform.right = transform.up;
+            prefab.transform.right = projectileSpawnPosition.right;
         }
     }
     IEnumerator GunDisable()
