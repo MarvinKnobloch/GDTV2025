@@ -10,9 +10,9 @@ public class NpcDialog : MonoBehaviour, IInteractables
     [SerializeField] private DialogObj[] dialog;
     public void Interaction()
     {
-        if (dialog[PlayerPrefs.GetInt("BossDefeated")].pauseGame == false)
+        if (dialog[PlayerPrefs.GetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString())].pauseGame == false)
         {
-            if (dialog[PlayerPrefs.GetInt("BossDefeated")].disableInputs == true)
+            if (dialog[PlayerPrefs.GetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString())].disableInputs == true)
             {
                 Player.Instance.rb.linearVelocity = Vector2.zero;
                 Player.Instance.SwitchToGround(true);
@@ -21,7 +21,7 @@ public class NpcDialog : MonoBehaviour, IInteractables
             }
         }
 
-        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(dialog[PlayerPrefs.GetInt("BossDefeated")]);
+        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(dialog[PlayerPrefs.GetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString())]);
         GameManager.Instance.playerUI.dialogBox.SetActive(true);
     }
 

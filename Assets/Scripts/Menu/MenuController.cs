@@ -143,8 +143,8 @@ public class MenuController : MonoBehaviour
     }
     public void NewGame()
     {
-        PlayerPrefs.SetInt("NewGame", 0);
-        PlayerPrefs.SetInt("BossDefeated", 0);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), 0);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), 0);
         PlayerPrefs.SetInt("ArenaOpen", 0);
         SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
