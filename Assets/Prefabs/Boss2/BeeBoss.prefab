@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7791624858056213769}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.5, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   beesPrefab: {fileID: 219986791610635206, guid: 36b309df54877b64396de3657bdb8ff6, type: 3}
+  boss2EndDialog: {fileID: 11400000, guid: 45c27e872c2a89e40ad2649fa14d5d8b, type: 2}
+  boss2EndEvent: {fileID: 11400000, guid: 50bf3a607e1dfb64bb3d6aea75705692, type: 2}
   state: 0
   nextAction: 0
 --- !u!114 &1407974128378792592

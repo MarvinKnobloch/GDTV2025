@@ -125,7 +125,7 @@ public class DialogBox : MonoBehaviour
     {
         if (currentDialog.eventAfterDialogEnd.Length != 0)
         {
-            for (int i = 0; i < currentDialog.dialogs[currentDialogNumber].dialogEvent.Length; i++)
+            for (int i = 0; i < currentDialog.eventAfterDialogEnd.Length; i++)
             {
                 if (currentDialog.eventAfterDialogEnd[i] != null)
                 {
