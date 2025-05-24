@@ -68,6 +68,14 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, true, 0.1f, 5);
         }
     }
+
+    public void ShowVictoryScreen()
+    {
+        victoryManager.gameObject.SetActive(true);
+        playerUI.ToggleBossHealth(false);
+        PoolingSystem.PurgePool();
+    }
+
     public void ActivateCursor()
     {
         //Cursor.lockState = CursorLockMode.None;

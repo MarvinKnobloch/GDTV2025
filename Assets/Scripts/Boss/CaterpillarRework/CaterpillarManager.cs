@@ -42,7 +42,7 @@ public class CaterpillarManager : MonoBehaviour
     private void OnDeath()
     {
         StopAllCoroutines();
-        GameManager.Instance.victoryManager.ShowVictoryScreen();
+        GameManager.Instance.ShowVictoryScreen();
     }
 
     private void PhaseTransition()
