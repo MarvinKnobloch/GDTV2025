@@ -7,12 +7,15 @@ public class TutorialFadeOut : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI tutorialText;
     [SerializeField] private float transitionTime;
+    [SerializeField] private int dontShowTutorial;
 
     private Color backgroundColor;
     private float timer;
 
     private void Awake()
     {
+        if (PlayerPrefs.GetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString()) >= dontShowTutorial) gameObject.SetActive(false);
+
         backgroundColor = tutorialText.color;
         backgroundColor.a = 0;
 
