@@ -24,6 +24,7 @@ public class CaterpillarManager : MonoBehaviour
     private Transform _goonSpawnPoint;
     private bool _headAttackFromLeft = true;
     private bool _tailAttackFromLeft = true;
+    private int _ensureInitialEvenGoonSpawn = 0;
 
     void Start()
     {
@@ -57,9 +58,21 @@ public class CaterpillarManager : MonoBehaviour
 
     IEnumerator ExecuteAI()
     {
+        var firstIteration = true;
         while (true)
         {
             DoMovement();
+
+            if (firstIteration)
+            {
+                firstIteration = false;
+                yield return new WaitForSeconds(TimeBetweenAI);
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
+
             yield return StartCoroutine(CurrentPhase.Attack(_headAttackFromLeft, _tailAttackFromLeft));
             SpawnGoon();
 
@@ -74,6 +87,36 @@ public class CaterpillarManager : MonoBehaviour
 
     void DoMovement()
     {
+        switch (_ensureInitialEvenGoonSpawn)
+        {
+            case 0:
+                _headAttackFromLeft = true;
+                _tailAttackFromLeft = false;
+                _goonSpawnPoint = LeftSlots[0];
+                Head.transform.position = LeftSlots[1].position;
+                Tail.transform.position = RightSlots[2].position;
+                _ensureInitialEvenGoonSpawn++;
+                return;
+            case 1:
+                _headAttackFromLeft = false;
+                _tailAttackFromLeft = true;
+                _goonSpawnPoint = LeftSlots[1];
+                Head.transform.position = RightSlots[2].position;
+                Tail.transform.position = LeftSlots[0].position;
+                _ensureInitialEvenGoonSpawn++;
+                return;
+            case 2:
+                _headAttackFromLeft = true;
+                _tailAttackFromLeft = true;
+                _goonSpawnPoint = LeftSlots[2];
+                Head.transform.position = LeftSlots[1].position;
+                Tail.transform.position = LeftSlots[0].position;
+                _ensureInitialEvenGoonSpawn++;
+                return;
+            default:
+                break;
+        }
+
         var useLeftSlotsForHead = UnityEngine.Random.Range(0, 2);
         var useLeftSlotsForTail = UnityEngine.Random.Range(0, 2);
 
