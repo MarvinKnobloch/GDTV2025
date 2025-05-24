@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class BeeBoss : MonoBehaviour
@@ -27,6 +28,10 @@ public class BeeBoss : MonoBehaviour
     [Header("BeesPhaseTwo")]
     [SerializeField] private Transform[] beesSpawnPoints;
     [SerializeField] private GameObject beesPrefab;
+
+    [Header("BossDefeat")]
+    [SerializeField] private DialogObj boss2EndDialog;
+    [SerializeField] private VoidEventChannel boss2EndEvent;
 
     private Collider2D bossCollider;
     private Health health;
@@ -70,6 +75,16 @@ public class BeeBoss : MonoBehaviour
         transform.position = flyInStart.position;
         currentEndPosition = rightArenaPosition.position;
         currentFlySpeed = flyInSpeed;
+    }
+    private void OnEnable()
+    {
+        health.dieEvent.AddListener(OnDeath);
+        boss2EndEvent.OnEventRaised += Boss2EndEvent;
+    }
+    private void OnDisable()
+    {
+        health.dieEvent.RemoveAllListeners();
+        boss2EndEvent.OnEventRaised -= Boss2EndEvent;
     }
     private void Update()
     {
@@ -206,5 +221,25 @@ public class BeeBoss : MonoBehaviour
 
             prefab.GetComponent<ChargeBees>().SetBeeValues(beesSpawnPoints[i].position, attackDuration + timeBetweenActions + i);
         }
+    }
+    private void OnDeath()
+    {
+        GameManager.Instance.menuController.gameIsPaused = true;
+        Time.timeScale = 0;
+        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss2EndDialog);
+        GameManager.Instance.playerUI.dialogBox.SetActive(true);
+        GameManager.Instance.playerUI.ToggleBossHealth(false);
+        //VictorySound
+    }
+
+    private void Boss2EndEvent()
+    {
+        int playerPref = 2;
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
+
+        GameManager.Instance.menuController.gameIsPaused = false;
+        Time.timeScale = 1;
+        SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI;
 
 public class Boss3 : MonoBehaviour
@@ -44,6 +45,7 @@ public class Boss3 : MonoBehaviour
     [SerializeField] private Transform phase2StartPosition;
     [SerializeField] private float phase2FlySpeed;
     private bool phase2;
+    private bool phase2Started;
     private int currentPhase2Action;
     private bool skipPhase2Stuff;
     private int phase2AttackCycle;
@@ -64,6 +66,10 @@ public class Boss3 : MonoBehaviour
     [SerializeField] private int phase2ShootBulletAmount;
     [SerializeField] private int phase2ShootAngle;
 
+    [Header("BossDefeat")]
+    [SerializeField] private DialogObj boss3EndDialog;
+    [SerializeField] private VoidEventChannel boss3EndEvent;
+
     private Health health;
     private Collider2D bossCollider;
     private Vector2 currentStartPosition;
@@ -77,8 +83,6 @@ public class Boss3 : MonoBehaviour
     private float interpoleAmount;
 
     private float timer;
-
-    [SerializeField] private DialogObj dialog;
 
     public State state;
 
@@ -107,10 +111,12 @@ public class Boss3 : MonoBehaviour
     private void OnEnable()
     {
         health.dieEvent.AddListener(OnDeath);
+        boss3EndEvent.OnEventRaised += Boss3EndEvent;
     }
     private void OnDisable()
     {
         health.dieEvent.RemoveListener(OnDeath);
+        boss3EndEvent.OnEventRaised -= Boss3EndEvent;
     }
     private void Update()
     {
@@ -418,6 +424,7 @@ public class Boss3 : MonoBehaviour
     }
     public void Phase2StartFight()
     {
+        phase2Started = true;
         GameManager.Instance.menuController.gameIsPaused = false;
         health.Value = health.MaxValue;
         GameManager.Instance.playerUI.BossHealthUIUpdate(health.Value, health.MaxValue);
@@ -494,12 +501,24 @@ public class Boss3 : MonoBehaviour
     }
     private void OnDeath()
     {
+        if (phase2Started == false) return;
+
         //Dialog
         GameManager.Instance.menuController.gameIsPaused = true;
         Time.timeScale = 0;
-        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(dialog);
+        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss3EndDialog);
         GameManager.Instance.playerUI.dialogBox.SetActive(true);
         GameManager.Instance.playerUI.ToggleBossHealth(false);
         //VictorySound
+    }
+    private void Boss3EndEvent()
+    {
+        int playerPref = 3;
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
+
+        GameManager.Instance.menuController.gameIsPaused = false;
+        Time.timeScale = 1;
+        SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
 }

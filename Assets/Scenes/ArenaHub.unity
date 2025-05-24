@@ -2324,7 +2324,7 @@ Transform:
   m_GameObject: {fileID: 864797743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31, y: -6.1, z: 0}
+  m_LocalPosition: {x: 37.78, y: -2.72, z: 0}
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4970,6 +4970,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05e3cbb133dc9b8408e2c247f50f4063, type: 2}
   - {fileID: 11400000, guid: 76557253e85e3a84fb24a046994595ea, type: 2}
   - {fileID: 11400000, guid: 1aec503a3f6d02540a6dc1d7c2d3b544, type: 2}
+  - {fileID: 11400000, guid: 8b42d6d7180f6e94bb0078201647b513, type: 2}
 --- !u!58 &306365063160070486
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5387,6 +5388,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 441a22c126050174698cfc656f7236eb, type: 2}
   - {fileID: 11400000, guid: 441a22c126050174698cfc656f7236eb, type: 2}
   - {fileID: 11400000, guid: 441a22c126050174698cfc656f7236eb, type: 2}
+  - {fileID: 11400000, guid: 441a22c126050174698cfc656f7236eb, type: 2}
 --- !u!1 &8255865652222014769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5491,6 +5493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionText: Talk
   dialog:
+  - {fileID: 11400000, guid: 12ec0b6ada3a1e04b86c371da2da7e7c, type: 2}
   - {fileID: 11400000, guid: 12ec0b6ada3a1e04b86c371da2da7e7c, type: 2}
   - {fileID: 11400000, guid: 12ec0b6ada3a1e04b86c371da2da7e7c, type: 2}
   - {fileID: 11400000, guid: 12ec0b6ada3a1e04b86c371da2da7e7c, type: 2}

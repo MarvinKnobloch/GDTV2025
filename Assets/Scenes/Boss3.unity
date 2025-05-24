@@ -3974,7 +3974,8 @@ MonoBehaviour:
   phase2ShootDelay: 4
   phase2ShootBulletAmount: 9
   phase2ShootAngle: 120
-  dialog: {fileID: 11400000, guid: 9b6e0e328c929d84f9c59c4959f0ed9d, type: 2}
+  boss3EndDialog: {fileID: 11400000, guid: 9b6e0e328c929d84f9c59c4959f0ed9d, type: 2}
+  boss3EndEvent: {fileID: 11400000, guid: 7896bf8855010a149aa1e9beb6a8ee16, type: 2}
   state: 0
 --- !u!114 &1254259303
 MonoBehaviour:
