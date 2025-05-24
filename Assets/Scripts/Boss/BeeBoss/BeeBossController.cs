@@ -13,6 +13,7 @@ public class BeeBossController : MonoBehaviour
     [SerializeField] private int beeGunIntervall;
     [SerializeField] private int beeGunStartDelay;
     [SerializeField] private Transform[] beeGunSpawns;
+    private Vector3 gunBaseSacle;
 
     [Header("Honey")]
     [SerializeField] private CrateHoney leftHoney;
@@ -28,6 +29,8 @@ public class BeeBossController : MonoBehaviour
 
     void Start()
     {
+        gunBaseSacle = beeGun.transform.localScale;
+
         InvokeRepeating("SpawnWall", movingWallStartDelay, movingWallInterval);
         InvokeRepeating("SpawnBeeGun", beeGunStartDelay, beeGunIntervall);
         InvokeRepeating("SpawnHoneyDrop", honeyDropStartDelay, honeyDropInterval);
@@ -41,11 +44,26 @@ public class BeeBossController : MonoBehaviour
     private void SpawnBeeGun()
     {
         int spawn = Random.Range(0, 3);
-        if (spawn == 0) beeGun.gunPosition = BeeGun.Position.left;   
-        else if (spawn == 1) beeGun.gunPosition = BeeGun.Position.top;
-        else beeGun.gunPosition = BeeGun.Position.right;
+        if (spawn == 0)
+        {
+            Vector3 localScale;
+            localScale = gunBaseSacle;
+            localScale.x *= -1;
+            beeGun.transform.localScale = localScale;
+            beeGun.gunPosition = BeeGun.Position.left;
+        }
+        else if (spawn == 1)
+        {
+            beeGun.transform.localScale = gunBaseSacle;
+            beeGun.gunPosition = BeeGun.Position.top;
+        }
+        else
+        {
+            beeGun.transform.localScale = gunBaseSacle;
+            beeGun.gunPosition = BeeGun.Position.right; 
+        }
 
-        beeGun.gameObject.transform.position = beeGunSpawns[spawn].position;
+        beeGun.gameObject.transform.parent.transform.position = beeGunSpawns[spawn].position;
         beeGun.gameObject.SetActive(true);
     }
     public void TriggerBossAndHoney(int number)

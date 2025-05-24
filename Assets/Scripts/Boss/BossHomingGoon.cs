@@ -7,6 +7,9 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
     public float Lifetime = 10f;
 
     private Health _health;
+    private float timer;
+
+    private bool faceRight;
 
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
@@ -30,6 +33,22 @@ public class BossHomingGoon : MonoBehaviour, IPoolingList
         var y = Player.Instance.transform.position.y;
 
         transform.position = Vector2.MoveTowards(transform.position, new(x, y), MovementSpeed * Time.fixedDeltaTime);
+        
+        timer += Time.fixedDeltaTime;
+        if(timer > 0.2f)
+        {
+            timer = 0;
+            if (transform.position.x > Player.Instance.transform.position.x && faceRight == true) flip();
+            if (transform.position.x < Player.Instance.transform.position.x && faceRight == false) flip();
+        }
+    }
+    private void flip()
+    {
+        faceRight = !faceRight;
+        Vector3 localScale;
+        localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
     IEnumerator ProjectileDisable()

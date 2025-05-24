@@ -6599,11 +6599,11 @@ MonoBehaviour:
   victoryManager: {fileID: 4037954549503477701}
   difficultySettings:
   - playerBonusHealth: 5
-    bossHealthMultiplier: 60
-  - playerBonusHealth: 3
-    bossHealthMultiplier: 80
+    bossHealthMultiplier: 70
   - playerBonusHealth: 0
     bossHealthMultiplier: 100
+  - playerBonusHealth: -3
+    bossHealthMultiplier: 120
   difficultyTexts:
   - {fileID: 5840860546362053770}
   - {fileID: 8761556558765983701}

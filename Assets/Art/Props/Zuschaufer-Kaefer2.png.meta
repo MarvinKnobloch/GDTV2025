@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 9b0615d3adcc2ba49b5444ecd830d65f
+guid: e0c15265f8c36a244be3a426937bdd83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6029821505213263509
-    second: spriteSheetSpring_0
+      213: 8142051078414767947
+    second: Zuschaufer-Kaefer2_0
   - first:
-      213: 5102849483085406213
-    second: spriteSheetSpring_1
+      213: 8589069393737790468
+    second: Zuschaufer-Kaefer2_1
   - first:
-      213: -8024049385938750240
-    second: spriteSheetSpring_2
+      213: -602014781367760987
+    second: Zuschaufer-Kaefer2_2
   - first:
-      213: 4664034999502654637
-    second: spriteSheetSpring_3
+      213: 1747726503154918194
+    second: Zuschaufer-Kaefer2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -82,9 +82,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheetSpring_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 396
-        width: 329
-        height: 396
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59e6f3d26ba3ea350800000000000000
-      internalID: 6029821505213263509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spriteSheetSpring_1
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 396
-        width: 329
-        height: 396
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 500679d9196f0d640800000000000000
-      internalID: 5102849483085406213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spriteSheetSpring_2
+      name: Zuschaufer-Kaefer2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 329
-        height: 396
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e4fde2c899d4a090800000000000000
-      internalID: -8024049385938750240
+      spriteID: 522399db57241ca4c8c8056aba1bfe7c
+      internalID: 1328825155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_3
+      name: Zuschaufer-Kaefer2_1
       rect:
         serializedVersion: 2
-        x: 329
+        x: 512
         y: 0
-        width: 329
-        height: 396
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dac4855fe1bf9b040800000000000000
-      internalID: 4664034999502654637
+      spriteID: a5cdfda7787e2e240a148d8565bfd458
+      internalID: 932213675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zuschaufer-Kaefer2_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cca3a7b21038246adda6ce1d1f0317
+      internalID: -1772290911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zuschaufer-Kaefer2_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c988316b29fea498e279b703823aed
+      internalID: -1901912233
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8424e4725ddfeb849b00a885d6f804cb
+    spriteID: 3960c308d14cd6e44816be56ccdec112
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +223,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":329.0,"y":396.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      spriteSheetSpring_0: 6029821505213263509
-      spriteSheetSpring_1: 5102849483085406213
-      spriteSheetSpring_2: -8024049385938750240
-      spriteSheetSpring_3: 4664034999502654637
+      Zuschaufer-Kaefer2_0: 1328825155
+      Zuschaufer-Kaefer2_1: 932213675
+      Zuschaufer-Kaefer2_2: -1772290911
+      Zuschaufer-Kaefer2_3: -1901912233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

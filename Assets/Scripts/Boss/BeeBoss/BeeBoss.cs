@@ -238,6 +238,7 @@ public class BeeBoss : MonoBehaviour
         PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
         PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
 
+        //GameManager.Instance.ShowVictoryScreen();
         GameManager.Instance.menuController.gameIsPaused = false;
         Time.timeScale = 1;
         SceneManager.LoadScene((int)GameScenes.AreaHub);

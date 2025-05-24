@@ -1,19 +1,79 @@
 fileFormatVersion: 2
-guid: 9b0615d3adcc2ba49b5444ecd830d65f
+guid: 92600d48049a69a4085729584ec59598
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6029821505213263509
-    second: spriteSheetSpring_0
+      213: -3234526700037050772
+    second: spriteSheetHoneyDrip_0
   - first:
-      213: 5102849483085406213
-    second: spriteSheetSpring_1
+      213: -6476275706744366236
+    second: spriteSheetHoneyDrip_1
   - first:
-      213: -8024049385938750240
-    second: spriteSheetSpring_2
+      213: -4053085745035903193
+    second: spriteSheetHoneyDrip_2
   - first:
-      213: 4664034999502654637
-    second: spriteSheetSpring_3
+      213: -3493949070643641090
+    second: spriteSheetHoneyDrip_3
+  - first:
+      213: -3095773291179527212
+    second: spriteSheetHoneyDrip_4
+  - first:
+      213: 5716806413557649398
+    second: spriteSheetHoneyDrip_5
+  - first:
+      213: 6327979988466847095
+    second: spriteSheetHoneyDrip_6
+  - first:
+      213: -551191692636272155
+    second: spriteSheetHoneyDrip_7
+  - first:
+      213: -7414079474101209088
+    second: spriteSheetHoneyDrip_8
+  - first:
+      213: 4773194017378077597
+    second: spriteSheetHoneyDrip_9
+  - first:
+      213: 7836992251488436345
+    second: spriteSheetHoneyDrip_10
+  - first:
+      213: 5699678538805479284
+    second: spriteSheetHoneyDrip_11
+  - first:
+      213: 5791964448797812179
+    second: spriteSheetHoneyDrip_12
+  - first:
+      213: -3354802928996287348
+    second: spriteSheetHoneyDrip_13
+  - first:
+      213: -4447530026744620527
+    second: spriteSheetHoneyDrip_14
+  - first:
+      213: -3188148146735560031
+    second: spriteSheetHoneyDrip_15
+  - first:
+      213: -9051263318055943248
+    second: spriteSheetHoneyDrip_16
+  - first:
+      213: 6770800434048977377
+    second: spriteSheetHoneyDrip_17
+  - first:
+      213: 6947130481618766923
+    second: spriteSheetHoneyDrip_18
+  - first:
+      213: 2005694048868793716
+    second: spriteSheetHoneyDrip_19
+  - first:
+      213: -7542566446026465991
+    second: spriteSheetHoneyDrip_20
+  - first:
+      213: -4454366937068421474
+    second: spriteSheetHoneyDrip_21
+  - first:
+      213: 4353284486581492910
+    second: spriteSheetHoneyDrip_22
+  - first:
+      213: 5684943647180310314
+    second: spriteSheetHoneyDrip_23
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +182,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheetSpring_0
+      name: spriteSheetHoneyDrip_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 396
-        width: 329
-        height: 396
+        y: 380
+        width: 336
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59e6f3d26ba3ea350800000000000000
-      internalID: 6029821505213263509
+      spriteID: c6e66c38a17ac13d0800000000000000
+      internalID: -3234526700037050772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_1
+      name: spriteSheetHoneyDrip_1
       rect:
         serializedVersion: 2
-        x: 329
-        y: 396
-        width: 329
-        height: 396
+        x: 336
+        y: 380
+        width: 336
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 500679d9196f0d640800000000000000
-      internalID: 5102849483085406213
+      spriteID: 46b9208be85af16a0800000000000000
+      internalID: -6476275706744366236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_2
+      name: spriteSheetHoneyDrip_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 329
-        height: 396
+        width: 336
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e4fde2c899d4a090800000000000000
-      internalID: -8024049385938750240
+      spriteID: 72f7fe23dfb80c7c0800000000000000
+      internalID: -4053085745035903193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_3
+      name: spriteSheetHoneyDrip_3
       rect:
         serializedVersion: 2
-        x: 329
+        x: 336
         y: 0
-        width: 329
-        height: 396
+        width: 336
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dac4855fe1bf9b040800000000000000
-      internalID: 4664034999502654637
+      spriteID: ef4cafcf4dff28fc0800000000000000
+      internalID: -3493949070643641090
       vertices: []
       indices: 
       edges: []
@@ -213,7 +273,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8424e4725ddfeb849b00a885d6f804cb
+    spriteID: b6397d3c95aa61041b298686a86aadb6
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +283,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":329.0,"y":396.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":336.0,"y":380.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      spriteSheetSpring_0: 6029821505213263509
-      spriteSheetSpring_1: 5102849483085406213
-      spriteSheetSpring_2: -8024049385938750240
-      spriteSheetSpring_3: 4664034999502654637
+      spriteSheetHoneyDrip_0: -3234526700037050772
+      spriteSheetHoneyDrip_1: -6476275706744366236
+      spriteSheetHoneyDrip_2: -4053085745035903193
+      spriteSheetHoneyDrip_3: -3493949070643641090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

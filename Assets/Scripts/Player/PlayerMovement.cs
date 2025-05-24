@@ -223,7 +223,7 @@ public class PlayerMovement
     {
         player.isFlying = false;
         player.jumpPerformed = false;
-        player.currentJumpCount = player.maxJumpCount;
+        player.currentJumpCount = player.maxJumpCount -1;
 
         player.rb.linearVelocity = Vector2.zero;
         player.rb.AddForce(new Vector2(0, jumpPadStrength), ForceMode2D.Impulse);
