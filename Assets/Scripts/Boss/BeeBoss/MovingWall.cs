@@ -15,11 +15,15 @@ public class MovingWall : MonoBehaviour
         {
             targetPosition = rightSpawn.position + Vector3.up * ySpawn;
             transform.position = leftSpawn.position + Vector3.up * ySpawn;
+
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else
         {
             targetPosition = leftSpawn.position + Vector3.up * ySpawn;
             transform.position = rightSpawn.position + Vector3.up * ySpawn;
+
+            transform.localScale = new Vector3(1, 1, 1);
         }
         gameObject.SetActive(true);
     }

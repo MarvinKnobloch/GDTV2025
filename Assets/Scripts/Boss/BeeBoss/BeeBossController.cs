@@ -15,13 +15,13 @@ public class BeeBossController : MonoBehaviour
     [SerializeField] private Transform[] beeGunSpawns;
 
     [Header("Honey")]
-    [SerializeField] private GameObject leftHoney;
-    [SerializeField] private GameObject rightHoney;
+    [SerializeField] private CrateHoney leftHoney;
+    [SerializeField] private CrateHoney rightHoney;
     private int activeHoneyCount;
+    private bool leftHoneyActive;
     private bool switchSpawn;
     [SerializeField] private float honeyDropInterval;
     [SerializeField] private float honeyDropStartDelay;
-    [SerializeField] private GameObject honeyPrefab;
 
     [Header("Boss")]
     [SerializeField] private GameObject beeBoss;
@@ -53,13 +53,11 @@ public class BeeBossController : MonoBehaviour
         if (number == 1)
         {
             activeHoneyCount++;
-            leftHoney.SetActive(true); 
+            leftHoneyActive = true;
         }
         else if (number == 2) 
         {
             activeHoneyCount++;
-
-            rightHoney.SetActive(true); 
         }
 
         if(activeHoneyCount >= 2)
@@ -77,18 +75,13 @@ public class BeeBossController : MonoBehaviour
         switchSpawn = !switchSpawn;
         if (activeHoneyCount == 1)
         {
-            if (leftHoney.activeSelf == true) HoneySpawn(leftHoney);
-            else HoneySpawn(rightHoney);
+            if (leftHoneyActive == true) leftHoney.CrateDrop();
+            else rightHoney.CrateDrop();
         }
         else
         {
-            if (switchSpawn) HoneySpawn(leftHoney);
-            else HoneySpawn(rightHoney);
+            if (switchSpawn) leftHoney.CrateDrop();
+            else rightHoney.CrateDrop();
         }
-    }
-    private void HoneySpawn(GameObject side)
-    {
-        GameObject prefab = PoolingSystem.SpawnObject(honeyPrefab, side.transform.GetChild(0).transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
-        prefab.transform.right = transform.right;
     }
 }
