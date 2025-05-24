@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3768841035553478455}
   - component: {fileID: 5108138318789059434}
   - component: {fileID: -407980967343755173}
+  - component: {fileID: -7385648048532147553}
   m_Layer: 7
   m_Name: Bees
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8092965593948068713, guid: 5b8c046c0625a8245bed8a1d5ee61e89, type: 3}
+  m_Sprite: {fileID: 6515200856923027770, guid: 5b8c046c0625a8245bed8a1d5ee61e89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,3 +162,25 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.17}
   m_Radius: 0.6
+--- !u!95 &-7385648048532147553
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195261893853084714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 796ab97823f00e041914228454fb8769, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
