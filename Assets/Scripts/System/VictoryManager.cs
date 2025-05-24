@@ -14,6 +14,7 @@ public class VictoryManager : MonoBehaviour
     public void ShowVictoryScreen()
     {
         GameManager.Instance.playerUI.ToggleBossHealth(false);
+        PoolingSystem.PurgePool();
 
         VictoryCanvas.enabled = true;
         _showVictoryScreen = true;

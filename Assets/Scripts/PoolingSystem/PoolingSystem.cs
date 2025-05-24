@@ -68,7 +68,7 @@ public class PoolingSystem : MonoBehaviour
     public static void ReturnObjectToPool(GameObject obj, PoolObjectInfo poolObjectInfo)
     {
         if (poolObjectInfo.inactiveObjects.Contains(obj))
-        { 
+        {
             //Debug.Log("Object is multiple times in the list");
             obj.SetActive(false);
             return;
@@ -76,6 +76,21 @@ public class PoolingSystem : MonoBehaviour
 
         poolObjectInfo.inactiveObjects.Add(obj);
         obj.SetActive(false);
+    }
+
+    public static void PurgePool()
+    {
+        int enumLength = Enum.GetNames(typeof(ProjectileType)).Length;
+
+        for (int i = 0; i < enumLength; i++)
+        {
+            var child = rootGameObject.transform.GetChild(i);
+            for (int j = child.childCount - 1; j >= 0; j--)
+            {
+                var obj = child.GetChild(j).gameObject;
+                Destroy(obj);
+            }
+        }
     }
 
     public class PoolObjectInfo
