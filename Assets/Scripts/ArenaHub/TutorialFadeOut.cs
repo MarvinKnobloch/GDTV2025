@@ -11,6 +11,7 @@ public class TutorialFadeOut : MonoBehaviour
 
     private Color backgroundColor;
     private float timer;
+    private bool _disableTriggerExit = false;
 
     private void Awake()
     {
@@ -21,6 +22,12 @@ public class TutorialFadeOut : MonoBehaviour
 
         tutorialText.color = backgroundColor;
     }
+
+    void OnApplicationQuit()
+    {
+        _disableTriggerExit = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -35,7 +42,7 @@ public class TutorialFadeOut : MonoBehaviour
         {
             StopAllCoroutines();
 
-            if (gameObject.activeSelf == true) StartCoroutine(FadeOut());
+            if (!_disableTriggerExit && gameObject.activeSelf == true) StartCoroutine(FadeOut());
         }
     }
     IEnumerator FadeIn()

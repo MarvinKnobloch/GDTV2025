@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public MenuController menuController;
     public PlayerUI playerUI;
+    public VictoryManager victoryManager;
     [NonSerialized] public CinemachineCamera cinemachineCamera;
     [NonSerialized] public CinemachineFollow cinemachineFollow;
     [NonSerialized] public Vector3 baseDamping;

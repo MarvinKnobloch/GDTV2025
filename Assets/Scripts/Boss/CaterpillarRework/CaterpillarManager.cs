@@ -29,12 +29,20 @@ public class CaterpillarManager : MonoBehaviour
     {
         StartCoroutine(ExecuteAI());
         Health.hitEvent.AddListener(PhaseTransition);
+        Health.dieEvent.AddListener(OnDeath);
     }
 
     private void OnDisable()
     {
         StopAllCoroutines();
         Health.hitEvent.RemoveListener(PhaseTransition);
+        Health.dieEvent.RemoveListener(OnDeath);
+    }
+
+    private void OnDeath()
+    {
+        StopAllCoroutines();
+        GameManager.Instance.victoryManager.ShowVictoryScreen();
     }
 
     private void PhaseTransition()
