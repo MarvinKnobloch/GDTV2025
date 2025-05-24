@@ -124,6 +124,7 @@ MonoBehaviour:
   iFramesBlinkSpeed: 0.1
   attackCooldown: 0.3
   playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
+  maxAttackAngle: 0.3
   platformLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   isBoss: 0
+  showBossHealthOnStart: 0
   dieEvent:
     m_PersistentCalls:
       m_Calls: []

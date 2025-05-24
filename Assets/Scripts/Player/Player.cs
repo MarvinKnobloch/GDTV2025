@@ -76,6 +76,8 @@ public class Player : MonoBehaviour
     public float attackCooldown;
     public GameObject playerProjectile;
     [NonSerialized] public Vector2 attackDirection;
+    [Range(0.2f, 1)]
+    public float maxAttackAngle;
 
     //Fly
     [NonSerialized] public bool isFlying;
@@ -257,7 +259,8 @@ public class Player : MonoBehaviour
         attackDirection = ((Vector2)mousePosition - (Vector2)playerArm.transform.position).normalized;
 
         if (faceRight) attackDirection *= -1;
-        if (attackDirection.x < 0.75f) attackDirection.x = 0.75f;
+
+        if (attackDirection.x < maxAttackAngle) attackDirection.x = maxAttackAngle;
 
         playerArm.transform.right = attackDirection;
     }
