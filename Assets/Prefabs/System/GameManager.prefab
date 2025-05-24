@@ -4157,7 +4157,7 @@ MonoBehaviour:
       - m_Target: {fileID: 6611504383399562460}
         m_TargetAssemblyTypeName: Audioslider, Assembly-CSharp
         m_MethodName: SoundEffectValueChange
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11031,7 +11031,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1030406359627717158}
         m_TargetAssemblyTypeName: Audioslider, Assembly-CSharp
         m_MethodName: MasterValuechange
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11961,7 +11961,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4772626740330339490}
         m_TargetAssemblyTypeName: Audioslider, Assembly-CSharp
         m_MethodName: MusicValueChange
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
