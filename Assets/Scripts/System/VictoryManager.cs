@@ -13,8 +13,18 @@ public class VictoryManager : MonoBehaviour
 
     public void ShowVictoryScreen()
     {
+        GameManager.Instance.playerUI.ToggleBossHealth(false);
+
         VictoryCanvas.enabled = true;
         _showVictoryScreen = true;
+    }
+
+    void PostTransition()
+    {
+        var bossDefeated = PlayerPrefs.GetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), 0);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), bossDefeated + 1);
+
+        SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
 
     void FixedUpdate()
@@ -30,7 +40,7 @@ public class VictoryManager : MonoBehaviour
             if (alpha >= 1f)
             {
                 _showVictoryScreen = false;
-                SceneManager.LoadScene((int)GameScenes.AreaHub);
+                PostTransition();
             }
         }
     }
