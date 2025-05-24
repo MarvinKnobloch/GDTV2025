@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private DifficultySettings[] difficultySettings;
     [SerializeField] private TextMeshProUGUI[] difficultyTexts;
+
+    public enum SaveFilePlayerPrefs
+    {
+        BossDefeated,
+        ArenaEntranceDialog,
+    }
     private void Awake()
     {
         if (Instance == null)
@@ -42,7 +48,6 @@ public class GameManager : MonoBehaviour
             difficultyTexts[i].text += "\n\n(<color=green>+" + difficultySettings[i].playerBonusHealth + "</color> Player bonus health)\n";
             difficultyTexts[i].text += "(<color=green>" + difficultySettings[i].bossHealthMultiplier + "% </color> Boss health)\n";
         }
-
     }
     private void Start()
     {

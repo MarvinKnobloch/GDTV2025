@@ -78,6 +78,8 @@ public class Boss3 : MonoBehaviour
 
     private float timer;
 
+    [SerializeField] private DialogObj dialog;
+
     public State state;
 
     public enum State
@@ -101,6 +103,14 @@ public class Boss3 : MonoBehaviour
         bossCollider = GetComponent<Collider2D>();
         transform.position = rightArenaPosition.position;
         timeBetweenActions = phase1IdleTime;
+    }
+    private void OnEnable()
+    {
+        health.dieEvent.AddListener(OnDeath);
+    }
+    private void OnDisable()
+    {
+        health.dieEvent.RemoveListener(OnDeath);
     }
     private void Update()
     {
@@ -481,5 +491,15 @@ public class Boss3 : MonoBehaviour
         {
             Player.Instance.health.PlayerTakeDamage(1, false);
         }
+    }
+    private void OnDeath()
+    {
+        //Dialog
+        GameManager.Instance.menuController.gameIsPaused = true;
+        Time.timeScale = 0;
+        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(dialog);
+        GameManager.Instance.playerUI.dialogBox.SetActive(true);
+        GameManager.Instance.playerUI.ToggleBossHealth(false);
+        //VictorySound
     }
 }

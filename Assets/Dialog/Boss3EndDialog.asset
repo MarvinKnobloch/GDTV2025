@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c696ea601a9f6499cb4fc4a77549ca, type: 3}
+  m_Name: Boss3EndDialog
+  m_EditorClassIdentifier: 
+  cantSkipDialog: 0
+  disableInputs: 1
+  pauseGame: 0
+  dialogs:
+  - characterSprite: {fileID: 53262258881974269, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
+    characterName: Boss3
+    dialogText: Geh jetzt schlafen
+    dialogEvent: []
+    autoPlayInterval: 0
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Player
+    dialogText: ICH BIN JANNIk
+    dialogEvent: []
+    autoPlayInterval: 0
+  eventAfterDialogEnd: []

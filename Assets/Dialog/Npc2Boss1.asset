@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53c696ea601a9f6499cb4fc4a77549ca, type: 3}
-  m_Name: Npc1Dialog
+  m_Name: Npc2Boss1
   m_EditorClassIdentifier: 
   cantSkipDialog: 0
   disableInputs: 1
