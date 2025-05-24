@@ -1,0 +1,558 @@
+fileFormatVersion: 2
+guid: 51171ba6f5373524582e64a807570cf4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2664347924141039564
+    second: spriteSheetSmallBeeDash_0
+  - first:
+      213: -726267595793273404
+    second: spriteSheetSmallBeeDash_1
+  - first:
+      213: 411213997573628136
+    second: spriteSheetSmallBeeDash_2
+  - first:
+      213: -3692315012531978213
+    second: spriteSheetSmallBeeDash_3
+  - first:
+      213: -6260609360281363463
+    second: spriteSheetSmallBeeDash_4
+  - first:
+      213: -7450745274325213156
+    second: spriteSheetSmallBeeDash_5
+  - first:
+      213: 3438982993194717842
+    second: spriteSheetSmallBeeDash_6
+  - first:
+      213: 7850551620548245898
+    second: spriteSheetSmallBeeDash_7
+  - first:
+      213: 5027869041790252630
+    second: spriteSheetSmallBeeDash_8
+  - first:
+      213: 5352225591220446992
+    second: spriteSheetSmallBeeDash_9
+  - first:
+      213: -5249828994069988266
+    second: spriteSheetSmallBeeDash_10
+  - first:
+      213: 9076769629341998017
+    second: spriteSheetSmallBeeDash_11
+  - first:
+      213: 3621179008285958344
+    second: spriteSheetSmallBeeDash_12
+  - first:
+      213: -5319213168015550046
+    second: spriteSheetSmallBeeDash_13
+  - first:
+      213: -1119273282429131716
+    second: spriteSheetSmallBeeDash_14
+  - first:
+      213: -3696826694597214643
+    second: spriteSheetSmallBeeDash_15
+  - first:
+      213: -2401853570896223219
+    second: spriteSheetSmallBeeDash_16
+  - first:
+      213: -7310644737840994726
+    second: spriteSheetSmallBeeDash_17
+  - first:
+      213: 941674166472340537
+    second: spriteSheetSmallBeeDash_18
+  - first:
+      213: -6971907940827591
+    second: spriteSheetSmallBeeDash_19
+  - first:
+      213: 8726087105088452170
+    second: spriteSheetSmallBeeDash_20
+  - first:
+      213: 6988667314737492380
+    second: spriteSheetSmallBeeDash_21
+  - first:
+      213: 9165467016557308389
+    second: spriteSheetSmallBeeDash_22
+  - first:
+      213: 5057809836284166002
+    second: spriteSheetSmallBeeDash_23
+  - first:
+      213: -8233381149543604789
+    second: spriteSheetSmallBeeDash_24
+  - first:
+      213: -2338807479331007399
+    second: spriteSheetSmallBeeDash_25
+  - first:
+      213: 6136153769012590627
+    second: spriteSheetSmallBeeDash_26
+  - first:
+      213: 2168422528559755425
+    second: spriteSheetSmallBeeDash_27
+  - first:
+      213: 3244202741648082092
+    second: spriteSheetSmallBeeDash_28
+  - first:
+      213: -6606953675800703260
+    second: spriteSheetSmallBeeDash_29
+  - first:
+      213: -6415887181334528053
+    second: spriteSheetSmallBeeDash_30
+  - first:
+      213: 6440431488151059887
+    second: spriteSheetSmallBeeDash_31
+  - first:
+      213: -7519667136588910379
+    second: spriteSheetSmallBeeDash_32
+  - first:
+      213: 3092156523383013810
+    second: spriteSheetSmallBeeDash_33
+  - first:
+      213: -4250437611333569560
+    second: spriteSheetSmallBeeDash_34
+  - first:
+      213: -6458452535133066109
+    second: spriteSheetSmallBeeDash_35
+  - first:
+      213: -4440605487253181784
+    second: spriteSheetSmallBeeDash_36
+  - first:
+      213: 3860865456403948878
+    second: spriteSheetSmallBeeDash_37
+  - first:
+      213: 3141660396551016411
+    second: spriteSheetSmallBeeDash_38
+  - first:
+      213: -7206678741352831270
+    second: spriteSheetSmallBeeDash_39
+  - first:
+      213: 4604364824265374804
+    second: spriteSheetSmallBeeDash_40
+  - first:
+      213: 2894545537634550410
+    second: spriteSheetSmallBeeDash_41
+  - first:
+      213: -2217337425532248824
+    second: spriteSheetSmallBeeDash_42
+  - first:
+      213: 5406448280361282462
+    second: spriteSheetSmallBeeDash_43
+  - first:
+      213: -1399627549404559491
+    second: spriteSheetSmallBeeDash_44
+  - first:
+      213: 656402862761320677
+    second: spriteSheetSmallBeeDash_45
+  - first:
+      213: -4046505138549959910
+    second: spriteSheetSmallBeeDash_46
+  - first:
+      213: 1817319591384665972
+    second: spriteSheetSmallBeeDash_47
+  - first:
+      213: -2459205244055447267
+    second: spriteSheetSmallBeeDash_48
+  - first:
+      213: 678530094465257275
+    second: spriteSheetSmallBeeDash_49
+  - first:
+      213: -4739513286299534629
+    second: spriteSheetSmallBeeDash_50
+  - first:
+      213: -917387032745834998
+    second: spriteSheetSmallBeeDash_51
+  - first:
+      213: -6031724569027764445
+    second: spriteSheetSmallBeeDash_52
+  - first:
+      213: 3401864050733514185
+    second: spriteSheetSmallBeeDash_53
+  - first:
+      213: 8759514861257545453
+    second: spriteSheetSmallBeeDash_54
+  - first:
+      213: -4466796794973972011
+    second: spriteSheetSmallBeeDash_55
+  - first:
+      213: -8875225382770770489
+    second: spriteSheetSmallBeeDash_56
+  - first:
+      213: 555551872574677053
+    second: spriteSheetSmallBeeDash_57
+  - first:
+      213: 2107579383388641317
+    second: spriteSheetSmallBeeDash_58
+  - first:
+      213: 5360033859359193152
+    second: spriteSheetSmallBeeDash_59
+  - first:
+      213: -9028799627940505318
+    second: spriteSheetSmallBeeDash_60
+  - first:
+      213: 9153272725087322697
+    second: spriteSheetSmallBeeDash_61
+  - first:
+      213: -25845275531096049
+    second: spriteSheetSmallBeeDash_62
+  - first:
+      213: 5287651208620897450
+    second: spriteSheetSmallBeeDash_63
+  - first:
+      213: 2457116356474790333
+    second: spriteSheetSmallBeeDash_64
+  - first:
+      213: -294130022234507853
+    second: spriteSheetSmallBeeDash_65
+  - first:
+      213: -1501458337908092588
+    second: spriteSheetSmallBeeDash_66
+  - first:
+      213: -2820805346493446839
+    second: spriteSheetSmallBeeDash_67
+  - first:
+      213: 9036473524518933772
+    second: spriteSheetSmallBeeDash_68
+  - first:
+      213: -4657288076613636763
+    second: spriteSheetSmallBeeDash_69
+  - first:
+      213: 4078629462778341046
+    second: spriteSheetSmallBeeDash_70
+  - first:
+      213: 4260683241982441256
+    second: spriteSheetSmallBeeDash_71
+  - first:
+      213: 8451480103324383955
+    second: spriteSheetSmallBeeDash_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1094
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4302687eda5560bd0800000000000000
+      internalID: -2664347924141039564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_1
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1094
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd6dd43877cbe5f0800000000000000
+      internalID: -726267595793273404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_2
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 1094
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e06b0cb3fce4b500800000000000000
+      internalID: 411213997573628136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 547
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10803f0f0342ccc0800000000000000
+      internalID: -3692315012531978213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_4
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 547
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb91faf4f8dd19a0800000000000000
+      internalID: -6260609360281363463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_5
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 547
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10ece316a2a99890800000000000000
+      internalID: -7450745274325213156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2921bf1dfc8b9bf20800000000000000
+      internalID: 3438982993194717842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_7
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 0
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8935a9da13c2fc60800000000000000
+      internalID: 7850551620548245898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetSmallBeeDash_8
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 0
+        width: 561
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6567715314496c540800000000000000
+      internalID: 5027869041790252630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: deeb12cb6d9757d4b81ec314baf6b7ce
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":561.0,"y":547.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spriteSheetSmallBeeDash_0: -2664347924141039564
+      spriteSheetSmallBeeDash_1: -726267595793273404
+      spriteSheetSmallBeeDash_2: 411213997573628136
+      spriteSheetSmallBeeDash_3: -3692315012531978213
+      spriteSheetSmallBeeDash_4: -6260609360281363463
+      spriteSheetSmallBeeDash_5: -7450745274325213156
+      spriteSheetSmallBeeDash_6: 3438982993194717842
+      spriteSheetSmallBeeDash_7: 7850551620548245898
+      spriteSheetSmallBeeDash_8: 5027869041790252630
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
