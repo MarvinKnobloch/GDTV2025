@@ -17,9 +17,19 @@ public class JumpPad : MonoBehaviour
     const string idleState = "Idle";
     const string activeState = "Active";
 
+    [NonSerialized] private HoneyPad honeyPad;
+    [NonSerialized] private SpriteRenderer honeySpriteRenderer;
+    private Color honeyColor;
+
     private void Awake()
     {
         currentAnimator = GetComponent<Animator>();
+        honeyPad = GetComponentInChildren<HoneyPad>();
+        honeySpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
+        honeyColor = honeySpriteRenderer.color;
+        honeyColor.a = 0;
+        honeySpriteRenderer.color = honeyColor;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,10 +39,14 @@ public class JumpPad : MonoBehaviour
             Player.Instance.JumpPad(jumpPadStrength - jumpPadReduction);
 
             ChangeAnimationState(activeState);
+            honeyPad.ChangeAnimationState(activeState);
             RestoreStrength(restoreEachJump);
         }
         else if (Utility.LayerCheck(collision, HoneyLayer))
         {
+            honeyColor.a = 1;
+            honeySpriteRenderer.color = honeyColor;
+
             jumpPadReduction = jumpPadReductionOnHoneyHit;
             Destroy(collision.gameObject);
         }
@@ -41,7 +55,17 @@ public class JumpPad : MonoBehaviour
     {
         jumpPadReduction -= restoreEachJump;
 
-        if (jumpPadReduction <= 0) jumpPadReduction = 0;
+        if (jumpPadReduction <= 0)
+        {
+            honeyColor.a = 0;
+            honeySpriteRenderer.color = honeyColor;
+            jumpPadReduction = 0;
+        }
+        else
+        {
+            honeyColor.a = 0.5f;
+            honeySpriteRenderer.color = honeyColor;
+        }
     }
 
     public void ChangeAnimationState(string newstate)
@@ -55,5 +79,6 @@ public class JumpPad : MonoBehaviour
     public void BackToIdle()
     {
         ChangeAnimationState(idleState);
+        honeyPad.ChangeAnimationState(idleState);
     }
 }
