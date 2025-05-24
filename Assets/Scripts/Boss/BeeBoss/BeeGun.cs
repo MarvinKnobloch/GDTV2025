@@ -9,12 +9,15 @@ public class BeeGun : MonoBehaviour
     [SerializeField] private float gunRotationSpeed;
     [SerializeField] private float spawnInterval;
     [SerializeField] private float angleOffset;
+    [SerializeField] private float sideAngleOffset;
     private float angleHalfed;
+    private float sideAngleHalfed;
     private float timer;
 
     private void Awake()
     {
         angleHalfed = angleOffset * 0.5f;
+        sideAngleHalfed = sideAngleOffset * 0.5f;
     }
     private void OnEnable()
     {
@@ -33,13 +36,13 @@ public class BeeGun : MonoBehaviour
         switch (gunPosition)
         {
             case Position.left:
-                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 245 - angleHalfed);   //90
+                transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, sideAngleOffset) - 310 - sideAngleHalfed);   //90
                 break;
             case Position.top:
-                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 335 - angleHalfed);  //180
+                transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 335 - angleHalfed);  //180
                 break;
             case Position.right:
-                transform.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 65 - angleHalfed);
+                transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, sideAngleOffset) - 45 - sideAngleHalfed);
                 break;
         }
 
@@ -48,7 +51,17 @@ public class BeeGun : MonoBehaviour
         {
             timer = 0;
             GameObject prefab = PoolingSystem.SpawnObject(gunProjectile, projectileSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
-            prefab.transform.right = projectileSpawnPosition.right;
+
+
+            if(gunPosition == Position.left)
+            {
+                prefab.transform.right = -projectileSpawnPosition.right;
+            }
+            else
+            {
+                prefab.transform.right = projectileSpawnPosition.right;
+            }
+
         }
     }
     IEnumerator GunDisable()
