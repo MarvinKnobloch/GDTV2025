@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -14,6 +15,12 @@ public class ChargeBees : MonoBehaviour, IPoolingList
     private Vector2 chargeDirection;
     private float timer;
     private float timeUntilCharge;
+
+    //Animations
+    [NonSerialized] public Animator currentAnimator;
+    [NonSerialized] public string currentstate;
+    const string idleState = "Idle";
+    const string chargeState = "Charge";
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
     public State state;
@@ -23,6 +30,14 @@ public class ChargeBees : MonoBehaviour, IPoolingList
         EnterFight,
         Idle,
         Charge,
+    }
+    private void Awake()
+    {
+        currentAnimator = GetComponent<Animator>();
+    }
+    private void OnEnable()
+    {
+        ChangeAnimationState(idleState);
     }
     private void Update()
     {
@@ -83,6 +98,7 @@ public class ChargeBees : MonoBehaviour, IPoolingList
             transform.right = chargeDirection;
         }
 
+        ChangeAnimationState(chargeState);
         timer = 0;
     }
     private void ChargeMovement()
@@ -104,5 +120,14 @@ public class ChargeBees : MonoBehaviour, IPoolingList
             StopAllCoroutines();
             PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
         }
+    }
+
+    public void ChangeAnimationState(string newstate)
+    {
+        if (currentstate == newstate) return;
+        currentstate = newstate;
+        if (currentAnimator == null) return;
+
+        currentAnimator.CrossFadeInFixedTime(newstate, 0.1f);
     }
 }
