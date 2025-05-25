@@ -222,7 +222,7 @@ public class Player : MonoBehaviour
             case States.Ground:
                 playerCollision.GroundCheck();
                 playerMovement.PlatformDropInput();
-                if(rotateWithMouse) playerMovement.RotatePlayerToMouse();
+                if (rotateWithMouse) playerMovement.RotatePlayerToMouse();
                 else playerMovement.RotatePlayer();
                 break;
             case States.GroundIntoAir:

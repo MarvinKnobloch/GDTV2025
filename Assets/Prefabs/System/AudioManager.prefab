@@ -315,17 +315,26 @@ MonoBehaviour:
     volume: 0
   - audioClip: {fileID: 0}
     volume: 0
-  - audioClip: {fileID: 8300000, guid: 4d27b3a71642619448b4e5612b7dcc2a, type: 3}
+  - audioClip: {fileID: 0}
     volume: 0.519
-  - audioClip: {fileID: 8300000, guid: 6965b05856d265d468b534f03d0c71c4, type: 3}
+  - audioClip: {fileID: 8300000, guid: 56b68f78b4fa51c4c8d1494efe42d0f7, type: 3}
     volume: 0.516
   utilityFiles:
   - audioClip: {fileID: 0}
     volume: 0
   - audioClip: {fileID: 8300000, guid: 46ced03ba0cac5a4e9cc7cf3c15708aa, type: 3}
     volume: 0.5
-  playerSounds: []
-  playerHitSounds: []
+  playerSounds:
+  - audioClip: {fileID: 8300000, guid: 8fb9a43120a200f4f9e0a234c5dbd24c, type: 3}
+    volume: 0.313
+  - audioClip: {fileID: 8300000, guid: f911005c19b63b04fb57315225bedad7, type: 3}
+    volume: 0.313
+  - audioClip: {fileID: 8300000, guid: 2ef425fa5baf9e44bbdef1c292b69a66, type: 3}
+    volume: 0.313
+  - audioClip: {fileID: 8300000, guid: d4a82fdff91a2e5409a016b41bfab29b, type: 3}
+    volume: 0.313
+  - audioClip: {fileID: 8300000, guid: 6d16eae9b91d1ae4dbe4a26c09161578, type: 3}
+    volume: 0.313
   enemySounds: []
   minPitch: 0
   maxPitch: 0

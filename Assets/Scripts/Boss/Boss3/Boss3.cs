@@ -28,7 +28,7 @@ public class Boss3 : MonoBehaviour
     [SerializeField] private int switchSideAttackBulletAmount;
     [SerializeField] private float switchSideAttackInterval;
     [SerializeField] private int switchSideAttackAngle;
-    private bool fliped;
+    private bool flipped;
 
     [Header("FlyToPlatform")]
     [SerializeField] private float flyDownSpeed;
@@ -277,9 +277,9 @@ public class Boss3 : MonoBehaviour
 
         transform.position = Vector3.Lerp(positionAB, positionBC, interpoleAmount);
 
-        if(interpoleAmount >= 0.5f && fliped == false)
+        if(interpoleAmount >= 0.5f && flipped == false)
         {
-            fliped = true;
+            flipped = true;
             Vector3 localScale;
             localScale = transform.localScale;
             localScale.x *= -1;
@@ -363,7 +363,7 @@ public class Boss3 : MonoBehaviour
     {
         timeBetweenActions = idleTime;
 
-        fliped = false;
+        flipped = false;
         currentSideAttackCount = 0;
         interpoleAmount = 0;
         attackTimer = 0;

@@ -8,27 +8,14 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     public float Lifetime = 10f;
     public float PuddleSpawnDeviation = 0.1f;
     public GameObject PuddlePrefab;
+    public Vector2 PuddleLaunchVelocity = new(0, 1f);
+    public bool SpawnedRight = false;
 
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
     void OnEnable()
     {
-        RaycastHit2D hit;
-        do
-        {
-            hit = Physics2D.Raycast(
-                transform.position,
-                Vector2.right,
-                100f,
-                LayerMask.GetMask("Puddles")
-            );
-
-            if (hit.collider != null)
-            {
-                Destroy(hit.collider.gameObject);
-            }
-        } while (hit.collider != null);
-
+        StartCoroutine(KillExistingPuddles());
         StartCoroutine(ProjectileDisable());
     }
 
@@ -39,7 +26,37 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
 
     void FixedUpdate()
     {
-        transform.position += MovementSpeed * Time.fixedDeltaTime * transform.right;
+        transform.position += MovementSpeed * (SpawnedRight ? -1 : 1) * Time.fixedDeltaTime * transform.right;
+    }
+
+    IEnumerator KillExistingPuddles()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        RaycastHit2D hit;
+        do
+        {
+            hit = Physics2D.Raycast(
+                transform.position,
+                Vector2.right * (SpawnedRight ? -1 : 1),
+                100f,
+                LayerMask.GetMask("Puddles")
+            );
+
+            if (hit.collider != null)
+            {
+                var hitGameObject = hit.collider.gameObject;
+
+                if (hitGameObject.transform.parent != null)
+                {
+                    Destroy(hitGameObject.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(hitGameObject);
+                }
+            }
+        } while (hit.collider != null);
     }
 
     IEnumerator ProjectileDisable()
@@ -65,21 +82,13 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     {
         yield return new WaitForSeconds(Random.Range(0.1f, PuddleSpawnDeviation));
 
-        var hit = Physics2D.Raycast(
-            transform.position,
-            Vector2.down,
-            20f,
-            LayerMask.GetMask("OneWayPlatform", "Terrain")
-        );
-
-        if (hit.collider != null)
-        {
-            Instantiate(PuddlePrefab, hit.point, Quaternion.identity);
-        }
+        var puddle = Instantiate(PuddlePrefab, transform.position, Quaternion.identity);
+        puddle.GetComponent<Rigidbody2D>().linearVelocity = PuddleLaunchVelocity;
     }
 
     void Die()
     {
         PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
+        StopAllCoroutines();
     }
 }

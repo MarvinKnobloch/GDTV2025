@@ -11,9 +11,12 @@ public class PlayerAbilities
         attackTimer += Time.deltaTime;
         if (player.controls.Player.Attack.IsPressed())
         {
-            if(attackTimer > player.attackCooldown)
+            if (attackTimer > player.attackCooldown)
             {
                 attackTimer = 0;
+                AudioManager.Instance.PlayAudioFileOneShot(
+                    AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.PlayerShoot]
+                );
                 player.CreatePrefab(player.playerProjectile, player.projectileSpawnPosition, Quaternion.identity);
             }
         }

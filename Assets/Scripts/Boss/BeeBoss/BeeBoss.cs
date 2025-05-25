@@ -10,6 +10,7 @@ public class BeeBoss : MonoBehaviour
     [SerializeField] private float flyInSpeed;
 
     [Header("Attack")]
+    [SerializeField] private Transform attackSpawnPosition;
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackInterval;
     [SerializeField] private GameObject stingerPrefab;
@@ -21,6 +22,7 @@ public class BeeBoss : MonoBehaviour
     [SerializeField] private Transform leftArenaPosition;
     [SerializeField] private Transform curvePosition;
     [SerializeField] private float switchSideSpeed;
+    private bool flipped;
 
     [Header("Values")]
     [SerializeField] private float timeBetweenActions;
@@ -44,6 +46,17 @@ public class BeeBoss : MonoBehaviour
     private Vector3 positionAB;
     private Vector3 positionBC;
     private float interpoleAmount;
+
+
+    //Animations
+    [Header("Animation")]
+    [SerializeField] private Animator gunAnimator;
+    private string currentstate;
+
+    const string idleState = "Idle";
+    const string chargeState = "Charge";
+    const string attackState = "Attack";
+    const string stopState = "Stop";
 
     private float timer;
 
@@ -134,6 +147,15 @@ public class BeeBoss : MonoBehaviour
 
         transform.position = Vector3.Lerp(positionAB, positionBC, interpoleAmount);
 
+        if (interpoleAmount >= 0.5f && flipped == false)
+        {
+            flipped = true;
+            Vector3 localScale;
+            localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
+
         if (Vector2.Distance(transform.position, currentEndPosition) < 0.5f)
         {
             SwitchToIdle();
@@ -145,7 +167,7 @@ public class BeeBoss : MonoBehaviour
         if(attackTimer >= attackInterval)
         {
             attackTimer = 0;
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, attackSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             float randomAngle = Random.Range(-attackAngle, attackAngle);
             if(isLeft) prefab.transform.Rotate(0, 0, 210 + randomAngle, Space.World);  //right angle
@@ -158,6 +180,7 @@ public class BeeBoss : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= attackDuration)
         {
+            ChangeAnimationState(stopState);
             SwitchToIdle();
         }
 
@@ -199,6 +222,7 @@ public class BeeBoss : MonoBehaviour
                     }
                     isLeft = !isLeft;
 
+                    ChangeAnimationState(chargeState);
                     SpawnBees();
                     state = State.Attack;
                     break;
@@ -207,6 +231,7 @@ public class BeeBoss : MonoBehaviour
     }
     private void SwitchToIdle()
     {
+        flipped = false;
         interpoleAmount = 0;
         attackTimer = 0;
         timer = 0;
@@ -243,4 +268,14 @@ public class BeeBoss : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
+    public void ChangeAnimationState(string newstate)
+    {
+        if (currentstate == newstate) return;
+        currentstate = newstate;
+        if (gunAnimator == null) return;
+
+        gunAnimator.CrossFadeInFixedTime(newstate, 0.1f);
+    }
+    public void GunAttackAnimation() => ChangeAnimationState(attackState);
+    public void GunIdleAnimation() => ChangeAnimationState(idleState);
 }
