@@ -15,7 +15,7 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
 
     void OnEnable()
     {
-        StartCoroutine(KillExistingPuddles());
+        //StartCoroutine(KillExistingPuddles());
         StartCoroutine(ProjectileDisable());
     }
 
@@ -85,6 +85,8 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
         var puddle = Instantiate(PuddlePrefab, transform.position, Quaternion.identity);
         puddle.GetComponent<Rigidbody2D>().linearVelocity = PuddleLaunchVelocity;
         puddle.GetComponent<SpriteRenderer>().flipX = SpawnedRight;
+		float duration = Mathf.RoundToInt(5f * PlayerPrefs.GetFloat("BossHealthMultiplier") * 0.01f);
+		Destroy(puddle, duration);
     }
 
     void Die()

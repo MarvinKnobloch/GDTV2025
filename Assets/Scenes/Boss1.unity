@@ -2816,10 +2816,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 91442397}
     - target: {fileID: 3516572119821851061, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
-      propertyPath: 'phases.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e16f802d2e04a646be6dd4aa54a6f09, type: 2}
-    - target: {fileID: 3516572119821851061, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: HeadAttacks.Array.size
       value: 2
       objectReference: {fileID: 0}

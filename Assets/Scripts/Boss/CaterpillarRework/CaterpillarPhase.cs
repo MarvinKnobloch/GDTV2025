@@ -24,13 +24,13 @@ public class CaterpillarPhase : MonoBehaviour
             HeadAnimator.SetTrigger("Shoot");
             TailAnimator.SetBool("IsShooting", true);
 
+			StopAllCoroutines();
             StartAttack(HeadPosition, headAttacksFromLeft, phase.HeadAttacks[i]);
             yield return StartAttack(TailPosition, tailAttacksFromLeft, phase.TailAttacks[i]);
 
             HeadAnimator.SetBool("IsShooting", false);
             TailAnimator.SetBool("IsShooting", false);
 
-			//StopAllCoroutines();
             yield return new WaitForSeconds(phase.TimeBetweenAttacks);
         }
 
