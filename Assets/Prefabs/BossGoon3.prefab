@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   Lifetime: 5
-  PuddleSpawnDeviation: 0.54
+  PuddleSpawnDeviation: 0.55
   PuddlePrefab: {fileID: 7541168289209611392, guid: 3b4c73482ac5cbe4fb61aade4c0edcfd, type: 3}
   PuddleLaunchVelocity: {x: 1, y: 4}
+  SpawnedRight: 0

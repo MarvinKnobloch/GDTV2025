@@ -9,17 +9,36 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     public float PuddleSpawnDeviation = 0.1f;
     public GameObject PuddlePrefab;
     public Vector2 PuddleLaunchVelocity = new(0, 1f);
+    public bool SpawnedRight = false;
 
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
     void OnEnable()
     {
+        StartCoroutine(KillExistingPuddles());
+        StartCoroutine(ProjectileDisable());
+    }
+
+    void OnDisable()
+    {
+        Die();
+    }
+
+    void FixedUpdate()
+    {
+        transform.position += MovementSpeed * (SpawnedRight ? -1 : 1) * Time.fixedDeltaTime * transform.right;
+    }
+
+    IEnumerator KillExistingPuddles()
+    {
+        yield return new WaitForSeconds(0.1f);
+
         RaycastHit2D hit;
         do
         {
             hit = Physics2D.Raycast(
                 transform.position,
-                Vector2.right,
+                Vector2.right * (SpawnedRight ? -1 : 1),
                 100f,
                 LayerMask.GetMask("Puddles")
             );
@@ -38,18 +57,6 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
                 }
             }
         } while (hit.collider != null);
-
-        StartCoroutine(ProjectileDisable());
-    }
-
-    void OnDisable()
-    {
-        Die();
-    }
-
-    void FixedUpdate()
-    {
-        transform.position += MovementSpeed * Time.fixedDeltaTime * transform.right;
     }
 
     IEnumerator ProjectileDisable()
@@ -82,5 +89,6 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     void Die()
     {
         PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
+        StopAllCoroutines();
     }
 }
