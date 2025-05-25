@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa235a72f1502cc478377d095afb28e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1544
   playerGroundDrag: -2
-  jumpStrength: 12
+  jumpStrength: 18.5
   maxJumpCount: 2
   maxJumpTime: 0.3
   dashTime: 0.2
@@ -191,8 +191,8 @@ BoxCollider2D:
   m_Offset: {x: 0.16, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1485715, y: 3.0015514}
+    pivot: {x: 0.455, y: 0.5}
+    oldSize: {x: 2.857143, y: 2.857143}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -215,7 +215,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -446,6 +446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17d94c847e55d34d9eb1162b2887362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 7
+  maxDistance: 6
   minAlpha: 0
   maxAlpha: 0.75
