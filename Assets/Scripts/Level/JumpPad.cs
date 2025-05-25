@@ -19,6 +19,8 @@ public class JumpPad : MonoBehaviour
 
     [NonSerialized] private HoneyPad honeyPad;
     [NonSerialized] private SpriteRenderer honeySpriteRenderer;
+    [NonSerialized] private SpriteRenderer honeySplashRenderer;
+	[NonSerialized] private Animator honeySplashAnimator;
     private Color honeyColor;
 
     private void Awake()
@@ -26,7 +28,10 @@ public class JumpPad : MonoBehaviour
         currentAnimator = GetComponent<Animator>();
         honeyPad = GetComponentInChildren<HoneyPad>();
         honeySpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
+        honeySplashRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
+		honeySplashAnimator = honeySplashRenderer.GetComponent<Animator>();
+		honeySplashRenderer.enabled = false;
+		
         honeyColor = honeySpriteRenderer.color;
         honeyColor.a = 0;
         honeySpriteRenderer.color = honeyColor;
@@ -44,13 +49,30 @@ public class JumpPad : MonoBehaviour
         }
         else if (Utility.LayerCheck(collision, HoneyLayer))
         {
-            honeyColor.a = 1;
-            honeySpriteRenderer.color = honeyColor;
-
-            jumpPadReduction = jumpPadReductionOnHoneyHit;
-            Destroy(collision.gameObject);
+			Destroy(collision.gameObject);
+            OnHoneyDropHit();
         }
     }
+
+	private void OnHoneyDropHit()
+	{
+		honeyColor.a = 1;
+		honeySpriteRenderer.color = honeyColor;
+
+		jumpPadReduction = jumpPadReductionOnHoneyHit;
+		
+		honeySplashRenderer.enabled = true;
+		honeySplashAnimator.ResetTrigger("Splash");
+		honeySplashAnimator.SetTrigger("Splash");
+		Invoke(nameof(DisableSplash), 0.4f);
+	}
+
+	private void DisableSplash()
+	{
+		honeySplashRenderer.enabled = false;
+
+	}
+
     public void RestoreStrength(float amount)
     {
         jumpPadReduction -= restoreEachJump;
