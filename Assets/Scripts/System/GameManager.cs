@@ -65,9 +65,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, true, 0.1f, 5);
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Empty, true, 0.1f, 5);
         }
     }
+
+	public void PlayBossMusic()
+	{
+		AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, true, 0.1f, 5);
+	}
 
     public void ShowVictoryScreen()
     {

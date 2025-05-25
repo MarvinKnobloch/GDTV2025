@@ -31,9 +31,6 @@ public class AudioManager : MonoBehaviour
     [Header("Player")]
     [SerializeField] public AudioFiles[] playerSounds;
 
-    [Header("PlayerHitSounds")]
-    [SerializeField] public AudioFiles[] playerHitSounds;
-
     [Header("Enemy")]
     [SerializeField] public AudioFiles[] enemySounds;
 
@@ -57,8 +54,11 @@ public class AudioManager : MonoBehaviour
     }
     public enum PlayerSounds
     {
-        Empty,
+        PlayerHit,
         PlayerDeath,
+        PlayerShoot,
+        PlayerDash,
+        PlayerJump,
     }
     public enum EnemySounds
     {
@@ -127,6 +127,23 @@ public class AudioManager : MonoBehaviour
     public void PlayAudioFileOneShot(AudioFiles file)
     {
         if (soundSource != null) soundSource.PlayOneShot(file.audioClip, file.volume);
+    }
+    public void PlayAudioFileLoop(AudioFiles file)
+    {
+        if (soundSource != null)
+        {
+            soundSource.clip = file.audioClip;
+            soundSource.loop = true;
+            soundSource.Play();
+        }
+    }
+    public void StopLoop()
+    {
+        if (soundSource != null)
+        {
+            soundSource.loop = false;
+            soundSource.Stop();
+        }
     }
     public void PlayRandomOneShot(AudioFiles[] files)
     {

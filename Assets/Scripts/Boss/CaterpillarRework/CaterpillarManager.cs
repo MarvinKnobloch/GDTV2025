@@ -25,6 +25,7 @@ public class CaterpillarManager : MonoBehaviour
     private bool _headAttackFromLeft = true;
     private bool _tailAttackFromLeft = true;
     private int _ensureInitialEvenGoonSpawn = 0;
+    private bool _goonSpawnsRight = false;
 
     void Start()
     {
@@ -82,7 +83,12 @@ public class CaterpillarManager : MonoBehaviour
 
     void SpawnGoon()
     {
-        PoolingSystem.SpawnObject(GoonPrefab, _goonSpawnPoint.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+        var goonObj = PoolingSystem.SpawnObject(GoonPrefab, _goonSpawnPoint.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+        goonObj.TryGetComponent(out BossStraightGoon goon);
+        if (goon != null)
+        {
+            goon.SpawnedRight = _goonSpawnsRight;
+        }
     }
 
     void DoMovement()
@@ -140,6 +146,11 @@ public class CaterpillarManager : MonoBehaviour
         } while (spawnSlotIndex == headSlotIndex || spawnSlotIndex == tailSlotIndex);
 
         _goonSpawnPoint = LeftSlots[spawnSlotIndex];
+        _goonSpawnsRight = UnityEngine.Random.Range(0, 2) == 1;
+        if (_goonSpawnsRight)
+        {
+            _goonSpawnPoint = RightSlots[spawnSlotIndex];
+        }
 
         Head.transform.position = headSlot.position;
         Tail.transform.position = tailSlot.position;
