@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090227a187dd24b46aef4fc1e41c1a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilesToShoot: 40
+  ProjectilesToShoot: 20
   SecondsBetweenProjectiles: 0.005
   ProjectilePrefab: {fileID: 5324997864933902000, guid: 3f62e6fb6788f9a498808872587eb3c7, type: 3}
   ProjectileDeviation: 0.3
@@ -1830,7 +1830,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1492635914542809318, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: ProjectilesToShoot
-      value: 18
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1492635914542809318, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: ProjectileDeviation
