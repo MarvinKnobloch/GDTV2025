@@ -8,6 +8,7 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     public float Lifetime = 10f;
     public float PuddleSpawnDeviation = 0.1f;
     public GameObject PuddlePrefab;
+    public Vector2 PuddleLaunchVelocity = new(0, 1f);
 
     public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
@@ -25,7 +26,16 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
 
             if (hit.collider != null)
             {
-                Destroy(hit.collider.gameObject);
+                var hitGameObject = hit.collider.gameObject;
+
+                if (hitGameObject.transform.parent != null)
+                {
+                    Destroy(hitGameObject.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(hitGameObject);
+                }
             }
         } while (hit.collider != null);
 
@@ -65,17 +75,8 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
     {
         yield return new WaitForSeconds(Random.Range(0.1f, PuddleSpawnDeviation));
 
-        var hit = Physics2D.Raycast(
-            transform.position,
-            Vector2.down,
-            20f,
-            LayerMask.GetMask("OneWayPlatform", "Terrain")
-        );
-
-        if (hit.collider != null)
-        {
-            Instantiate(PuddlePrefab, hit.point, Quaternion.identity);
-        }
+        var puddle = Instantiate(PuddlePrefab, transform.position, Quaternion.identity);
+        puddle.GetComponent<Rigidbody2D>().linearVelocity = PuddleLaunchVelocity;
     }
 
     void Die()
