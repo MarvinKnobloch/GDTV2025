@@ -102,8 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd54419e4f235b84baa9daa9f2f8c002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPosition: {x: 0, y: 0}
   lifetime: 2
-  projectileSpeed: 20
+  projectileSpeed: 25
   collideLayer:
     serializedVersion: 2
     m_Bits: 8

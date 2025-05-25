@@ -227,12 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e730d048e92ace4b9f201dd71d1c04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPadStrength: 26
+  jumpPadStrength: 28
   HoneyLayer:
     serializedVersion: 2
     m_Bits: 4096
-  jumpPadReductionOnHoneyHit: 12
-  restoreEachJump: 6
+  jumpPadReductionOnHoneyHit: 8
+  restoreEachJump: 4
 --- !u!61 &1338213832021778322
 BoxCollider2D:
   m_ObjectHideFlags: 0
