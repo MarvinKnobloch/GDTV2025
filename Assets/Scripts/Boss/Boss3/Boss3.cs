@@ -531,6 +531,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
     private void OnDeath()
     {
         if (phase2Started == false) return;
+        if (Player.Instance.playerIsDead) return;
 
         Player.Instance.bossDefeated = true;
         GameManager.Instance.menuController.gameIsPaused = true;

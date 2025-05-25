@@ -903,7 +903,7 @@ Transform:
   m_GameObject: {fileID: 952093486}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -3.42, z: 0}
+  m_LocalPosition: {x: -0.1, y: -3.34, z: 0}
   m_LocalScale: {x: 30, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2183,7 +2183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.39
+      value: 8.26
       objectReference: {fileID: 0}
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2474,6 +2474,8 @@ MonoBehaviour:
   ProjectilesToShoot: 20
   SecondsBetweenProjectiles: 0.005
   ProjectilePrefab: {fileID: 5324997864933902000, guid: 3f62e6fb6788f9a498808872587eb3c7, type: 3}
+  ProjectileSpeed: 20
+  ProjectileGravity: 1
   ProjectileDeviation: 0.3
 --- !u!114 &1833803061
 MonoBehaviour:
@@ -2490,6 +2492,8 @@ MonoBehaviour:
   ProjectilesToShoot: 12
   SecondsBetweenProjectiles: 0.08
   ProjectilePrefab: {fileID: 5324997864933902000, guid: e13f86a4d81cbc3439c62106f81c71ed, type: 3}
+  ProjectileSpeed: 20
+  ProjectileGravity: 1
   ProjectileDeviation: 0.025
 --- !u!1001 &1894984207
 PrefabInstance:
@@ -2503,85 +2507,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2208153146647745181, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019787506880255950, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019787506880255950, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.072
-      objectReference: {fileID: 0}
-    - target: {fileID: 5297253793894354581, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5297253793894354581, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Size.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5297253793894354581, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Size.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5297253793894354581, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: eae85bc496da3ad45a2292b4c003f884, type: 3}
-    - target: {fileID: 5297253793894354581, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5297253793894354581, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507815630000086644, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.455
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507815630000086644, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507815630000086644, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507815630000086644, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.857143
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507815630000086644, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.857143
-      objectReference: {fileID: 0}
-    - target: {fileID: 5584160841267296647, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.231
-      objectReference: {fileID: 0}
-    - target: {fileID: 5584160841267296647, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.548
-      objectReference: {fileID: 0}
-    - target: {fileID: 5796379789577318499, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.26
       objectReference: {fileID: 0}
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1
+      value: 5.14
       objectReference: {fileID: 0}
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2614,22 +2546,6 @@ PrefabInstance:
     - target: {fileID: 7597518449176708245, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7950512290126317246, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7950512290126317246, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Size.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7950512290126317246, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_Size.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7950512290126317246, guid: 0e78b9f3354f6e34b9ca9bad534271c9, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2879,6 +2795,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1492635914542809318, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: ProjectileSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492635914542809318, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: ProjectilesToShoot
       value: 10
       objectReference: {fileID: 0}
@@ -2976,6 +2896,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056597202715149406, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622743123961069286, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: ProjectileGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6622743123961069286, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}

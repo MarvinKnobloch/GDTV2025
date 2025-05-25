@@ -10,13 +10,15 @@ public class CaterpillarAttack : MonoBehaviour
     public int ProjectilesToShoot = 1;
     public float SecondsBetweenProjectiles = 0.1f;
     public GameObject ProjectilePrefab;
+	public float ProjectileSpeed = 20f;
+	public float ProjectileGravity = 1.0f;
 
     [Header("Projectile")]
     public float ProjectileDeviation = 0.1f;
 
     public void ShootProjectile()
     {
-        var projectile = InstantiateInPool(ProjectilePrefab);
+        var projectile = InstantiateInPool(ProjectilePrefab).GetComponent<Projectile>();
         var direction = Vector3.right;
 
         if (!AttackFromLeft)
@@ -24,8 +26,8 @@ public class CaterpillarAttack : MonoBehaviour
             direction = Vector3.left;
         }
 
-        direction += new Vector3(0, UnityEngine.Random.Range(-ProjectileDeviation, ProjectileDeviation), 0);
-        projectile.transform.right = direction;
+		direction += new Vector3(0, UnityEngine.Random.Range(-ProjectileDeviation, ProjectileDeviation), 0);
+		projectile.FireProjectileLinear(direction, ProjectileSpeed, ProjectileGravity);
     }
 
     public IEnumerator ShootProjectiles()

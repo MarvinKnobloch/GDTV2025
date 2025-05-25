@@ -1,33 +1,48 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour, IPoolingList
 {
-    private Rigidbody2D rb;
-    private Vector2 direction;
-    public Vector2 oldPosition;
+    public float projectileSpeed;
 
     [Header("ProjectileValues")]
     [SerializeField] private float lifetime = 2f;
-    public float projectileSpeed;
-    [NonSerialized] public float randomSpeed;
     [SerializeField] private LayerMask collideLayer;
 
     [Header("EnemyValues")]
     [SerializeField] private LayerMask enemyHitLayer;
     [SerializeField] private int damage;
 
-    public PoolingSystem.PoolObjectInfo poolingList { get; set; }
+    private Rigidbody2D rb;
+    private Vector2 direction;
+
+	public PoolingSystem.PoolObjectInfo poolingList { get; set; }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+	public void FireProjectileLinear(Vector2 direction, float speed, float gravity = 0.0f)
+	{
+		this.direction = direction.normalized;
+		transform.right = direction;
+		this.rb.linearVelocity = direction * speed;
+		this.rb.gravityScale = gravity;
+	}
+
+	public void FireProjectileAngle(float direction, float speed, float gravity = 0.0f)
+	{
+		var radians = Mathf.Deg2Rad * direction;
+		this.direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+		transform.right = this.direction;
+		this.rb.linearVelocity = this.direction * speed;
+		this.rb.gravityScale = gravity;
+	}
+
     private void OnEnable()
     {
-        oldPosition = transform.position;
         StartCoroutine(ProjectileDisable());
     }
     private void OnDisable()
@@ -36,13 +51,13 @@ public class Projectile : MonoBehaviour, IPoolingList
     }
     private void FixedUpdate()
     {
-        rb.linearVelocityY = 0;
-        rb.transform.Translate(transform.right * (projectileSpeed + randomSpeed) * Time.deltaTime, Space.World);
+        //rb.linearVelocityY = 0;
+        //rb.transform.Translate(transform.right * (projectileSpeed + randomSpeed) * Time.deltaTime, Space.World);
 
-        direction = ((Vector2)transform.position - oldPosition).normalized;
-        oldPosition = transform.position;
-        transform.right = direction;
+		direction = rb.linearVelocity.normalized;
+		transform.right = direction;
     }
+
     private IEnumerator ProjectileDisable()
     {
         yield return new WaitForSeconds(lifetime);
