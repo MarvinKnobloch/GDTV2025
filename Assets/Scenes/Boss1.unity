@@ -2454,6 +2454,8 @@ MonoBehaviour:
   ProjectilesToShoot: 20
   SecondsBetweenProjectiles: 0.005
   ProjectilePrefab: {fileID: 5324997864933902000, guid: 3f62e6fb6788f9a498808872587eb3c7, type: 3}
+  ProjectileSpeed: 20
+  ProjectileGravity: 1
   ProjectileDeviation: 0.3
 --- !u!114 &1833803061
 MonoBehaviour:
@@ -2470,6 +2472,8 @@ MonoBehaviour:
   ProjectilesToShoot: 12
   SecondsBetweenProjectiles: 0.08
   ProjectilePrefab: {fileID: 5324997864933902000, guid: e13f86a4d81cbc3439c62106f81c71ed, type: 3}
+  ProjectileSpeed: 20
+  ProjectileGravity: 1
   ProjectileDeviation: 0.025
 --- !u!1001 &1894984207
 PrefabInstance:
@@ -2859,6 +2863,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1492635914542809318, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: ProjectileSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492635914542809318, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: ProjectilesToShoot
       value: 10
       objectReference: {fileID: 0}
@@ -2956,6 +2964,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056597202715149406, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622743123961069286, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: ProjectileGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6622743123961069286, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
