@@ -6600,9 +6600,9 @@ MonoBehaviour:
   difficultySettings:
   - playerBonusHealth: 5
     bossHealthMultiplier: 70
-  - playerBonusHealth: 0
+  - playerBonusHealth: 3
     bossHealthMultiplier: 100
-  - playerBonusHealth: -3
+  - playerBonusHealth: 0
     bossHealthMultiplier: 120
   difficultyTexts:
   - {fileID: 5840860546362053770}

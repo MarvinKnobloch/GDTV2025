@@ -125,7 +125,7 @@ MonoBehaviour:
   iFramesBlinkSpeed: 0.1
   attackCooldown: 0.3
   playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
-  projectileSpeed: 20
+  projectileSpeed: 25
   maxAttackAngle: 0
   platformLayer:
     serializedVersion: 2
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf2b3e97dd19834696f8e3b4416b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   isBoss: 0
   showBossHealthOnStart: 0
   dieEvent:

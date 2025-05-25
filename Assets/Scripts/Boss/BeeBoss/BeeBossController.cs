@@ -63,6 +63,7 @@ public class BeeBossController : MonoBehaviour
             beeGun.gunPosition = BeeGun.Position.right; 
         }
 
+        beeGun.BulletSpawnInterval();
         beeGun.gameObject.transform.parent.transform.position = beeGunSpawns[spawn].position;
         beeGun.gameObject.SetActive(true);
     }
@@ -82,6 +83,7 @@ public class BeeBossController : MonoBehaviour
 
         if(activeHoneyCount >= 2)
         {
+            CancelInvoke("SpawnWall");
             CancelInvoke("SpawnBeeGun");
             beeGun.GunOff();
             beeBoss.SetActive(true);

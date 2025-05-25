@@ -128,6 +128,12 @@ public class CaterpillarManager : MonoBehaviour
         {
             goon.SpawnedRight = _goonSpawnsRight;
         }
+
+        goonObj.TryGetComponent(out SpriteRenderer goonSpriteRenderer);
+        if (goonSpriteRenderer != null)
+        {
+            goonSpriteRenderer.flipX = !_goonSpawnsRight;
+        }
     }
 
     void DoMovement()

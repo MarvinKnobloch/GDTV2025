@@ -1,52 +1,25 @@
 fileFormatVersion: 2
-guid: 9d0ad4feb99bfeb49975a3035bfff4cd
+guid: dd9482b9304d42947a5612661bded3fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3420745408551112505
-    second: spriteSheetRaupeHead_0
+      213: 2753246685739592993
+    second: spriteSheetRoachCrawl_0
   - first:
-      213: 2443916929295491357
-    second: spriteSheetRaupeHead_1
+      213: -5722877883181628151
+    second: spriteSheetRoachCrawl_1
   - first:
-      213: 8137392016273741690
-    second: spriteSheetRaupeHead_2
+      213: -2606746260489052269
+    second: spriteSheetRoachCrawl_2
   - first:
-      213: -8814055383022441716
-    second: spriteSheetRaupeHead_3
+      213: -3597857006177735691
+    second: spriteSheetRoachCrawl_3
   - first:
-      213: -381458001967177772
-    second: spriteSheetRaupeHead_4
+      213: -5885734414901109618
+    second: spriteSheetRoachCrawl_4
   - first:
-      213: -1944041610308497798
-    second: spriteSheetRaupeHead_5
-  - first:
-      213: 6014456201237887127
-    second: spriteSheetRaupeHead_6
-  - first:
-      213: 12966480169564157
-    second: spriteSheetRaupeHead_7
-  - first:
-      213: 4772760315410786829
-    second: spriteSheetRaupeHead_8
-  - first:
-      213: -8378020033652810731
-    second: spriteSheetRaupeHead_9
-  - first:
-      213: 8880342289782366802
-    second: spriteSheetRaupeHead_10
-  - first:
-      213: -6144448338677017258
-    second: spriteSheetRaupeHead_11
-  - first:
-      213: 3996710605422216992
-    second: spriteSheetRaupeHead_12
-  - first:
-      213: 6374176252091554984
-    second: spriteSheetRaupeHead_13
-  - first:
-      213: 4316741978654112374
-    second: spriteSheetRaupeHead_14
+      213: 3356775222392370274
+    second: spriteSheetRoachCrawl_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -93,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -155,89 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheetRaupeHead_0
+      name: spriteSheetRoachCrawl_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
-        width: 465
-        height: 400
-      alignment: 9
-      pivot: {x: 0.4, y: 0.38}
+        y: 162
+        width: 548
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93fccbf33dde87f20800000000000000
-      internalID: 3420745408551112505
+      spriteID: 12da78af54f753620800000000000000
+      internalID: 2753246685739592993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetRaupeHead_1
+      name: spriteSheetRoachCrawl_1
       rect:
         serializedVersion: 2
-        x: 465
-        y: 400
-        width: 465
-        height: 400
-      alignment: 9
-      pivot: {x: 0.4, y: 0.38}
+        x: 548
+        y: 162
+        width: 548
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d11a83faf798ae120800000000000000
-      internalID: 2443916929295491357
+      spriteID: 9050508e2e04490b0800000000000000
+      internalID: -5722877883181628151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetRaupeHead_2
+      name: spriteSheetRoachCrawl_2
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 162
+        width: 548
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fd8f3561af2dbd0800000000000000
+      internalID: -2606746260489052269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetRoachCrawl_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 465
-        height: 400
-      alignment: 9
-      pivot: {x: 0.4, y: 0.38}
+        width: 548
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a779810dce2dde070800000000000000
-      internalID: 8137392016273741690
+      spriteID: 5fb202a7d18d11ec0800000000000000
+      internalID: -3597857006177735691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetRaupeHead_3
+      name: spriteSheetRoachCrawl_4
       rect:
         serializedVersion: 2
-        x: 465
+        x: 548
         y: 0
-        width: 465
-        height: 400
-      alignment: 9
-      pivot: {x: 0.4, y: 0.38}
+        width: 548
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0be358f35f2ea580800000000000000
-      internalID: -8814055383022441716
+      spriteID: e8c178dcbbba15ea0800000000000000
+      internalID: -5885734414901109618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetRoachCrawl_5
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 548
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264b781a749a59e20800000000000000
+      internalID: 3356775222392370274
       vertices: []
       indices: 
       edges: []
@@ -246,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 581b54734c22fd942839a3aa04c247b6
+    spriteID: 9e465ebfac7afd349b0f86a90cc81a6a
     internalID: 0
     vertices: []
     indices: 
@@ -256,12 +273,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":465.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":548.0,"y":162.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      spriteSheetRaupeHead_0: 3420745408551112505
-      spriteSheetRaupeHead_1: 2443916929295491357
-      spriteSheetRaupeHead_2: 8137392016273741690
-      spriteSheetRaupeHead_3: -8814055383022441716
+      spriteSheetRoachCrawl_0: 2753246685739592993
+      spriteSheetRoachCrawl_1: -5722877883181628151
+      spriteSheetRoachCrawl_2: -2606746260489052269
+      spriteSheetRoachCrawl_3: -3597857006177735691
+      spriteSheetRoachCrawl_4: -5885734414901109618
+      spriteSheetRoachCrawl_5: 3356775222392370274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
