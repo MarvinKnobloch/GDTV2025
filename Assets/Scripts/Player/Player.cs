@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
     [Header("Attack")]
     public float attackCooldown;
     public GameObject playerProjectile;
+	public float projectileSpeed;
     [NonSerialized] public Vector2 attackDirection;
     [Range(0.0f, 1)]
     public float maxAttackAngle;
@@ -264,7 +265,6 @@ public class Player : MonoBehaviour
         attackDirection = ((Vector2)mousePosition - (Vector2)playerArm.transform.position).normalized;
 
         if (faceRight) attackDirection *= -1;
-
         if (attackDirection.x < maxAttackAngle) attackDirection.x = maxAttackAngle;
 
         playerArm.transform.right = attackDirection;
@@ -311,13 +311,13 @@ public class Player : MonoBehaviour
     }
     public void CreatePrefab(GameObject obj, Transform spawnPosition, Quaternion rotation)
     {
-        GameObject prefab = PoolingSystem.SpawnObject(obj, spawnPosition.transform.position, rotation, PoolingSystem.ProjectileType.Player);
-        //GameObject projectile = Instantiate(obj, spawnPosition.position, Quaternion.identity);
+        Projectile prefab = PoolingSystem.SpawnObject(obj, spawnPosition.transform.position, rotation, PoolingSystem.ProjectileType.Player).GetComponent<Projectile>();
+        Vector2 direction = attackDirection;
+        if (faceRight) direction *= -1;
 
-        prefab.transform.right = attackDirection;
+        prefab.FireProjectileLinear(direction, projectileSpeed);
 
-        if (faceRight) prefab.transform.Rotate(0, 180, 0);
-        //else prefab.transform.Rotate(0, 0, 0);
+
     }
     public void IFramesStart()
     {

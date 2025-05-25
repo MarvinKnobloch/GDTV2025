@@ -14,6 +14,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackInterval;
     [SerializeField] private GameObject stingerPrefab;
+	[SerializeField] private float stingerSpeed = 15f;
     [SerializeField] private float attackAngle;
     private float attackTimer;
 
@@ -167,13 +168,12 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
         if(attackTimer >= attackInterval)
         {
             attackTimer = 0;
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, attackSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
-
+            Projectile prefab = PoolingSystem.SpawnObject(stingerPrefab, attackSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy).GetComponent<Projectile>();
             float randomAngle = Random.Range(-attackAngle, attackAngle);
-            if(isLeft) prefab.transform.Rotate(0, 0, 210 + randomAngle, Space.World);  //right angle
-            else prefab.transform.Rotate(0, 0, -30 + randomAngle, Space.World);       //left angle
+            if(isLeft) randomAngle += 210;
+            else randomAngle -= 30;
 
-            //prefab.transform.right = transform.right;
+            prefab.FireProjectileAngle(randomAngle, stingerSpeed);
         }
         //bullet spawn
 

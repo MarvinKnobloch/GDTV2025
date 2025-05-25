@@ -52,10 +52,10 @@ public class PoolingSystem : MonoBehaviour
         {
             obj.transform.position = spawnPosition;
             obj.transform.rotation = spawnRotation;
-            if (obj.TryGetComponent(out Projectile projectile))
+            /*if (obj.TryGetComponent(out Projectile projectile))
             {
                 projectile.oldPosition = spawnPosition;
-            }
+            }*/
 
             obj.SetActive(true);
             pool.inactiveObjects.Remove(obj);

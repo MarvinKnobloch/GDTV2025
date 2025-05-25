@@ -4,6 +4,7 @@ using UnityEngine;
 public class BeeGun : MonoBehaviour
 {
     [SerializeField] private GameObject gunProjectile;
+	[SerializeField] private float projectileSpeed;
     [SerializeField] private Transform projectileSpawnPosition;
     [SerializeField] private float gunUptime;
     [SerializeField] private float gunRotationSpeed;
@@ -50,18 +51,18 @@ public class BeeGun : MonoBehaviour
         if(timer > spawnInterval)
         {
             timer = 0;
-            GameObject prefab = PoolingSystem.SpawnObject(gunProjectile, projectileSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
-
+            Projectile prefab = PoolingSystem.SpawnObject(gunProjectile, projectileSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy).GetComponent<Projectile>();
+			Vector2 direction;
 
             if(gunPosition == Position.left)
             {
-                prefab.transform.right = -projectileSpawnPosition.right;
+                direction = -projectileSpawnPosition.right;
             }
             else
             {
-                prefab.transform.right = projectileSpawnPosition.right;
+                direction = projectileSpawnPosition.right;
             }
-
+			prefab.FireProjectileLinear(direction, projectileSpeed);
         }
     }
     IEnumerator GunDisable()
