@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class CaterpillarPhase : MonoBehaviour
     public Transform TailPosition;
     public float TimeBetweenAttacks = 1f;
     public int TransitionAtHealth = 1;
+
+    public Animator HeadAnimator { private get; set; }
+    public Animator TailAnimator { private get; set; }
 
     void Start()
     {
@@ -26,9 +30,16 @@ public class CaterpillarPhase : MonoBehaviour
             HeadAttacks[i].ProjectileOrigin = HeadPosition;
             TailAttacks[i].ProjectileOrigin = TailPosition;
 
+            HeadAnimator.SetTrigger("Shoot");
+            TailAnimator.SetBool("IsShooting", true);
+
             StartCoroutine(HeadAttacks[i].ShootProjectiles());
             yield return StartCoroutine(TailAttacks[i].ShootProjectiles());
             StopAllCoroutines();
+
+            HeadAnimator.SetBool("IsShooting", false);
+            TailAnimator.SetBool("IsShooting", false);
+
 
             yield return new WaitForSeconds(TimeBetweenAttacks);
         }
