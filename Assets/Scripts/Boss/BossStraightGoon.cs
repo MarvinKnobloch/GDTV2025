@@ -84,6 +84,7 @@ public class BossStraightGoon : MonoBehaviour, IPoolingList
 
         var puddle = Instantiate(PuddlePrefab, transform.position, Quaternion.identity);
         puddle.GetComponent<Rigidbody2D>().linearVelocity = PuddleLaunchVelocity;
+        puddle.GetComponent<SpriteRenderer>().flipX = SpawnedRight;
     }
 
     void Die()
