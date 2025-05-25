@@ -988,6 +988,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
+      propertyPath: saveProperty
+      value: IntroBoss1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
+      propertyPath: skipInEditor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}

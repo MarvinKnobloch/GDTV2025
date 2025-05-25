@@ -22,7 +22,7 @@ public class Trompeter : MonoBehaviour
 		if (skipInEditor || (!Application.isEditor && saveProperty != ""))
 		{
 			var played = PlayerPrefs.GetInt(saveProperty, 0) != 0;
-			if (played)
+			if (skipInEditor || played)
 			{
 				StartEvent();
 				Destroy(gameObject);
