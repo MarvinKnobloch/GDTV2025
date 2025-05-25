@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class BeeBoss : MonoBehaviour
+public class BeeBoss : MonoBehaviour, IGunAnimation
 {
     [Header("FlyInValues")]
     [SerializeField] private Transform flyInStart;
@@ -276,6 +276,8 @@ public class BeeBoss : MonoBehaviour
 
         gunAnimator.CrossFadeInFixedTime(newstate, 0.1f);
     }
-    public void GunAttackAnimation() => ChangeAnimationState(attackState);
-    public void GunIdleAnimation() => ChangeAnimationState(idleState);
+
+    public void AttackAnimation() => ChangeAnimationState(attackState);
+    public void IdleAnimation() => ChangeAnimationState(idleState);
+
 }

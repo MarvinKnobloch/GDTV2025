@@ -9,10 +9,12 @@ public class BeeCarry : MonoBehaviour
 
     [SerializeField] private Transform leftSpawn, rightSpawn;
     [SerializeField] private GameObject bombPrefab;
+    [SerializeField] private Transform prefabSpawnPosition;
 
     private Vector3 currentEndPosition;
     private float timer;
     private bool spawnLeft;
+    private Vector3 baseScale;
 
     public State state;
     public enum State
@@ -20,6 +22,15 @@ public class BeeCarry : MonoBehaviour
         FlyIn,
         Idle,
         FlyOut,
+    }
+    private void Awake()
+    {
+        baseScale = transform.localScale;
+        gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        prefabSpawnPosition.gameObject.SetActive(true);
     }
 
     void Update()
@@ -46,11 +57,17 @@ public class BeeCarry : MonoBehaviour
         {
             spawnLeft = true;
             transform.position = leftSpawn.position;
+
+            Vector3 localScale;
+            localScale = baseScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
         }
         else 
         {
             spawnLeft = false;
-            transform.position = rightSpawn.position; 
+            transform.position = rightSpawn.position;
+            transform.localScale = baseScale;
         }
         currentEndPosition = transform.position;
         currentEndPosition.x = xIdleValue;
@@ -87,8 +104,10 @@ public class BeeCarry : MonoBehaviour
             if (spawnLeft) currentEndPosition = rightSpawn.position;
             else currentEndPosition = leftSpawn.position;
 
-            GameObject prefab = PoolingSystem.SpawnObject(bombPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(bombPrefab, prefabSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
             state = State.FlyOut;
+
+            prefabSpawnPosition.gameObject.SetActive(false);
         }
     }
 }

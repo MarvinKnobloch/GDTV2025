@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
     public Transform projectileSpawnPosition;
     [NonSerialized] public Vector3 mousePosition;
     public bool rotateWithMouse;
-
+    [NonSerialized] public bool bossDefeated;
 
     //Animations
     [NonSerialized] public Animator currentAnimator;
