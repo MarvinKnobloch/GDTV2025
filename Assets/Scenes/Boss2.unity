@@ -3575,6 +3575,17 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &1196329203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2715754128878777660, guid: b764dd995223f9d478fc2d98fc90fc15, type: 3}
+  m_PrefabInstance: {fileID: 1390493987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21904a9f69e31c74d8f7451f5193ee0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1198536886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,7 +4078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3407341134086643430, guid: a27e4618227a8784ebc5a20f8db479f7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240871481520683727, guid: a27e4618227a8784ebc5a20f8db479f7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5254,11 +5265,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1492297684 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3407341134086643430, guid: a27e4618227a8784ebc5a20f8db479f7, type: 3}
-  m_PrefabInstance: {fileID: 1241531764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1590541558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7738,7 +7744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7747,7 +7753,7 @@ PrefabInstance:
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1492297684}
+      objectReference: {fileID: 1196329203}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7762,7 +7768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: PlayBossMusic
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -7770,7 +7776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5327990253814663610, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: onReachedTarget.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
