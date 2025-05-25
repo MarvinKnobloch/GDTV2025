@@ -4568,6 +4568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunProjectile: {fileID: 5324997864933902000, guid: 90314f5fcdff5fc40928b1cbaf7401e9, type: 3}
+  projectileSpeed: 15
   projectileSpawnPosition: {fileID: 677603237}
   gunUptime: 3
   gunRotationSpeed: 100
