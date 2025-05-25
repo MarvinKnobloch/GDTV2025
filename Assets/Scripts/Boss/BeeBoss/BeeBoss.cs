@@ -249,12 +249,12 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     }
     private void OnDeath()
     {
+        Player.Instance.bossDefeated = true;
         GameManager.Instance.menuController.gameIsPaused = true;
         Time.timeScale = 0;
         GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss2EndDialog);
         GameManager.Instance.playerUI.dialogBox.SetActive(true);
         GameManager.Instance.playerUI.ToggleBossHealth(false);
-        //VictorySound
     }
 
     private void Boss2EndEvent()
@@ -263,10 +263,14 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
         PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
         PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
 
-        //GameManager.Instance.ShowVictoryScreen();
         GameManager.Instance.menuController.gameIsPaused = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene((int)GameScenes.AreaHub);
+
+        GameManager.Instance.ShowVictoryScreen();
+
+        StopAllCoroutines();
+        CancelInvoke();
+        gameObject.SetActive(false);
     }
     public void ChangeAnimationState(string newstate)
     {

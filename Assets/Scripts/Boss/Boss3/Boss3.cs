@@ -553,7 +553,6 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         StopAllCoroutines();
         CancelInvoke();
         gameObject.SetActive(false);
-        //SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
 
     public void ChangeAnimationState(string newstate)

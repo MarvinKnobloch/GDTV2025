@@ -9,7 +9,7 @@ public class Trompeter : MonoBehaviour
 
 	public string saveProperty;
 
-	public UnityEvent onReachedTarget;
+ 	public UnityEvent onReachedTarget;
 
 	[Header("Debug")]
 	public bool skipInEditor = false;

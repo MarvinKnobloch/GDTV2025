@@ -2183,7 +2183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -30
   m_Sprite: {fileID: 21300000, guid: 24b144206538cf64a81bcf3894169b3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2919,6 +2919,14 @@ PrefabInstance:
       propertyPath: TimeBetweenAI
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: boss1EndEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 467932468a4b27a43bd2893d869d45d0, type: 2}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: boss1EndDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abcf9196bb3aa374eb85e0cc4d2fc37b, type: 2}
     - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: 'LeftSlots.Array.data[0]'
       value: 

@@ -12,9 +12,6 @@ public class VictoryManager : MonoBehaviour
 
     void PostTransition()
     {
-        var bossDefeated = PlayerPrefs.GetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), 0);
-        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), bossDefeated + 1);
-
         SceneManager.LoadScene((int)GameScenes.AreaHub);
     }
 
