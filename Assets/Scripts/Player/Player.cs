@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
     [NonSerialized] public Vector3 mousePosition;
     public bool rotateWithMouse;
     [NonSerialized] public bool bossDefeated;
+    [NonSerialized] public bool playerIsDead;
 
     //Animations
     [NonSerialized] public Animator currentAnimator;
@@ -362,7 +363,7 @@ public class Player : MonoBehaviour
     private void OnDeath()
     {
         //animation
-
+        playerIsDead = true;
         rb.linearVelocity = Vector2.zero;
         ChangeAnimationState(deathState);
         state = States.Death;

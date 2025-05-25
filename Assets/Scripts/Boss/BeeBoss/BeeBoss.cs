@@ -8,6 +8,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     [Header("FlyInValues")]
     [SerializeField] private Transform flyInStart;
     [SerializeField] private float flyInSpeed;
+    [SerializeField] private float phase2StartDelay;
 
     [Header("Attack")]
     [SerializeField] private Transform attackSpawnPosition;
@@ -15,6 +16,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     [SerializeField] private float attackInterval;
     [SerializeField] private GameObject stingerPrefab;
     [SerializeField] private float attackAngle;
+    [SerializeField] private float idleTimeAfterAttack;
     private float attackTimer;
 
     [Header("SwitchSideValues")]
@@ -22,14 +24,13 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     [SerializeField] private Transform leftArenaPosition;
     [SerializeField] private Transform curvePosition;
     [SerializeField] private float switchSideSpeed;
+    [SerializeField] private float idleTimeAfterSwitchSide;
     private bool flipped;
-
-    [Header("Values")]
-    [SerializeField] private float timeBetweenActions;
 
     [Header("BeesPhaseTwo")]
     [SerializeField] private Transform[] beesSpawnPoints;
     [SerializeField] private GameObject beesPrefab;
+    [SerializeField] private MovingWall movingWall;
 
     [Header("BossDefeat")]
     [SerializeField] private DialogObj boss2EndDialog;
@@ -41,6 +42,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     private Vector2 currentEndPosition;
     private float currentFlySpeed;
     private bool isLeft;
+    private float timeBetweenActions;
 
     //CurceMovement;
     private Vector3 positionAB;
@@ -134,7 +136,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
                     GameManager.Instance.playerUI.BossHealthUIUpdate(health.Value, health.MaxValue);
                     bossCollider.enabled = true;
                     nextAction = NextAction.Attack;
-                    SwitchToIdle();
+                    SwitchToIdle(phase2StartDelay);
                     break;
             }
         }
@@ -158,7 +160,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
 
         if (Vector2.Distance(transform.position, currentEndPosition) < 0.5f)
         {
-            SwitchToIdle();
+            SwitchToIdle(idleTimeAfterSwitchSide);
         }
     }
     private void BossAttack()
@@ -170,8 +172,8 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
             GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, attackSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             float randomAngle = Random.Range(-attackAngle, attackAngle);
-            if(isLeft) prefab.transform.Rotate(0, 0, 210 + randomAngle, Space.World);  //right angle
-            else prefab.transform.Rotate(0, 0, -30 + randomAngle, Space.World);       //left angle
+            if(isLeft) prefab.transform.Rotate(0, 0, 230 + randomAngle, Space.World);  //right angle 210
+            else prefab.transform.Rotate(0, 0, -50 + randomAngle, Space.World);       //left angle   -30
 
             //prefab.transform.right = transform.right;
         }
@@ -180,8 +182,10 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
         timer += Time.deltaTime;
         if(timer >= attackDuration)
         {
+            SpawnBees();
+            SpawnWall();
             ChangeAnimationState(stopState);
-            SwitchToIdle();
+            SwitchToIdle(idleTimeAfterAttack);
         }
 
     }
@@ -200,6 +204,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
                     currentFlySpeed = switchSideSpeed;
 
                     nextAction = NextAction.Attack;
+
                     state = State.MoveToLeft;
                     break;
                 case NextAction.MoveToRight:
@@ -208,6 +213,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
                     currentFlySpeed = switchSideSpeed;
 
                     state = State.MoveToRight;
+
                     nextAction = NextAction.Attack;
                     break;
                 case NextAction.Attack:
@@ -223,18 +229,18 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
                     isLeft = !isLeft;
 
                     ChangeAnimationState(chargeState);
-                    SpawnBees();
                     state = State.Attack;
                     break;
             }
         }
     }
-    private void SwitchToIdle()
+    private void SwitchToIdle(float idleTime)
     {
         flipped = false;
         interpoleAmount = 0;
         attackTimer = 0;
         timer = 0;
+        timeBetweenActions = idleTime;
 
         state = State.Idle;
     }
@@ -247,8 +253,14 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
             prefab.GetComponent<ChargeBees>().SetBeeValues(beesSpawnPoints[i].position, attackDuration + timeBetweenActions + i);
         }
     }
+    private void SpawnWall()
+    {
+        movingWall.SetWall();
+    }
     private void OnDeath()
     {
+        if (Player.Instance.playerIsDead) return;
+
         Player.Instance.bossDefeated = true;
         GameManager.Instance.menuController.gameIsPaused = true;
         Time.timeScale = 0;

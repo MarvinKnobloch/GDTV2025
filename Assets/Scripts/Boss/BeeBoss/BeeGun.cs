@@ -7,16 +7,18 @@ public class BeeGun : MonoBehaviour
     [SerializeField] private Transform projectileSpawnPosition;
     [SerializeField] private float gunUptime;
     [SerializeField] private float gunRotationSpeed;
-    [SerializeField] private float spawnInterval;
-    [SerializeField] private float angleOffset;
+    [SerializeField] private float topSpawnInterval;
+    [SerializeField] private float sideSpawnInterval;
+    [SerializeField] private float topAngleOffset;
     [SerializeField] private float sideAngleOffset;
     private float angleHalfed;
     private float sideAngleHalfed;
     private float timer;
+    private float spawnInterval;
 
     private void Awake()
     {
-        angleHalfed = angleOffset * 0.5f;
+        angleHalfed = topAngleOffset * 0.5f;
         sideAngleHalfed = sideAngleOffset * 0.5f;
     }
     private void OnEnable()
@@ -39,7 +41,7 @@ public class BeeGun : MonoBehaviour
                 transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, sideAngleOffset) - 310 - sideAngleHalfed);   //90
                 break;
             case Position.top:
-                transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, angleOffset) - 335 - angleHalfed);  //180
+                transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, topAngleOffset) - 335 - angleHalfed);  //180
                 break;
             case Position.right:
                 transform.parent.localEulerAngles = new Vector3(0, 0, Mathf.PingPong(Time.time * gunRotationSpeed, sideAngleOffset) - 45 - sideAngleHalfed);
@@ -69,10 +71,14 @@ public class BeeGun : MonoBehaviour
         yield return new WaitForSeconds(gunUptime);
         GunOff();
     }
+    public void BulletSpawnInterval()
+    {
+        if (gunPosition == Position.top) spawnInterval = topSpawnInterval;
+        else spawnInterval = sideSpawnInterval;
+    }
     public void GunOff()
     {
         StopAllCoroutines();
         gameObject.SetActive(false);
     }
-
 }

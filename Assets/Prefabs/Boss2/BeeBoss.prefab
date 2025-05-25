@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d260c98c2b3524492babf7240bd72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beeBoss: {fileID: 2716063967168807904}
+  boss: {fileID: 0}
 --- !u!95 &6614668011273240007
 Animator:
   serializedVersion: 7
@@ -373,16 +373,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyInStart: {fileID: 0}
   flyInSpeed: 5
+  phase2StartDelay: 1
   attackSpawnPosition: {fileID: 3721311201293302157}
   attackDuration: 2
-  attackInterval: 0.08
+  attackInterval: 0.07
   stingerPrefab: {fileID: 5324997864933902000, guid: 90314f5fcdff5fc40928b1cbaf7401e9, type: 3}
-  attackAngle: 30
+  attackAngle: 60
+  idleTimeAfterAttack: 3
   rightArenaPosition: {fileID: 0}
   leftArenaPosition: {fileID: 0}
   curvePosition: {fileID: 0}
   switchSideSpeed: 0.3
-  timeBetweenActions: 2
+  idleTimeAfterSwitchSide: 2
   beesSpawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -390,6 +392,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   beesPrefab: {fileID: 219986791610635206, guid: 36b309df54877b64396de3657bdb8ff6, type: 3}
+  movingWall: {fileID: 0}
   boss2EndDialog: {fileID: 11400000, guid: 45c27e872c2a89e40ad2649fa14d5d8b, type: 2}
   boss2EndEvent: {fileID: 11400000, guid: 50bf3a607e1dfb64bb3d6aea75705692, type: 2}
   gunAnimator: {fileID: 6614668011273240007}
