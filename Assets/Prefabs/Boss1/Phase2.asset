@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8670d9c945fc1c24e9681d413d021aab, type: 3}
+  m_Name: Phase2
+  m_EditorClassIdentifier: 
+  HeadAttacks:
+  - ProjectilesToShoot: 20
+    SecondsBetweenProjectiles: 0.1
+    ProjectilePrefab: {fileID: 5324997864933902000, guid: 6586a40fb2067a24f99d66f1648060aa, type: 3}
+    ProjectileSpeed: 13
+    ProjectileGravity: 1
+    attackFunction: 1
+    ProjectileDeviation: 1
+    startAngle: 20
+    endAngle: 90
+  TailAttacks:
+  - ProjectilesToShoot: 12
+    SecondsBetweenProjectiles: 0.15
+    ProjectilePrefab: {fileID: 5324997864933902000, guid: 77dc181d40ea6bf4381fd69515179db8, type: 3}
+    ProjectileSpeed: 12
+    ProjectileGravity: 0
+    attackFunction: 0
+    ProjectileDeviation: 30
+    startAngle: 0
+    endAngle: 0
+  TimeBetweenAttacks: 2
+  TransitionAtHealth: 35

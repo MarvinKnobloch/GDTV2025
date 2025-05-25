@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4628145176533789256}
   - component: {fileID: 2021661567658137595}
   - component: {fileID: 2285358749501749688}
-  m_Layer: 0
-  m_Name: PlayerProjectile
+  m_Layer: 8
+  m_Name: Raupe_Bullet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6666667, g: 0.18674535, b: 0.16470587, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,15 +102,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd54419e4f235b84baa9daa9f2f8c002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 20
-  lifetime: 2
+  projectileSpeed: 25
+  lifetime: 5
   collideLayer:
     serializedVersion: 2
     m_Bits: 8
   enemyHitLayer:
     serializedVersion: 2
-    m_Bits: 128
-  damage: 10
+    m_Bits: 64
+  damage: 1
 --- !u!50 &2021661567658137595
 Rigidbody2D:
   serializedVersion: 5
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

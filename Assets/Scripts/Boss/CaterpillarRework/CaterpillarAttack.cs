@@ -1,46 +1,52 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-public class CaterpillarAttack : MonoBehaviour
+public class CaterpillarAttack : AbstractAttack
 {
-    [Header("Attack")]
-    [NonSerialized] public bool AttackFromLeft = true;
-    [NonSerialized] public Transform ProjectileOrigin;
-    public int ProjectilesToShoot = 1;
-    public float SecondsBetweenProjectiles = 0.1f;
-    public GameObject ProjectilePrefab;
-	public float ProjectileSpeed = 20f;
-	public float ProjectileGravity = 1.0f;
-
-    [Header("Projectile")]
-    public float ProjectileDeviation = 0.1f;
-
-    public void ShootProjectile()
+    public void ShootProjectile(int index, Transform origin, bool attackFromLeft, AttackPattern attackPattern)
     {
-        var projectile = InstantiateInPool(ProjectilePrefab).GetComponent<Projectile>();
-        var direction = Vector3.right;
+        var projectile = InstantiateInPool(attackPattern.ProjectilePrefab, origin).GetComponent<Projectile>();
+        var direction = 0f;
 
-        if (!AttackFromLeft)
+		switch (attackPattern.attackFunction)
+		{
+			case AttackFunction.Burst:
+			{
+				// Zufälliger Winkel zwischen start und end
+				direction = UnityEngine.Random.Range(attackPattern.startAngle, attackPattern.endAngle);
+				break;
+			}
+			case AttackFunction.Serie:
+			{
+				// Gleichmäßiger Winkel von start bis end
+				direction = Mathf.Lerp(attackPattern.startAngle, attackPattern.endAngle, index / (attackPattern.ProjectilesToShoot - 1f));
+				break;
+			}
+			case AttackFunction.Hunt:
+			{
+				// Richtung direkt auf den Spieler berechnen
+				Vector2 toPlayer = (Player.Instance.transform.position - origin.position).normalized;
+				projectile.FireProjectileLinear(toPlayer, attackPattern.ProjectileSpeed, attackPattern.ProjectileGravity);
+				return;
+			}
+		}
+
+        if (!attackFromLeft)
         {
-            direction = Vector3.left;
+            // flip angle on 90°
+            direction = 90.0f + (90.0f - direction);
         }
 
-		direction += new Vector3(0, UnityEngine.Random.Range(-ProjectileDeviation, ProjectileDeviation), 0);
-		projectile.FireProjectileLinear(direction, ProjectileSpeed, ProjectileGravity);
+		direction += UnityEngine.Random.Range(-attackPattern.ProjectileDeviation, attackPattern.ProjectileDeviation);
+		projectile.FireProjectileAngle(direction, attackPattern.ProjectileSpeed, attackPattern.ProjectileGravity);
     }
 
-    public IEnumerator ShootProjectiles()
+    public override IEnumerator ShootProjectiles(Transform origin, bool attackFromLeft, AttackPattern attackPattern)
     {
-        for (int i = 0; i < ProjectilesToShoot; i++)
+        for (int i = 0; i < attackPattern.ProjectilesToShoot; i++)
         {
-            ShootProjectile();
-            yield return new WaitForSeconds(SecondsBetweenProjectiles);
+            ShootProjectile(i, origin, attackFromLeft, attackPattern);
+            yield return new WaitForSeconds(attackPattern.SecondsBetweenProjectiles);
         }
-    }
-
-    protected GameObject InstantiateInPool(GameObject prefab)
-    {
-        return PoolingSystem.SpawnObject(prefab, ProjectileOrigin.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
     }
 }

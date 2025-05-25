@@ -7,9 +7,8 @@ public class CaterpillarManager : MonoBehaviour
 {
     [Header("Combat")]
     public Health Health;
-    public List<CaterpillarPhase> Phases = new();
-    [NonSerialized] public int CurrentPhaseIndex = 0;
-    public CaterpillarPhase CurrentPhase => Phases[CurrentPhaseIndex];
+    public CaterpillarPhase phaseReferences;
+
     public float TimeBetweenAI = 1f;
 
     [Header("Goon")]
@@ -40,18 +39,16 @@ public class CaterpillarManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(ExecuteAI());
-        Health.hitEvent.AddListener(PhaseTransition);
         Health.dieEvent.AddListener(OnDeath);
         boss1EndEvent.OnEventRaised += Boss1EndEvent;
 
-        CurrentPhase.HeadAnimator = HeadAnimator;
-        CurrentPhase.TailAnimator = TailAnimator;
+        phaseReferences.HeadAnimator = HeadAnimator;
+        phaseReferences.TailAnimator = TailAnimator;
     }
 
     private void OnDisable()
     {
         StopAllCoroutines();
-        Health.hitEvent.RemoveListener(PhaseTransition);
         Health.dieEvent.RemoveListener(OnDeath);
         boss1EndEvent.OnEventRaised -= Boss1EndEvent;
     }
@@ -81,21 +78,7 @@ public class CaterpillarManager : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void PhaseTransition()
-    {
-        if (Health.Value <= CurrentPhase.TransitionAtHealth)
-        {
-            StopAllCoroutines();
-            CurrentPhaseIndex++;
-
-            CurrentPhase.HeadAnimator = HeadAnimator;
-            CurrentPhase.TailAnimator = TailAnimator;
-
-            StartCoroutine(ExecuteAI());
-        }
-    }
-
-    IEnumerator ExecuteAI()
+    public IEnumerator ExecuteAI()
     {
         var firstIteration = true;
         while (true)
@@ -130,7 +113,7 @@ public class CaterpillarManager : MonoBehaviour
                 yield return new WaitForSeconds(0.25f);
             }
 
-            yield return StartCoroutine(CurrentPhase.Attack(_headAttackFromLeft, _tailAttackFromLeft));
+            yield return StartCoroutine(phaseReferences.Attack(this, _headAttackFromLeft, _tailAttackFromLeft));
             SpawnGoon();
 
             yield return new WaitForSeconds(TimeBetweenAI);
