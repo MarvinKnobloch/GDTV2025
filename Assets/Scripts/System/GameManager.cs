@@ -36,18 +36,6 @@ public class GameManager : MonoBehaviour
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 120;
-
-        if (PlayerPrefs.GetFloat("BossHealthMultiplier") == 0) PlayerPrefs.SetFloat("BossHealthMultiplier", 100);
-
-        for (int i = 0; i < difficultyTexts.Length; i++)
-        {
-            if (i == 0) difficultyTexts[i].text = "<b><u>Explorer</u></b>";
-            else if (i == 1) difficultyTexts[i].text = "<b><u>Average</u></b>";
-            else difficultyTexts[i].text = "<b><u>Gamer</u></b>";
-
-            difficultyTexts[i].text += "\n\n(<color=green>+" + difficultySettings[i].playerBonusHealth + "</color> Player bonus health)\n";
-            difficultyTexts[i].text += "(<color=green>" + difficultySettings[i].bossHealthMultiplier + "% </color> Boss health)\n";
-        }
     }
     private void Start()
     {
@@ -66,6 +54,25 @@ public class GameManager : MonoBehaviour
         else
         {
             AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Empty, true, 0.1f, 5);
+        }
+
+        StartCoroutine(SetDifficultyButtons());
+    }
+    IEnumerator SetDifficultyButtons()
+    {
+        yield return null;
+
+        if (PlayerPrefs.GetFloat("BossHealthMultiplier") == 0) PlayerPrefs.SetFloat("BossHealthMultiplier", 100);
+
+        for (int i = 0; i < difficultyTexts.Length; i++)
+        {
+            if (i == 0) difficultyTexts[i].text = "<b><u>Explorer</u></b>";
+            else if (i == 1) difficultyTexts[i].text = "<b><u>Average</u></b>";
+            else difficultyTexts[i].text = "<b><u>Gamer</u></b>";
+
+            int health = difficultySettings[i].playerBonusHealth + Player.Instance.health.MaxValue;
+            difficultyTexts[i].text += "\n\n(<color=green>" + health + "</color> Player health)\n";
+            difficultyTexts[i].text += "(<color=green>" + difficultySettings[i].bossHealthMultiplier + "% </color> Boss health)\n";
         }
     }
 

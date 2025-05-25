@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -142,6 +143,10 @@ public class Player : MonoBehaviour
         playerAbilities.player = this;
         playerInteraction.player = this;
 
+        if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.TitelScreen)
+        {
+            gameObject.SetActive(false);
+        }
     }
     private void Start()
     {

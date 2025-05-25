@@ -10,8 +10,6 @@ public class TriggerZoneDialog : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(PlayerPrefs.GetInt(firstPlayerPrefCondition));
-        Debug.Log(PlayerPrefs.GetInt(secondPlayerPrefCondition));
         if(PlayerPrefs.GetInt(firstPlayerPrefCondition) != PlayerPrefs.GetInt(secondPlayerPrefCondition))
         {
             gameObject.SetActive(false);
