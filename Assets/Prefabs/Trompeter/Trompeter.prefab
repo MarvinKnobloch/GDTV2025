@@ -124,11 +124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1347a67c07e22ec46880533d9cc851a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: -1.5
   moveTime: 5
+  saveProperty: 
   onReachedTarget:
     m_PersistentCalls:
       m_Calls: []
+  skipInEditor: 0
 --- !u!82 &1165454361246114904
 AudioSource:
   m_ObjectHideFlags: 0
