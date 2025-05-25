@@ -44,7 +44,8 @@ public class AudioManager : MonoBehaviour
         Empty,
         TitleScreen,
         ArenaHub,
-        Boss
+        Boss,
+        ArenaIntro,
     }
     public enum UtilitySounds
     {

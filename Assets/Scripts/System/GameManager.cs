@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     {
         BossDefeated,
         ArenaEntranceDialog,
+        IntroBoss1,
+        IntroBoss2,
+        IntroBoss3,
     }
     private void Awake()
     {
@@ -43,17 +46,17 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.TitelScreen)
         {
-            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.TitleScreen, true, 0.1f, 1);
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.TitleScreen, false, 0.1f, 1);
         }
 
         if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.AreaHub)
         {
             //AudioManager.Instance.SetSong((int)AudioManager.MusicSongs.Tutorial);
-            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.ArenaHub, true, 0.1f, 1);
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.ArenaHub, false, 0.1f, 1);
         }
         else
         {
-            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Empty, true, 0.1f, 5);
+            AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, false, 0.1f, 5);
         }
 
         StartCoroutine(SetDifficultyButtons());
@@ -78,7 +81,7 @@ public class GameManager : MonoBehaviour
 
 	public void PlayBossMusic()
 	{
-		AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, true, 0.1f, 5);
+		AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.Boss, false, 0.1f, 5);
 	}
 
     public void ShowVictoryScreen()

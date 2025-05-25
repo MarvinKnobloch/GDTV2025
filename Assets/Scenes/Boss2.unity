@@ -8190,6 +8190,10 @@ PrefabInstance:
       propertyPath: 'beesSpawnPoints.Array.data[4]'
       value: 
       objectReference: {fileID: 1599809657}
+    - target: {fileID: 6798036996960754605, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 489327571}
     - target: {fileID: 7791624858056213769, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: m_Name
       value: BeeBoss
