@@ -27,11 +27,16 @@ public class CaterpillarManager : MonoBehaviour
     private int _ensureInitialEvenGoonSpawn = 0;
     private bool _goonSpawnsRight = false;
 
+    [Header("BossDefeat")]
+    [SerializeField] private DialogObj boss1EndDialog;
+    [SerializeField] private VoidEventChannel boss1EndEvent;
+
     void Start()
     {
         StartCoroutine(ExecuteAI());
         Health.hitEvent.AddListener(PhaseTransition);
         Health.dieEvent.AddListener(OnDeath);
+        boss1EndEvent.OnEventRaised += Boss1EndEvent;
     }
 
     private void OnDisable()
@@ -39,12 +44,32 @@ public class CaterpillarManager : MonoBehaviour
         StopAllCoroutines();
         Health.hitEvent.RemoveListener(PhaseTransition);
         Health.dieEvent.RemoveListener(OnDeath);
+        boss1EndEvent.OnEventRaised -= Boss1EndEvent;
     }
 
     private void OnDeath()
     {
-        StopAllCoroutines();
+        Player.Instance.bossDefeated = true;
+        GameManager.Instance.menuController.gameIsPaused = true;
+        Time.timeScale = 0;
+        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss1EndDialog);
+        GameManager.Instance.playerUI.dialogBox.SetActive(true);
+        GameManager.Instance.playerUI.ToggleBossHealth(false);
+    }
+    private void Boss1EndEvent()
+    {
+        int playerPref = 1;
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
+
+        GameManager.Instance.menuController.gameIsPaused = false;
+        Time.timeScale = 1;
+
         GameManager.Instance.ShowVictoryScreen();
+
+        StopAllCoroutines();
+        CancelInvoke();
+        gameObject.SetActive(false);
     }
 
     private void PhaseTransition()

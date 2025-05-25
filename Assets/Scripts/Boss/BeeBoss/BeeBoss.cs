@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class BeeBoss : MonoBehaviour
+public class BeeBoss : MonoBehaviour, IGunAnimation
 {
     [Header("FlyInValues")]
     [SerializeField] private Transform flyInStart;
@@ -249,12 +249,12 @@ public class BeeBoss : MonoBehaviour
     }
     private void OnDeath()
     {
+        Player.Instance.bossDefeated = true;
         GameManager.Instance.menuController.gameIsPaused = true;
         Time.timeScale = 0;
         GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss2EndDialog);
         GameManager.Instance.playerUI.dialogBox.SetActive(true);
         GameManager.Instance.playerUI.ToggleBossHealth(false);
-        //VictorySound
     }
 
     private void Boss2EndEvent()
@@ -263,10 +263,14 @@ public class BeeBoss : MonoBehaviour
         PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
         PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
 
-        //GameManager.Instance.ShowVictoryScreen();
         GameManager.Instance.menuController.gameIsPaused = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene((int)GameScenes.AreaHub);
+
+        GameManager.Instance.ShowVictoryScreen();
+
+        StopAllCoroutines();
+        CancelInvoke();
+        gameObject.SetActive(false);
     }
     public void ChangeAnimationState(string newstate)
     {
@@ -276,6 +280,8 @@ public class BeeBoss : MonoBehaviour
 
         gunAnimator.CrossFadeInFixedTime(newstate, 0.1f);
     }
-    public void GunAttackAnimation() => ChangeAnimationState(attackState);
-    public void GunIdleAnimation() => ChangeAnimationState(idleState);
+
+    public void AttackAnimation() => ChangeAnimationState(attackState);
+    public void IdleAnimation() => ChangeAnimationState(idleState);
+
 }

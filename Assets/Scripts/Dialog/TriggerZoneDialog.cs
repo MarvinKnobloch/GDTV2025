@@ -27,6 +27,8 @@ public class TriggerZoneDialog : MonoBehaviour
             Player.Instance.SwitchToGround(true);
             Player.Instance.ChangeAnimationState("Idle");
             Player.Instance.state = Player.States.Ground;
+
+            gameObject.SetActive(false);
         }
     }
 }

@@ -72,6 +72,8 @@ public class Health : MonoBehaviour
             return;
         if (Value <= 0)
             return;
+        if (Player.Instance.bossDefeated) return;
+
         if (Player.Instance.iframesWhileDash)
         {
             if (Player.Instance.state == Player.States.Dash) return;

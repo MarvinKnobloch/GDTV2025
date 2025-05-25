@@ -1,10 +1,8 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.DebugUI;
 
-public class Boss3 : MonoBehaviour
+public class Boss3 : MonoBehaviour, IGunAnimation
 {
     [Header("Values")]
     [SerializeField] private float phase1IdleTime;
@@ -62,6 +60,7 @@ public class Boss3 : MonoBehaviour
     [SerializeField] private float chargeBeesSpeed;
 
     [Header("Phase2Shoot")]
+    [SerializeField] private float phase2ShootStartDelay;
     [SerializeField] private float phase2ShootDelay;
     [SerializeField] private int phase2ShootBulletAmount;
     [SerializeField] private int phase2ShootAngle;
@@ -69,6 +68,16 @@ public class Boss3 : MonoBehaviour
     [Header("BossDefeat")]
     [SerializeField] private DialogObj boss3EndDialog;
     [SerializeField] private VoidEventChannel boss3EndEvent;
+
+    //Animations
+    [Header("Animation")]
+    [SerializeField] private Animator gunAnimator;
+    private string currentstate;
+
+    const string idleState = "Idle";
+    const string chargeState = "Charge";
+    const string attackState = "Attack";
+    const string stopState = "Stop";
 
     private Health health;
     private Collider2D bossCollider;
@@ -185,6 +194,7 @@ public class Boss3 : MonoBehaviour
 
         if (nextAttack == 0)
         {
+            ChangeAnimationState(chargeState);
             state = State.Attack;
         }
         else if (nextAttack == 1)
@@ -193,6 +203,7 @@ public class Boss3 : MonoBehaviour
             else currentEndPosition = leftArenaPosition.position;
             currentStartPosition = transform.position;
 
+            ChangeAnimationState(chargeState);
             state = State.SwitchSide;
         }
         else if (nextAttack == 2)
@@ -222,6 +233,8 @@ public class Boss3 : MonoBehaviour
             currentPhase2Action++;
             currentEndPosition = rightSideBottom.position + Vector3.up * -1f;
             state = State.Phase2FlyDown;
+
+            ChangeAnimationState(chargeState);
         }
         else if(currentPhase2Action == 1)
         {
@@ -229,6 +242,8 @@ public class Boss3 : MonoBehaviour
             currentPhase2Action--;
             currentEndPosition = phase2StartPosition.position;
             state = State.Phase2FlyUp;
+
+            ChangeAnimationState(chargeState);
         }
         currentStartPosition = transform.position;
         currentFlySpeed = phase2FlySpeed;
@@ -242,6 +257,7 @@ public class Boss3 : MonoBehaviour
             switch (state)
             {
                 case State.FlyDown:
+                    ChangeAnimationState(chargeState);
                     state = State.SideAttack;
                     break;
                 case State.FlyUp:
@@ -261,9 +277,11 @@ public class Boss3 : MonoBehaviour
                     }
                     phase2AttackCycle++;
                     if (phase2AttackCycle >= 2) phase2AttackCycle = 0;
+                    ChangeAnimationState(stopState);
                     SwitchToIdle(phase2IdleTime);
                     break;
                 case State.Phase2FlyUp:
+                    ChangeAnimationState(stopState);
                     SwitchToIdle(phase2IdleTime);
                     break;
             }
@@ -297,6 +315,7 @@ public class Boss3 : MonoBehaviour
         {
             isLeft = !isLeft;
 
+            ChangeAnimationState(stopState);
             SwitchToIdle(phase1IdleTime);
         }
     }
@@ -317,12 +336,12 @@ public class Boss3 : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= attackDuration)
         {
+            ChangeAnimationState(stopState);
             SwitchToIdle(phase1IdleTime);
         }
     }
     private void BossSwitchSideAttack()
     {
-
         Vector3 targetDir = Player.Instance.gameObject.transform.position - transform.position;
 
         float angleEachBullet = switchSideAttackAngle / switchSideAttackBulletAmount;
@@ -355,6 +374,7 @@ public class Boss3 : MonoBehaviour
             else currentEndPosition = rightArenaPosition.position;
             currentStartPosition = transform.position;
 
+            ChangeAnimationState(stopState);
             state = State.FlyUp;
         }
     }
@@ -472,12 +492,21 @@ public class Boss3 : MonoBehaviour
     }
     IEnumerator Phase2Shoot()
     {
+        yield return new WaitForSeconds(phase2ShootStartDelay);
+        float firstBreak = 0.3f;
+        ChangeAnimationState(chargeState);
         Phase2ShootLogic();
-        yield return new WaitForSeconds(phase2ShootDelay);
+        yield return new WaitForSeconds(firstBreak);
+        ChangeAnimationState(stopState);
+        yield return new WaitForSeconds(phase2ShootDelay - firstBreak);
+        ChangeAnimationState(chargeState);
         Phase2ShootLogic();
+        yield return new WaitForSeconds(firstBreak);
+        ChangeAnimationState(stopState);
     }
     private void Phase2ShootLogic()
     {
+
         Vector3 targetDir = Player.Instance.gameObject.transform.position - transform.position;
 
         float angleEachBullet = phase2ShootAngle / phase2ShootBulletAmount;
@@ -503,13 +532,12 @@ public class Boss3 : MonoBehaviour
     {
         if (phase2Started == false) return;
 
-        //Dialog
+        Player.Instance.bossDefeated = true;
         GameManager.Instance.menuController.gameIsPaused = true;
         Time.timeScale = 0;
         GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss3EndDialog);
         GameManager.Instance.playerUI.dialogBox.SetActive(true);
         GameManager.Instance.playerUI.ToggleBossHealth(false);
-        //VictorySound
     }
     private void Boss3EndEvent()
     {
@@ -519,6 +547,22 @@ public class Boss3 : MonoBehaviour
 
         GameManager.Instance.menuController.gameIsPaused = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene((int)GameScenes.AreaHub);
+
+        GameManager.Instance.ShowVictoryScreen();
+
+        StopAllCoroutines();
+        CancelInvoke();
+        gameObject.SetActive(false);
     }
+
+    public void ChangeAnimationState(string newstate)
+    {
+        if (currentstate == newstate) return;
+        currentstate = newstate;
+        if (gunAnimator == null) return;
+
+        gunAnimator.CrossFadeInFixedTime(newstate, 0.1f);
+    }
+    public void AttackAnimation() => ChangeAnimationState(attackState);
+    public void IdleAnimation() => ChangeAnimationState(idleState);
 }
