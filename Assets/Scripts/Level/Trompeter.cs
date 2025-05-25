@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,32 +12,48 @@ public class Trompeter : MonoBehaviour
 
  	public UnityEvent onReachedTarget;
 
-	[Header("Debug")]
-	public bool skipInEditor = false;
-
 	private Vector3 startPosition;
 	private float timer;
 
     void Start()
     {
-		if (skipInEditor || (!Application.isEditor && saveProperty != ""))
+		if(PlayerPrefs.GetInt(saveProperty) == 1)
 		{
-			var played = PlayerPrefs.GetInt(saveProperty, 0) != 0;
-			if (skipInEditor || played)
-			{
-				StartEvent();
-				Destroy(gameObject);
-				return;
-			}
-		}
-
-		startPosition = transform.position;
-		timer = moveTime;
-
-		if (speed > 0)
+            StartEvent();
+            Destroy(gameObject);
+            return;
+        }
+		else
 		{
-			transform.localScale = new Vector3(-1, 1, 1);
-		}
+			PlayerPrefs.SetInt(saveProperty, 1);
+            startPosition = transform.position;
+            timer = moveTime;
+
+            if (speed > 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+
+			StartCoroutine(ChangeToIntroMusic());
+        }
+
+        //if (skipInEditor || (!Application.isEditor && saveProperty != ""))
+        //{
+        //	var played = PlayerPrefs.GetInt(saveProperty, 0) != 0;
+        //	if (skipInEditor || played)
+        //	{
+        //		StartEvent();
+        //		Destroy(gameObject);
+        //		return;
+        //	}
+        //}
+        //startPosition = transform.position;
+        //timer = moveTime;
+
+        //if (speed > 0)
+        //{
+        //    transform.localScale = new Vector3(-1, 1, 1);
+        //}
     }
 
     void Update()
@@ -70,6 +87,11 @@ public class Trompeter : MonoBehaviour
 				}
 			}
 		}
+    }
+	IEnumerator ChangeToIntroMusic()
+	{
+		yield return null;
+        AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.ArenaIntro, false, 0.1f, 1);
     }
 
 	void StartEvent()
