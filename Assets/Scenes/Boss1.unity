@@ -140,6 +140,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2575839298642843803, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
   m_PrefabInstance: {fileID: 9113860052921768758}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &84186895 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1945498258170401585, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &84186896 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7396065686069326015, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &91442396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9018330379792294156, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
@@ -148,6 +158,16 @@ GameObject:
 --- !u!4 &91442397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2306646421227544126, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &91442398 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3317721808944432356, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+  m_PrefabInstance: {fileID: 9113860052921768758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &91442399 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7574380230007454246, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
   m_PrefabInstance: {fileID: 9113860052921768758}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &374062015
@@ -281,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 410371628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.6, y: 5.6499996, z: 0}
+  m_LocalPosition: {x: 29.44, y: 6.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -536,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 656231354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.44, y: 5.69, z: 0}
+  m_LocalPosition: {x: 4.67, y: 6.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1363,7 +1383,7 @@ Transform:
   m_GameObject: {fileID: 1290860337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.96, y: 10.129999, z: 0}
+  m_LocalPosition: {x: 29.73, y: 10.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2139,7 +2159,7 @@ Transform:
   m_GameObject: {fileID: 1648523260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.93, y: 14.27, z: 0}
+  m_LocalPosition: {x: 30.48, y: 15.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2322,7 +2342,7 @@ Transform:
   m_GameObject: {fileID: 1813999735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.42, y: 10, z: 0}
+  m_LocalPosition: {x: 5.22, y: 10.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2987,6 +3007,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 84186892}
     - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: HeadAnimator
+      value: 
+      objectReference: {fileID: 84186896}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: TailAnimator
+      value: 
+      objectReference: {fileID: 91442399}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: TimeBetweenAI
       value: 3
       objectReference: {fileID: 0}
@@ -2998,6 +3026,14 @@ PrefabInstance:
       propertyPath: boss1EndDialog
       value: 
       objectReference: {fileID: 11400000, guid: abcf9196bb3aa374eb85e0cc4d2fc37b, type: 2}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: HeadSpriteRenderer
+      value: 
+      objectReference: {fileID: 84186895}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: TailSpriteRenderer
+      value: 
+      objectReference: {fileID: 91442398}
     - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: 'LeftSlots.Array.data[0]'
       value: 

@@ -31,12 +31,21 @@ public class CaterpillarManager : MonoBehaviour
     [SerializeField] private DialogObj boss1EndDialog;
     [SerializeField] private VoidEventChannel boss1EndEvent;
 
+    [Header("Animation")]
+    public Animator HeadAnimator;
+    public Animator TailAnimator;
+    public SpriteRenderer HeadSpriteRenderer;
+    public SpriteRenderer TailSpriteRenderer;
+
     void Start()
     {
         StartCoroutine(ExecuteAI());
         Health.hitEvent.AddListener(PhaseTransition);
         Health.dieEvent.AddListener(OnDeath);
         boss1EndEvent.OnEventRaised += Boss1EndEvent;
+
+        CurrentPhase.HeadAnimator = HeadAnimator;
+        CurrentPhase.TailAnimator = TailAnimator;
     }
 
     private void OnDisable()
@@ -78,6 +87,10 @@ public class CaterpillarManager : MonoBehaviour
         {
             StopAllCoroutines();
             CurrentPhaseIndex++;
+
+            CurrentPhase.HeadAnimator = HeadAnimator;
+            CurrentPhase.TailAnimator = TailAnimator;
+
             StartCoroutine(ExecuteAI());
         }
     }
@@ -88,6 +101,24 @@ public class CaterpillarManager : MonoBehaviour
         while (true)
         {
             DoMovement();
+
+            if (_headAttackFromLeft)
+            {
+                HeadSpriteRenderer.flipX = true;
+            }
+            else
+            {
+                HeadSpriteRenderer.flipX = false;
+            }
+
+            if (_tailAttackFromLeft)
+            {
+                TailSpriteRenderer.flipX = true;
+            }
+            else
+            {
+                TailSpriteRenderer.flipX = false;
+            }
 
             if (firstIteration)
             {
