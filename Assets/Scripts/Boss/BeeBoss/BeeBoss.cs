@@ -172,8 +172,8 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
             attackTimer = 0;
             Projectile prefab = PoolingSystem.SpawnObject(stingerPrefab, attackSpawnPosition.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy).GetComponent<Projectile>();
             float randomAngle = Random.Range(-attackAngle, attackAngle);
-            if(isLeft) randomAngle += 210;
-            else randomAngle -= 30;
+            if(isLeft) randomAngle += 230;
+            else randomAngle -= 50;
 
             prefab.FireProjectileAngle(randomAngle, stingerSpeed);
         }

@@ -12,7 +12,7 @@ public class MovingWall : MonoBehaviour
         if (gameObject.activeSelf) return;
 
         int spawn = Random.Range(0, 2);
-        int ySpawn = Random.Range(-1, 5);
+        int ySpawn = Random.Range(0, 5);
         if (spawn == 0)
         {
             targetPosition = rightSpawn.position + Vector3.up * ySpawn;
