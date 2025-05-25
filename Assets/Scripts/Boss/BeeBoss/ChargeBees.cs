@@ -98,6 +98,14 @@ public class ChargeBees : MonoBehaviour, IPoolingList
             transform.right = chargeDirection;
         }
 
+        Vector2 direction = Player.Instance.transform.position - transform.position;
+        transform.up = -direction;
+
+        int bonusRotation = 30;
+        if(transform.position.x < Player.Instance.transform.position.x) transform.Rotate(0, 0, transform.rotation.x - bonusRotation);
+        else transform.Rotate(0, 0, transform.rotation.x + bonusRotation);
+
+
         ChangeAnimationState(chargeState);
         timer = 0;
     }
