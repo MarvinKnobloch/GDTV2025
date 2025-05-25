@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d260c98c2b3524492babf7240bd72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beeBoss: {fileID: 2716063967168807904}
+  boss: {fileID: 0}
 --- !u!95 &6614668011273240007
 Animator:
   serializedVersion: 7
@@ -377,6 +377,7 @@ MonoBehaviour:
   attackDuration: 2
   attackInterval: 0.08
   stingerPrefab: {fileID: 5324997864933902000, guid: 90314f5fcdff5fc40928b1cbaf7401e9, type: 3}
+  stingerSpeed: 15
   attackAngle: 30
   rightArenaPosition: {fileID: 0}
   leftArenaPosition: {fileID: 0}
