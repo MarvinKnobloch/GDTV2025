@@ -11,12 +11,15 @@ public class Trompeter : MonoBehaviour
 
 	public UnityEvent onReachedTarget;
 
+	[Header("Debug")]
+	public bool skipInEditor = false;
+
 	private Vector3 startPosition;
 	private float timer;
 
     void Start()
     {
-		if (!Application.isEditor && saveProperty != "")
+		if (skipInEditor || (!Application.isEditor && saveProperty != ""))
 		{
 			var played = PlayerPrefs.GetInt(saveProperty, 0) != 0;
 			if (played)
@@ -55,7 +58,7 @@ public class Trompeter : MonoBehaviour
 				if (transform.position.x < startPosition.x)
 				{
 					StartEvent();
-					Destroy(gameObject, 1.0f);
+					Destroy(gameObject, 1.5f);
 				}
 			}
 			else
@@ -63,7 +66,7 @@ public class Trompeter : MonoBehaviour
 				if (transform.position.x > startPosition.x)
 				{
 					StartEvent();
-					Destroy(gameObject, 1.0f);
+					Destroy(gameObject, 1.5f);
 				}
 			}
 		}
