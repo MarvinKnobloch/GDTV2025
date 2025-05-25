@@ -1,19 +1,40 @@
 fileFormatVersion: 2
-guid: 9b0615d3adcc2ba49b5444ecd830d65f
+guid: d7dc2fda42e80874593fa8cbcb51370e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6029821505213263509
-    second: spriteSheetSpring_0
+      213: -2157185795824945333
+    second: spriteSheetBullet1_0
   - first:
-      213: 5102849483085406213
-    second: spriteSheetSpring_1
+      213: -8759434382090519680
+    second: spriteSheetBullet1_1
   - first:
-      213: -8024049385938750240
-    second: spriteSheetSpring_2
+      213: 7461600051702806904
+    second: spriteSheetBullet1_2
   - first:
-      213: 4664034999502654637
-    second: spriteSheetSpring_3
+      213: -41191914144519828
+    second: spriteSheetBullet1_3
+  - first:
+      213: -8726235917665273637
+    second: spriteSheetBullet1_4
+  - first:
+      213: -8120061441186539575
+    second: spriteSheetBullet1_5
+  - first:
+      213: 5910945836236321852
+    second: spriteSheetBullet1_6
+  - first:
+      213: 674756698439894320
+    second: spriteSheetBullet1_7
+  - first:
+      213: -8106384365575088237
+    second: spriteSheetBullet1_8
+  - first:
+      213: -7667006032307351961
+    second: spriteSheetBullet1_9
+  - first:
+      213: -5202518768512576806
+    second: spriteSheetBullet1_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,10 +78,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,10 +102,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 1
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +143,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheetSpring_0
+      name: spriteSheetBullet1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
-        width: 336
-        height: 400
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59e6f3d26ba3ea350800000000000000
-      internalID: 6029821505213263509
+      spriteID: fb73f28c05bac5649998402973cb9335
+      internalID: -5186895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_1
+      name: spriteSheetBullet1_1
       rect:
         serializedVersion: 2
-        x: 336
-        y: 400
-        width: 336
-        height: 400
+        x: 200
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 500679d9196f0d640800000000000000
-      internalID: 5102849483085406213
+      spriteID: 992e521633fae87488ec8b13f16ad1c1
+      internalID: 1216356577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_2
+      name: spriteSheetBullet1_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 336
-        height: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e4fde2c899d4a090800000000000000
-      internalID: -8024049385938750240
+      spriteID: 0b3164c4e98d611439ab34af1f2c66af
+      internalID: -1835343824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheetSpring_3
+      name: spriteSheetBullet1_3
       rect:
         serializedVersion: 2
-        x: 336
+        x: 200
         y: 0
-        width: 336
-        height: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dac4855fe1bf9b040800000000000000
-      internalID: 4664034999502654637
+      spriteID: cbd6377be8cd39247a894a4172493d2c
+      internalID: 1072676926
       vertices: []
       indices: 
       edges: []
@@ -213,7 +234,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8424e4725ddfeb849b00a885d6f804cb
+    spriteID: 2317eae095e428145816eb9544a47729
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +244,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":336.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":200.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      spriteSheetSpring_0: 6029821505213263509
-      spriteSheetSpring_1: 5102849483085406213
-      spriteSheetSpring_2: -8024049385938750240
-      spriteSheetSpring_3: 4664034999502654637
+      spriteSheetBullet1_0: -5186895
+      spriteSheetBullet1_1: 1216356577
+      spriteSheetBullet1_2: -1835343824
+      spriteSheetBullet1_3: 1072676926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

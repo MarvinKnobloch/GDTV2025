@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     public float attackCooldown;
     public GameObject playerProjectile;
     [NonSerialized] public Vector2 attackDirection;
-    [Range(0.2f, 1)]
+    [Range(0.0f, 1)]
     public float maxAttackAngle;
 
     //Fly
