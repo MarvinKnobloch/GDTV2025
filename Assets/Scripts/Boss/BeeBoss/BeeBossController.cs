@@ -72,10 +72,12 @@ public class BeeBossController : MonoBehaviour
         {
             activeHoneyCount++;
             leftHoneyActive = true;
+            leftHoney.ChangeSprite();
         }
         else if (number == 2) 
         {
             activeHoneyCount++;
+            rightHoney.ChangeSprite();
         }
 
         if(activeHoneyCount >= 2)
