@@ -125,7 +125,7 @@ MonoBehaviour:
   iFramesBlinkSpeed: 0.1
   attackCooldown: 0.3
   playerProjectile: {fileID: 5324997864933902000, guid: 289598d53020711478139b47c2a825b8, type: 3}
-  projectileSpeed: 25
+  projectileSpeed: 27
   maxAttackAngle: 0
   platformLayer:
     serializedVersion: 2

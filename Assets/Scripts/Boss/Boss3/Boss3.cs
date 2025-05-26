@@ -327,9 +327,9 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             attackTimer = 0;
             GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
-            float randomAngle = UnityEngine.Random.Range(-attackAngle, attackAngle);
-            if (isLeft) prefab.transform.Rotate(0, 0, -30 + randomAngle, Space.World);
-            else prefab.transform.Rotate(0, 0, 210 + randomAngle, Space.World);
+            float randomAngle = Random.Range(-attackAngle, attackAngle);
+            if (isLeft) prefab.transform.Rotate(0, 0, -40 + randomAngle, Space.World);
+            else prefab.transform.Rotate(0, 0, 230 + randomAngle, Space.World);   //210
 
             //prefab.transform.right = transform.right;
         }

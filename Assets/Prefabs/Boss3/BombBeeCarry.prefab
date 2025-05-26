@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2465035375302880749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.85, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.01, y: -0.901, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7336669808085957164}
@@ -195,7 +195,6 @@ MonoBehaviour:
   rightSpawn: {fileID: 0}
   bombPrefab: {fileID: 5324997864933902000, guid: 75120385167dd704e91c7d3cb45a4e2b, type: 3}
   prefabSpawnPosition: {fileID: 79708592059301694}
-  bombSprite: {fileID: 2465035375302880749}
   state: 0
 --- !u!95 &1324677399782978499
 Animator:

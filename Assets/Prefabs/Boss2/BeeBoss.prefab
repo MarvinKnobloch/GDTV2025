@@ -378,7 +378,7 @@ MonoBehaviour:
   attackDuration: 2
   attackInterval: 0.07
   stingerPrefab: {fileID: 5324997864933902000, guid: 90314f5fcdff5fc40928b1cbaf7401e9, type: 3}
-  stingerSpeed: 15
+  stingerSpeed: 13
   attackAngle: 60
   idleTimeAfterAttack: 3
   rightArenaPosition: {fileID: 0}

@@ -108,7 +108,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 5325924135150994472, guid: b5aa9b02559083d41a8946ac9d177d28, type: 3}
   explosionRadius: 3
   explosionProjectiles: {fileID: 5748349628775575405, guid: 59b4c933463d3af4cab8fe9b8da31505, type: 3}
-  explosionProjectilesCount: 6
+  explosionProjectilesCount: 4
   projectileRandomSpeed: 3
   projectileRandomAngle: 45
   minAngle: 10

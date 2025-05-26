@@ -42,25 +42,26 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
 
             if(hitPlayer == false && explosionProjectilesCount > 0)
             {
+                hitPlayer = true; //because two explosions got triggered
+
                 for (int i = 0; i < explosionProjectilesCount; i++)
                 {
+
                     GameObject barrelprojectiles = PoolingSystem.SpawnObject(explosionProjectiles, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
-                    Projectile projectile = barrelprojectiles.GetComponent<Projectile>();
+
                     float randomSpeed = Random.Range(-projectileRandomSpeed, projectileRandomSpeed);
-                    //sprojectile.randomSpeed = randomSpeed;
+                    barrelprojectiles.GetComponent<MarvinProjectile>().randomSpeed = randomSpeed;
 
                     float randomAngle = Random.Range(-projectileRandomAngle, projectileRandomAngle);
-                    if(randomAngle >= 0)
+                    if (randomAngle >= 0)
                     {
                         if (randomAngle < minAngle) randomAngle = minAngle;
                     }
                     else
                     {
-                        if(randomAngle > -minAngle) randomAngle = -minAngle;
+                        if (randomAngle > -minAngle) randomAngle = -minAngle;
                     }
                     barrelprojectiles.transform.Rotate(0, 0, 90 + randomAngle);
-
-                    projectile.FireProjectileAngle(randomAngle, randomSpeed);
 
                     //barrelprojectiles.transform.right = transform.up;
                 }
