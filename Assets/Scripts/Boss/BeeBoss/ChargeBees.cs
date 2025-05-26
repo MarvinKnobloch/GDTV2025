@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using UnityEditor.Rendering;
 using UnityEngine;
-using static BeeBoss;
 
 public class ChargeBees : MonoBehaviour, IPoolingList
 {

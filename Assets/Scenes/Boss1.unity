@@ -3129,7 +3129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2001916241821886349, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2391825072463041349, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
       propertyPath: BossAttacks.Array.size

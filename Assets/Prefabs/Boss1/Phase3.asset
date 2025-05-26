@@ -22,6 +22,15 @@ MonoBehaviour:
     ProjectileDeviation: 5
     startAngle: 0
     endAngle: 0
+  - ProjectilesToShoot: 0
+    SecondsBetweenProjectiles: 0.15
+    ProjectilePrefab: {fileID: 5324997864933902000, guid: 6586a40fb2067a24f99d66f1648060aa, type: 3}
+    ProjectileSpeed: 10
+    ProjectileGravity: 0
+    attackFunction: 2
+    ProjectileDeviation: 5
+    startAngle: 0
+    endAngle: 0
   TailAttacks:
   - ProjectilesToShoot: 8
     SecondsBetweenProjectiles: 0
@@ -41,5 +50,5 @@ MonoBehaviour:
     ProjectileDeviation: 0
     startAngle: -45
     endAngle: 45
-  TimeBetweenAttacks: 1
+  TimeBetweenAttacks: 1.2
   TransitionAtHealth: 1
