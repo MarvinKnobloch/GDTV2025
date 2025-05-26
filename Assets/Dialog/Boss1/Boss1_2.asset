@@ -15,5 +15,15 @@ MonoBehaviour:
   cantSkipDialog: 0
   disableInputs: 0
   pauseGame: 0
-  dialogs: []
+  dialogs:
+  - characterSprite: {fileID: 3420745408551112505, guid: 9d0ad4feb99bfeb49975a3035bfff4cd, type: 3}
+    characterName: Rupert
+    dialogText: "WAHHHHHHH\nI can\xB4t believe it."
+    dialogEvent: []
+    autoPlayInterval: 0
+  - characterSprite: {fileID: 3420745408551112505, guid: 9d0ad4feb99bfeb49975a3035bfff4cd, type: 3}
+    characterName: Rupert
+    dialogText: Time to go back to the gym.
+    dialogEvent: []
+    autoPlayInterval: 0
   eventAfterDialogEnd: []

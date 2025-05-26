@@ -16,34 +16,34 @@ MonoBehaviour:
   disableInputs: 1
   pauseGame: 0
   dialogs:
-  - characterSprite: {fileID: 0}
-    characterName: Guard
+  - characterSprite: {fileID: 6515200856923027770, guid: 5b8c046c0625a8245bed8a1d5ee61e89, type: 3}
+    characterName: Arena Guard
     dialogText: Oh, a new challenger. Well you look pretty weak
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
+  - characterSprite: {fileID: 7501388567208550495, guid: 204ce3362201bd142aab45bf1adf0838, type: 3}
     characterName: Player
     dialogText: Do i?
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
-    characterName: Guard
+  - characterSprite: {fileID: 6515200856923027770, guid: 5b8c046c0625a8245bed8a1d5ee61e89, type: 3}
+    characterName: Arena Guard
     dialogText: Ah. Yes. Mabye you should go back to mommy.
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
-    characterName: Guard
+  - characterSprite: {fileID: 8092965593948068713, guid: 5b8c046c0625a8245bed8a1d5ee61e89, type: 3}
+    characterName: Arena Guard
     dialogText: However, if you want to fight enter the arena behind me.
     dialogEvent:
     - {fileID: 11400000, guid: 538a4175fbad3dd4883c44d9b3006466, type: 2}
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
+  - characterSprite: {fileID: 7501388567208550495, guid: 204ce3362201bd142aab45bf1adf0838, type: 3}
     characterName: Player
-    dialogText: After i cleaned up the arena a will beat up your ass.
+    dialogText: After i have cleaned up the arena a will beat up your ass.
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
-    characterName: Guard
+  - characterSprite: {fileID: 6515200856923027770, guid: 5b8c046c0625a8245bed8a1d5ee61e89, type: 3}
+    characterName: Arena Guard
     dialogText: Well, good luck on both tasks.
     dialogEvent: []
     autoPlayInterval: 0
