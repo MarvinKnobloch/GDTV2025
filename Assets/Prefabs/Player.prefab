@@ -134,6 +134,7 @@ MonoBehaviour:
   platformDropStrength: -3
   projectileSpawnPosition: {fileID: 5019787506880255950}
   rotateWithMouse: 1
+  spriteExplosionPrefab: {fileID: 4258586466659054382, guid: 44762079f2f0a984ba28b3e6c9f1dd04, type: 3}
   state: 0
 --- !u!114 &7275883768611437086
 MonoBehaviour:

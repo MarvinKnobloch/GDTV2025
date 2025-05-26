@@ -11949,7 +11949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetButton: {fileID: 8806937470511425293}
-  timeUntilGameover: 1.5
+  timeUntilGameover: 3
   gameOvertext: {fileID: 3858743639370819363}
 --- !u!1 &5525147233077550599
 GameObject:
