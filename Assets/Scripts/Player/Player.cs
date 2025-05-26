@@ -103,6 +103,8 @@ public class Player : MonoBehaviour
     const string deathState = "Death";
     const string flyState = "Fly";
 
+	public GameObject spriteExplosionPrefab;
+
     //Interaction
     [NonSerialized] public List<IInteractables> interactables = new List<IInteractables>();
     [NonSerialized] public IInteractables currentInteractable;
@@ -373,7 +375,9 @@ public class Player : MonoBehaviour
         ChangeAnimationState(deathState);
         state = States.Death;
 
-        playerUI.GameOver();
+		Instantiate(spriteExplosionPrefab, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+		playerUI.GameOver();
         //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.utilityFiles[(int)AudioManager.UtilitySounds.PlayerDeath]);
     }
     public void RestartGame()
