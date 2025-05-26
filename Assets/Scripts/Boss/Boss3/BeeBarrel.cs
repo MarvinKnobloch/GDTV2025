@@ -33,7 +33,6 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
                 {
                     if (cols[i].gameObject == Player.Instance.gameObject)
                     {
-                        hitPlayer = true;
                         Player.Instance.health.PlayerTakeDamage(1, false);
                         break;
                     }
@@ -65,6 +64,7 @@ public class BeeBarrel : MonoBehaviour, IPoolingList
 
                     //barrelprojectiles.transform.right = transform.up;
                 }
+                AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Explosion]);
             }
 
             PoolingSystem.ReturnObjectToPool(gameObject, poolingList);

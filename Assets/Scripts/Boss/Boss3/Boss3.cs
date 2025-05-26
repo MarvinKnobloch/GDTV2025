@@ -10,6 +10,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
     private float timeBetweenActions;
     [SerializeField] private int phaseTreshold;
     [SerializeField] private Boss3Controller boss3Controller;
+    [SerializeField] private Transform projectileSpawn;
 
     [Header("BasicAttack")]
     [SerializeField] private float attackDuration;
@@ -42,6 +43,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
     [SerializeField] private float phase2FlyInSpeed;
     [SerializeField] private Transform phase2StartPosition;
     [SerializeField] private float phase2FlySpeed;
+    [SerializeField] private GameObject gunConnector;
     private bool phase2;
     private bool phase2Started;
     private int currentPhase2Action;
@@ -200,7 +202,8 @@ public class Boss3 : MonoBehaviour, IGunAnimation
 
         if (nextAttack == 0)
         {
-            ChangeAnimationState(chargeState);
+            ChargeAnitmation();
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.GunFire]);
             state = State.Attack;
         }
         else if (nextAttack == 1)
@@ -209,7 +212,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             else currentEndPosition = leftArenaPosition.position;
             currentStartPosition = transform.position;
 
-            ChangeAnimationState(chargeState);
+            ChargeAnitmation();
             state = State.SwitchSide;
         }
         else if (nextAttack == 2)
@@ -240,7 +243,8 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             currentEndPosition = rightSideBottom.position + Vector3.up * -1f;
             state = State.Phase2FlyDown;
 
-            ChangeAnimationState(chargeState);
+            ChargeAnitmation();
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.GunFire]);
         }
         else if(currentPhase2Action == 1)
         {
@@ -249,7 +253,8 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             currentEndPosition = phase2StartPosition.position;
             state = State.Phase2FlyUp;
 
-            ChangeAnimationState(chargeState);
+            ChargeAnitmation();
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.GunFire]);
         }
         currentStartPosition = transform.position;
         currentFlySpeed = phase2FlySpeed;
@@ -258,12 +263,12 @@ public class Boss3 : MonoBehaviour, IGunAnimation
     {
         transform.position = Vector2.MoveTowards(transform.position, currentEndPosition, currentFlySpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, currentEndPosition) < 0.5f)
+        if (Vector2.Distance(transform.position, currentEndPosition) < 0.1f)
         {
             switch (state)
             {
                 case State.FlyDown:
-                    ChangeAnimationState(chargeState);
+                    ChargeAnitmation();
                     state = State.SideAttack;
                     break;
                 case State.FlyUp:
@@ -315,6 +320,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         {
             attackTimer = 0;
             BossSwitchSideAttack();
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.SingleFire]);
         }
 
         if (Vector2.Distance(transform.position, currentEndPosition) < 0.5f)
@@ -331,7 +337,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         if (attackTimer >= attackInterval)
         {
             attackTimer = 0;
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, projectileSpawn.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             float randomAngle = Random.Range(-attackAngle, attackAngle);
             if (isLeft) prefab.transform.Rotate(0, 0, -40 + randomAngle, Space.World);
@@ -354,7 +360,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         float startangle = switchSideAttackAngle * 0.5f;
         for (int i = 0; i < switchSideAttackBulletAmount; i++)
         {
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, projectileSpawn.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             prefab.transform.right = targetDir;
             prefab.transform.Rotate(0, 0, transform.rotation.z - startangle + angleEachBullet * i);
@@ -368,10 +374,12 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             attackTimer = 0;
             currentSideAttackCount++;
 
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, projectileSpawn.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             if (isLeft) prefab.transform.Rotate(0, 0, 0, Space.World);  //right angle
             else prefab.transform.Rotate(0, 0, 180, Space.World);       //left angle
+
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.SingleFire]);
         }
 
         if (currentSideAttackCount >= sideAttackCount)
@@ -438,6 +446,8 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         currentFlySpeed = phase2FlyInSpeed;
         skipPhase2Stuff = false;
 
+        gunConnector.transform.Rotate(0, 0, -15);
+
         if (isLeft)
         {
             isLeft = !isLeft;
@@ -457,6 +467,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         GameManager.Instance.playerUI.ToggleBossHealth(true);
         bossCollider.enabled = true;
         Player.Instance.playerCollider.enabled = true;
+
     }
     private void Phase2BaseAttack()
     {
@@ -468,23 +479,21 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             attackTimer = 0;
             currentSideAttackCount++;
 
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, projectileSpawn.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             //if (isLeft) prefab.transform.Rotate(0, 0, 0, Space.World);  //right angle
             prefab.transform.Rotate(0, 0, 180, Space.World);       //left angle
         }
     }
-    private void ChargeBeesDelay()
-    {
-        StartCoroutine(Phase2ChargeBees());
-    }
     IEnumerator Phase2ChargeBees()
     {
         SpawnChargeBees(chargeBeesStack1);
+        //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Bee]);
         yield return new WaitForSeconds(timeBeetweenChargeBees);
         SpawnChargeBees(chargeBeesStack2);
         yield return new WaitForSeconds(timeBeetweenChargeBees);
         SpawnChargeBees(chargeBeesStack1);
+        //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Bee]);
         yield return new WaitForSeconds(timeBeetweenChargeBees);
         SpawnChargeBees(chargeBeesStack2);
     }
@@ -495,31 +504,32 @@ public class Boss3 : MonoBehaviour, IGunAnimation
             bees[i].gameObject.SetActive(true);
             bees[i].SetValues(chargeBeesSpeed);
         }
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Bee]);
     }
     IEnumerator Phase2Shoot()
     {
         yield return new WaitForSeconds(phase2ShootStartDelay);
         float firstBreak = 0.3f;
-        ChangeAnimationState(chargeState);
+        ChargeAnitmation();
         Phase2ShootLogic();
         yield return new WaitForSeconds(firstBreak);
         ChangeAnimationState(stopState);
         yield return new WaitForSeconds(phase2ShootDelay - firstBreak);
-        ChangeAnimationState(chargeState);
+        ChargeAnitmation();
         Phase2ShootLogic();
         yield return new WaitForSeconds(firstBreak);
         ChangeAnimationState(stopState);
     }
     private void Phase2ShootLogic()
     {
-
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.SingleFire]);
         Vector3 targetDir = Player.Instance.gameObject.transform.position - transform.position;
 
         float angleEachBullet = phase2ShootAngle / phase2ShootBulletAmount;
         float startangle = phase2ShootAngle * 0.5f;
         for (int i = 0; i < phase2ShootBulletAmount; i++)
         {
-            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, transform.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
+            GameObject prefab = PoolingSystem.SpawnObject(stingerPrefab, projectileSpawn.position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
 
             prefab.transform.right = targetDir;
             prefab.transform.Rotate(0, 0, transform.rotation.z - startangle + angleEachBullet * i);
@@ -561,7 +571,10 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         CancelInvoke();
         gameObject.SetActive(false);
     }
-
+    private void ChargeAnitmation()
+    {
+        ChangeAnimationState(chargeState);
+    }
     public void ChangeAnimationState(string newstate)
     {
         if (currentstate == newstate) return;

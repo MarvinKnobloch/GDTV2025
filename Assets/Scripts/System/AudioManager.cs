@@ -68,7 +68,10 @@ public class AudioManager : MonoBehaviour
     }
     public enum EnemySounds
     {
-        Empty
+        GunFire,
+        SingleFire,
+        Explosion,
+        Bee,
     }
     public enum LevelSounds
     {

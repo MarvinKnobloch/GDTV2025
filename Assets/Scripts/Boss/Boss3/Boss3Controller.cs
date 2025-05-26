@@ -123,6 +123,7 @@ public class Boss3Controller : MonoBehaviour
 
         boss3.Phase2Start();
 
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Explosion]);
         //InvokeRepeating("ToggleBeeCircle", beeCircleDelay, beeCircleInterval);
     }
     public void ToggleBeeCircle()
