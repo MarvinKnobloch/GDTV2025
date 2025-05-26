@@ -137,6 +137,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         cam = Camera.main;
         playerArm = transform.GetChild(0).transform;
+        currentAnimator = GetComponent<Animator>();
 
         baseGravityScale = rb.gravityScale;
 
