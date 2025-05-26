@@ -2,10 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System;
 using System.Collections;
-using UnityEngine.SceneManagement;
-using static GameManager;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -34,7 +31,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private Image bossHealthbar;
 
     [Header("GameOver")]
-    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] public GameObject gameOverScreen;
 
     private float timer;
 

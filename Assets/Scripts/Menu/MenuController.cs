@@ -91,6 +91,7 @@ public class MenuController : MonoBehaviour
         {
             if (Player.Instance == null) return;
 
+            if (GameManager.Instance.playerUI.gameOverScreen.activeSelf == true) return;
             if (GameManager.Instance.playerUI.dialogBox.activeSelf == true) return;
             if (confirmController.activeSelf == true) confirmController.SetActive(false);
             else if (ingameMenu.activeSelf == false)

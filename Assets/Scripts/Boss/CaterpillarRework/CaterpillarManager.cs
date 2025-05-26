@@ -58,6 +58,8 @@ public class CaterpillarManager : MonoBehaviour
 
     private void OnDeath()
     {
+        if (Player.Instance.playerIsDead) return;
+
         Player.Instance.bossDefeated = true;
         GameManager.Instance.menuController.gameIsPaused = true;
         Time.timeScale = 0;
