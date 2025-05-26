@@ -16,14 +16,11 @@ MonoBehaviour:
   disableInputs: 1
   pauseGame: 0
   dialogs:
-  - characterSprite: {fileID: -1974688698322031458, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
-    characterName: Npc1
-    dialogText: BTTTTTTTZZZZZZZ
-    dialogEvent: {fileID: 0}
+  - characterSprite: {fileID: -7315217131209605434, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
+    characterName: Maya
+    dialogText: Sorry, no time for dialog.
+    dialogEvent:
+    - {fileID: 0}
     autoPlayInterval: 0
-  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
-    characterName: Player
-    dialogText: Projekt Manager am Arsch.
-    dialogEvent: {fileID: 0}
-    autoPlayInterval: 0
-  eventAfterDialogEnd: {fileID: 0}
+  eventAfterDialogEnd:
+  - {fileID: 0}

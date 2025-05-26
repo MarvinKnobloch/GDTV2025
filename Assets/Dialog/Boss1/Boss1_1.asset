@@ -21,7 +21,7 @@ MonoBehaviour:
     dialogText: Oh, is it lunchtime already?
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 7501388567208550495, guid: 204ce3362201bd142aab45bf1adf0838, type: 3}
+  - characterSprite: {fileID: 9009851264869320688, guid: ced99b55d8f75fb458e1bc95967b18a6, type: 3}
     characterName: Bernhard
     dialogText: "I\xB4m not hungry right now.\nSorry!"
     dialogEvent: []

@@ -16,12 +16,12 @@ MonoBehaviour:
   disableInputs: 1
   pauseGame: 0
   dialogs:
-  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+  - characterSprite: {fileID: -2806695253659225460, guid: 4eb19b09d5b4e5d4486fe58ba6a90d91, type: 3}
     characterName: Ant4403
     dialogText: "I can\xB4t believe you defeat every gladiator."
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+  - characterSprite: {fileID: -2806695253659225460, guid: 4eb19b09d5b4e5d4486fe58ba6a90d91, type: 3}
     characterName: Ant1
     dialogText: You are the new CHAMPION!
     dialogEvent: []
