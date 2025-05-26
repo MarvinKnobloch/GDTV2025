@@ -103,6 +103,8 @@ public class Player : MonoBehaviour
     const string deathState = "Death";
     const string flyState = "Fly";
 
+	public Animator gunArmAnimator;
+
 	public GameObject spriteExplosionPrefab;
 
     //Interaction

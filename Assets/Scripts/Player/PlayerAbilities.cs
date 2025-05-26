@@ -17,6 +17,7 @@ public class PlayerAbilities
                 AudioManager.Instance.PlayAudioFileOneShot(
                     AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.PlayerShoot]
                 );
+				player.gunArmAnimator.SetTrigger("Shoot");
                 player.CreatePrefab(player.playerProjectile, player.projectileSpawnPosition, Quaternion.identity);
             }
         }
