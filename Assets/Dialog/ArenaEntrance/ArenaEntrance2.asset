@@ -16,14 +16,28 @@ MonoBehaviour:
   disableInputs: 1
   pauseGame: 0
   dialogs:
-  - characterSprite: {fileID: 0}
-    characterName: ggg
-    dialogText: So you bet the first boss
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant10801
+    dialogText: 'So you were able to be Rupert.
+
+'
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
-    characterName: player
-    dialogText: Easy
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant13
+    dialogText: 'Pahhh...
+
+      He is by far the weakest of our gladiators.'
+    dialogEvent: []
+    autoPlayInterval: 0
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant10801
+    dialogText: Good luck with the next one.
+    dialogEvent: []
+    autoPlayInterval: 0
+  - characterSprite: {fileID: 6630997377671843064, guid: 204ce3362201bd142aab45bf1adf0838, type: 3}
+    characterName: Bernhard
+    dialogText: Thanks!
     dialogEvent: []
     autoPlayInterval: 0
   eventAfterDialogEnd: []
