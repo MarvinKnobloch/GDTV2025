@@ -5271,7 +5271,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1719775754427208435, guid: 8e139bba918b4db4aac76cfe5057d1c3, type: 3}
       propertyPath: maxHealth
-      value: 1
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 2399001641056007526, guid: 8e139bba918b4db4aac76cfe5057d1c3, type: 3}
       propertyPath: boss2
@@ -8464,7 +8464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1719775754427208435, guid: 8e139bba918b4db4aac76cfe5057d1c3, type: 3}
       propertyPath: maxHealth
-      value: 1
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 2399001641056007526, guid: 8e139bba918b4db4aac76cfe5057d1c3, type: 3}
       propertyPath: boss2

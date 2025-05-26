@@ -354,8 +354,10 @@ MonoBehaviour:
     volume: 0.1
   - audioClip: {fileID: 8300000, guid: a6ce57b7a1e6a7441bae585845483e8b, type: 3}
     volume: 0.2
+  - audioClip: {fileID: 8300000, guid: 44285341d7867ca43b3cf388ef59dd44, type: 3}
+    volume: 0.2
   levelSounds:
-  - audioClip: {fileID: 8300000, guid: 6d16eae9b91d1ae4dbe4a26c09161578, type: 3}
+  - audioClip: {fileID: 8300000, guid: ae8b5652a404e2345bbf02cd12281c02, type: 3}
     volume: 0.3
   minPitch: 0
   maxPitch: 0

@@ -106,6 +106,8 @@ public class ChargeBees : MonoBehaviour, IPoolingList
 
         ChangeAnimationState(chargeState);
         timer = 0;
+
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Charge]);
     }
     private void ChargeMovement()
     {
