@@ -203,22 +203,22 @@ public class PlayerMovement
             else player.SwitchToAir();
         }
     }
-    public void FlyInput(InputAction.CallbackContext ctx)
-    {
-        bool pressed = ctx.ReadValueAsButton();
-        if (pressed)
-        {
-            player.isFlying = !player.isFlying;
-            if(player.isFlying == true)
-            {
-                player.SwitchToFly();
-            }
-            else
-            {
-                player.SwitchToAir();
-            }
-        }
-    }
+    //public void FlyInput(InputAction.CallbackContext ctx)
+    //{
+    //    bool pressed = ctx.ReadValueAsButton();
+    //    if (pressed)
+    //    {
+    //        player.isFlying = !player.isFlying;
+    //        if(player.isFlying == true)
+    //        {
+    //            player.SwitchToFly();
+    //        }
+    //        else
+    //        {
+    //            player.SwitchToAir();
+    //        }
+    //    }
+    //}
     public void FlyMovement()
     {
         player.playerVelocity.Set(player.moveDirection.x * player.movementSpeed, player.moveDirection.y * player.movementSpeed);
