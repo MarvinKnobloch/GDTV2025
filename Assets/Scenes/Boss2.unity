@@ -8215,6 +8215,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 72744703}
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: beesSpawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: 'beesSpawnPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1987672485}
@@ -8225,11 +8229,11 @@ PrefabInstance:
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: 'beesSpawnPoints.Array.data[2]'
       value: 
-      objectReference: {fileID: 274615240}
+      objectReference: {fileID: 702791916}
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: 'beesSpawnPoints.Array.data[3]'
       value: 
-      objectReference: {fileID: 702791916}
+      objectReference: {fileID: 1599809657}
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: 'beesSpawnPoints.Array.data[4]'
       value: 

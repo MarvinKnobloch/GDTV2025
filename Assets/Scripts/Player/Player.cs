@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
     [NonSerialized] public Animator currentAnimator;
     [NonSerialized] public string currentstate;
     const string deathState = "Death";
+    const string flyState = "Fly";
 
     //Interaction
     [NonSerialized] public List<IInteractables> interactables = new List<IInteractables>();
@@ -297,9 +298,12 @@ public class Player : MonoBehaviour
     }
     public void SwitchToFly()
     {
+
         rb.gravityScale = 0;
         rb.linearVelocity = Vector2.zero;
 
+        ChangeAnimationState(flyState);
+        isFlying = true;
         state = States.Fly;
     }
     public void JumpPad(float jumpPadStrength) => playerMovement.JumpPad(jumpPadStrength);
