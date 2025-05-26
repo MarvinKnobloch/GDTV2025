@@ -390,4 +390,6 @@ public class Player : MonoBehaviour
         GameManager.Instance.menuController.gameIsPaused = false;
     }
     public void AttackTimeReset() => playerAbilities.AttackTimeReset();
+    public void PlayFootStep1() => AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.Footstep1]);
+    public void PlayFootStep2() => AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.Footstep2]);
 }

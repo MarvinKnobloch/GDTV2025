@@ -34,6 +34,9 @@ public class AudioManager : MonoBehaviour
     [Header("Enemy")]
     [SerializeField] public AudioFiles[] enemySounds;
 
+    [Header("Level")]
+    [SerializeField] public AudioFiles[] levelSounds;
+
     [Space]
     [SerializeField] private float minPitch;
     [SerializeField] private float maxPitch;
@@ -60,10 +63,16 @@ public class AudioManager : MonoBehaviour
         PlayerShoot,
         PlayerDash,
         PlayerJump,
+        Footstep1,
+        Footstep2,
     }
     public enum EnemySounds
     {
         Empty
+    }
+    public enum LevelSounds
+    {
+        JumpPad,
     }
     private void Awake()
     {

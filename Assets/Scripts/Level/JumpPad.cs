@@ -46,6 +46,8 @@ public class JumpPad : MonoBehaviour
             ChangeAnimationState(activeState);
             honeyPad.ChangeAnimationState(activeState);
             RestoreStrength(restoreEachJump);
+
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.levelSounds[(int)AudioManager.LevelSounds.JumpPad]);
         }
         else if (Utility.LayerCheck(collision, HoneyLayer))
         {

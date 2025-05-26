@@ -337,7 +337,14 @@ MonoBehaviour:
     volume: 0.313
   - audioClip: {fileID: 8300000, guid: ec3ef9cf54710ef4b9967013d969b9f5, type: 3}
     volume: 0.2
+  - audioClip: {fileID: 8300000, guid: 9d2d2becccfc9e541ab88c379ae540fc, type: 3}
+    volume: 0.2
+  - audioClip: {fileID: 8300000, guid: 34cec3835b960e04d852d4b5a123fc11, type: 3}
+    volume: 0.2
   enemySounds: []
+  levelSounds:
+  - audioClip: {fileID: 8300000, guid: 6d16eae9b91d1ae4dbe4a26c09161578, type: 3}
+    volume: 0.3
   minPitch: 0
   maxPitch: 0
   randomVolumeMultipler: 0
