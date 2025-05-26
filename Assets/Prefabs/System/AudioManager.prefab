@@ -313,8 +313,8 @@ MonoBehaviour:
   musicFiles:
   - audioClip: {fileID: 0}
     volume: 0
-  - audioClip: {fileID: 8300000, guid: 4d27b3a71642619448b4e5612b7dcc2a, type: 3}
-    volume: 0.2
+  - audioClip: {fileID: 8300000, guid: 7083fbb4b3d641b4e8037a11cbf7d5b9, type: 3}
+    volume: 0.5
   - audioClip: {fileID: 8300000, guid: 5c01b0db19bcb5a42b8233a058f083b2, type: 3}
     volume: 0.3
   - audioClip: {fileID: 8300000, guid: 56b68f78b4fa51c4c8d1494efe42d0f7, type: 3}
