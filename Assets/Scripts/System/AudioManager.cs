@@ -72,6 +72,8 @@ public class AudioManager : MonoBehaviour
         SingleFire,
         Explosion,
         Bee,
+        GunFire2,
+        Splash,
     }
     public enum LevelSounds
     {

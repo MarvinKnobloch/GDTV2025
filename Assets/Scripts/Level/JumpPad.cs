@@ -67,7 +67,9 @@ public class JumpPad : MonoBehaviour
 		honeySplashAnimator.ResetTrigger("Splash");
 		honeySplashAnimator.SetTrigger("Splash");
 		Invoke(nameof(DisableSplash), 0.4f);
-	}
+
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Splash]);
+    }
 
 	private void DisableSplash()
 	{
