@@ -39,12 +39,11 @@ public class CaterpillarPhase : MonoBehaviour
 
 	private void PhaseTransition(CaterpillarManager manager)
     {
-        if (manager.Health.Value <= phases[phaseIndex].TransitionAtHealth)
+		var transitionAtHealth = Mathf.RoundToInt(phases[phaseIndex].TransitionAtHealth * (PlayerPrefs.GetFloat("BossHealthMultiplier") * 0.01f));
+        if (manager.Health.Value <= transitionAtHealth)
         {
             StopAllCoroutines();
             phaseIndex++;
-
-            manager.StartCoroutine(manager.ExecuteAI());
         }
     }
 

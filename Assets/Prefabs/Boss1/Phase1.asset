@@ -23,8 +23,8 @@ MonoBehaviour:
     startAngle: 0
     endAngle: 0
   TailAttacks:
-  - ProjectilesToShoot: 3
-    SecondsBetweenProjectiles: 0.5
+  - ProjectilesToShoot: 5
+    SecondsBetweenProjectiles: 0.4
     ProjectilePrefab: {fileID: 5324997864933902000, guid: 77dc181d40ea6bf4381fd69515179db8, type: 3}
     ProjectileSpeed: 12
     ProjectileGravity: 0
@@ -33,4 +33,4 @@ MonoBehaviour:
     startAngle: 0
     endAngle: 0
   TimeBetweenAttacks: 2
-  TransitionAtHealth: 70
+  TransitionAtHealth: 80
