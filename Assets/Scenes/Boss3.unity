@@ -440,6 +440,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 471941630}
     m_Modifications:
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
       objectReference: {fileID: 0}
@@ -587,7 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss3: {fileID: 1254259301}
   bombBeesInterval: 8
-  bombBeesDelay: 0.2
+  bombBeesDelay: 1
   bombBeeCarry: {fileID: 29906763}
   platformPositions:
   - {fileID: 2062828663633744762}
@@ -596,7 +600,7 @@ MonoBehaviour:
   - {fileID: 1894073319}
   - {fileID: 322659944}
   barrelBeesInterval: 8
-  barrelBeesDelay: 4
+  barrelBeesDelay: 5
   barrelBeeCarry: {fileID: 1645897232}
   barrelDropPositions:
   - {fileID: 751293523}
@@ -656,6 +660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 471941630}
     m_Modifications:
+    - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -1170,6 +1178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6832514789869959739, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -1293,6 +1309,10 @@ PrefabInstance:
     - target: {fileID: 6832514789869959739, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_Name
       value: NormalPlatform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2977,6 +2997,10 @@ PrefabInstance:
       value: NormalPlatform (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3991,21 +4015,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e4d9c1306d4eb46b1724164cbef84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase1IdleTime: 1
+  phase1IdleTime: 2
   phase2IdleTime: 5
   phaseTreshold: 11
   boss3Controller: {fileID: 174624513}
   attackDuration: 2
-  attackInterval: 0.2
+  attackInterval: 0.13
   stingerPrefab: {fileID: 5324997864933902000, guid: 4856a3c18fe9e4f479b3c3fb6ec15d2b, type: 3}
-  attackAngle: 30
+  attackAngle: 45
   rightArenaPosition: {fileID: 1882398969}
   leftArenaPosition: {fileID: 178731276}
   curvePosition: {fileID: 1092499930}
   switchSideSpeed: 0.2
-  switchSideAttackBulletAmount: 7
-  switchSideAttackInterval: 1
-  switchSideAttackAngle: 90
+  switchSideAttackBulletAmount: 6
+  switchSideAttackInterval: 2
+  switchSideAttackAngle: 100
   flyDownSpeed: 10
   leftSideTop: {fileID: 325890401}
   leftSideBottom: {fileID: 1789008269}
@@ -4020,7 +4044,7 @@ MonoBehaviour:
   phase2FlySpeed: 6
   phase2BaseAttackInverval: 0.15
   phase2BaseAttackCount: 10
-  chargeBeesDelay: 2
+  chargeBeesDelay: 2.5
   timeBeetweenChargeBees: 1.5
   chargeBeesStack1:
   - {fileID: 4050705977542301544}
@@ -4050,7 +4074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf2b3e97dd19834696f8e3b4416b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 80
   isBoss: 1
   showBossHealthOnStart: 1
   dieEvent:
@@ -4067,6 +4091,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 471941630}
     m_Modifications:
+    - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4207,6 +4235,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 471941630}
     m_Modifications:
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
       objectReference: {fileID: 0}
@@ -4250,6 +4282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OnyWayPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5882440457250272580, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4273,6 +4309,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 3399852814667539038, guid: b764dd995223f9d478fc2d98fc90fc15, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340897186055490641, guid: b764dd995223f9d478fc2d98fc90fc15, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -4670,6 +4710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 471941630}
     m_Modifications:
+    - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5021932719870964940, guid: ef94896124474d045b920f8a4a9d2357, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -5352,6 +5396,10 @@ PrefabInstance:
     - target: {fileID: 6832514789869959739, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_Name
       value: NormalPlatform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6316,6 +6364,10 @@ PrefabInstance:
     - target: {fileID: 6832514789869959739, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_Name
       value: NormalPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 7125898298539633453, guid: 3bb7dffcc9831bd4fa8f52eb5c0891e7, type: 3}
       propertyPath: m_LocalPosition.x
