@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
     const string flyState = "Fly";
 
 	public Animator gunArmAnimator;
+	public Animator muzzleFlashAnimator;
 
 	public GameObject spriteExplosionPrefab;
 

@@ -1,0 +1,345 @@
+fileFormatVersion: 2
+guid: 437f567730a773e4c9a520aebba18378
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8775771248463582297
+    second: spriteSheetPlayerMuzzleflash_0
+  - first:
+      213: 5686347459333115256
+    second: spriteSheetPlayerMuzzleflash_1
+  - first:
+      213: 8663990354256291211
+    second: spriteSheetPlayerMuzzleflash_2
+  - first:
+      213: -9161924679916221901
+    second: spriteSheetPlayerMuzzleflash_3
+  - first:
+      213: -4548601735588935911
+    second: spriteSheetPlayerMuzzleflash_4
+  - first:
+      213: -6271012853304572252
+    second: spriteSheetPlayerMuzzleflash_5
+  - first:
+      213: 3231363022303347218
+    second: spriteSheetPlayerMuzzleflash_6
+  - first:
+      213: 2543798407328920475
+    second: spriteSheetPlayerMuzzleflash_7
+  - first:
+      213: 4506509245627966902
+    second: spriteSheetPlayerMuzzleflash_8
+  - first:
+      213: -2580902994045642142
+    second: spriteSheetPlayerMuzzleflash_9
+  - first:
+      213: -7373866589188923260
+    second: spriteSheetPlayerMuzzleflash_10
+  - first:
+      213: 2787062616374076002
+    second: spriteSheetPlayerMuzzleflash_11
+  - first:
+      213: -8661059970331989219
+    second: spriteSheetPlayerMuzzleflash_12
+  - first:
+      213: -4019293435729058672
+    second: spriteSheetPlayerMuzzleflash_13
+  - first:
+      213: -6572955979100007248
+    second: spriteSheetPlayerMuzzleflash_14
+  - first:
+      213: -4523894520425568038
+    second: spriteSheetPlayerMuzzleflash_15
+  - first:
+      213: -2598058519104730157
+    second: spriteSheetPlayerMuzzleflash_16
+  - first:
+      213: 637884251931991981
+    second: spriteSheetPlayerMuzzleflash_17
+  - first:
+      213: 1459273447160176338
+    second: spriteSheetPlayerMuzzleflash_18
+  - first:
+      213: -1348467211377402038
+    second: spriteSheetPlayerMuzzleflash_19
+  - first:
+      213: -5322040460931267246
+    second: spriteSheetPlayerMuzzleflash_20
+  - first:
+      213: 5689630365507254511
+    second: spriteSheetPlayerMuzzleflash_21
+  - first:
+      213: -8475422828514627283
+    second: spriteSheetPlayerMuzzleflash_22
+  - first:
+      213: -4910979292855068762
+    second: spriteSheetPlayerMuzzleflash_23
+  - first:
+      213: -5666097567870845029
+    second: spriteSheetPlayerMuzzleflash_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spriteSheetPlayerMuzzleflash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 253
+        width: 197
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7881d7cf09174ca4b92ffd5b485d9418
+      internalID: 1062238144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetPlayerMuzzleflash_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 253
+        width: 197
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4481456cd9d996741bd5c4543cb876a5
+      internalID: 676258391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetPlayerMuzzleflash_2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 253
+        width: 197
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e36a6cd58282f941aaa149cb3e4248f
+      internalID: -2049313938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetPlayerMuzzleflash_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 197
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f124b6eff54e2b49a0fa7e7127bd80c
+      internalID: -1207836797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetPlayerMuzzleflash_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 197
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe989e495666f6408a7e31072325b32
+      internalID: -1358231582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteSheetPlayerMuzzleflash_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0
+        width: 197
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8873ecc4613ff448933c72a09e4296a
+      internalID: -985680624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3743792239b1c1547a5dfc36ec863b17
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":197.0,"y":253.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spriteSheetPlayerMuzzleflash_0: 1062238144
+      spriteSheetPlayerMuzzleflash_1: 676258391
+      spriteSheetPlayerMuzzleflash_2: -2049313938
+      spriteSheetPlayerMuzzleflash_3: -1207836797
+      spriteSheetPlayerMuzzleflash_4: -1358231582
+      spriteSheetPlayerMuzzleflash_5: -985680624
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
