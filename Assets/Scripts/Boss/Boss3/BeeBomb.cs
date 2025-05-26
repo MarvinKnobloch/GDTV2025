@@ -31,6 +31,8 @@ public class BeeBomb : MonoBehaviour, IPoolingList
                 }
             }
             PoolingSystem.ReturnObjectToPool(gameObject, poolingList);
+
+            AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Explosion]);
         }
     }
 }
