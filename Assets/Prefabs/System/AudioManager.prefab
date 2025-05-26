@@ -329,8 +329,8 @@ MonoBehaviour:
   playerSounds:
   - audioClip: {fileID: 8300000, guid: 8fb9a43120a200f4f9e0a234c5dbd24c, type: 3}
     volume: 0.5
-  - audioClip: {fileID: 8300000, guid: f911005c19b63b04fb57315225bedad7, type: 3}
-    volume: 0.1
+  - audioClip: {fileID: 8300000, guid: 26c15bf2af2a8eb4fbd6a2e7211bb794, type: 3}
+    volume: 0.08
   - audioClip: {fileID: 8300000, guid: 2ef425fa5baf9e44bbdef1c292b69a66, type: 3}
     volume: 0.05
   - audioClip: {fileID: 8300000, guid: d4a82fdff91a2e5409a016b41bfab29b, type: 3}
@@ -346,8 +346,8 @@ MonoBehaviour:
     volume: 0.06
   - audioClip: {fileID: 8300000, guid: e14b415ff58bdf14bb0d4e19fea29329, type: 3}
     volume: 0.05
-  - audioClip: {fileID: 8300000, guid: f911005c19b63b04fb57315225bedad7, type: 3}
-    volume: 0.1
+  - audioClip: {fileID: 8300000, guid: 26c15bf2af2a8eb4fbd6a2e7211bb794, type: 3}
+    volume: 0.08
   - audioClip: {fileID: 8300000, guid: e885267b0310a8e4da81f2b0373957d9, type: 3}
     volume: 0.2
   - audioClip: {fileID: 8300000, guid: 5d193fbfe7c1d064cbcf99ee1fe04b5d, type: 3}
