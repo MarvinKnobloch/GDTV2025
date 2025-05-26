@@ -106,7 +106,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8200
   explosionPrefab: {fileID: 5325924135150994472, guid: 5c66ad7ee50c8ef4686f4119c14bd180, type: 3}
-  explosionRadius: 14
+  explosionRadius: 16
   explosionProjectiles: {fileID: 5748349628775575405, guid: 59b4c933463d3af4cab8fe9b8da31505, type: 3}
   explosionProjectilesCount: 0
   projectileRandomSpeed: 0

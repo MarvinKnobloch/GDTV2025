@@ -378,7 +378,7 @@ public class Player : MonoBehaviour
         state = States.Death;
 
 		Instantiate(spriteExplosionPrefab, transform.position, Quaternion.identity);
-		Destroy(gameObject);
+        gameObject.SetActive(false);
 		playerUI.GameOver();
         //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.utilityFiles[(int)AudioManager.UtilitySounds.PlayerDeath]);
     }
