@@ -23,7 +23,7 @@ MonoBehaviour:
     autoPlayInterval: 0
   - characterSprite: {fileID: 7501388567208550495, guid: 204ce3362201bd142aab45bf1adf0838, type: 3}
     characterName: Bernhard
-    dialogText: "I\xB4m not hungery right now.\nSorry!"
+    dialogText: "I\xB4m not hungry right now.\nSorry!"
     dialogEvent: []
     autoPlayInterval: 0
   - characterSprite: {fileID: 3420745408551112505, guid: 9d0ad4feb99bfeb49975a3035bfff4cd, type: 3}
