@@ -17,7 +17,7 @@ MonoBehaviour:
   pauseGame: 0
   dialogs:
   - characterSprite: {fileID: -1974688698322031458, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
-    characterName: Terror Wesp
+    characterName: Willy
     dialogText: Dont talk to me ...
     dialogEvent:
     - {fileID: 0}

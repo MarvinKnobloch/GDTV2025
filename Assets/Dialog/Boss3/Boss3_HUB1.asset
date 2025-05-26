@@ -17,7 +17,7 @@ MonoBehaviour:
   pauseGame: 0
   dialogs:
   - characterSprite: {fileID: -1974688698322031458, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
-    characterName: Terror Wesp
+    characterName: Willy
     dialogText: You're looking for trouble, aren't you? But before you mess with
       me, you should take care of my little brother first. Believe me, you don't
       stand a chance against me!

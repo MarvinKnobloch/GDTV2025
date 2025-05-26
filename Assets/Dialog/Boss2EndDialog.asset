@@ -17,13 +17,13 @@ MonoBehaviour:
   pauseGame: 0
   dialogs:
   - characterSprite: {fileID: 53262258881974269, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
-    characterName: Boss2
-    dialogText: Boss2 down
+    characterName: Maya
+    dialogText: Brzzz Brtzzzz Brzzzztzzzzz
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+  - characterSprite: {fileID: 9009851264869320688, guid: ced99b55d8f75fb458e1bc95967b18a6, type: 3}
     characterName: Player
-    dialogText: Test Test
+    dialogText: Brtz Brtzit Brrrtz
     dialogEvent: []
     autoPlayInterval: 0
   eventAfterDialogEnd:

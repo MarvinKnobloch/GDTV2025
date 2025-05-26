@@ -17,15 +17,15 @@ MonoBehaviour:
   pauseGame: 0
   dialogs:
   - characterSprite: {fileID: -1974688698322031458, guid: 49009f875a6505445a8a1f3f27d90223, type: 3}
-    characterName: Terror Wesp
+    characterName: Willy
     dialogText: Okay, you defeated my brother. But now the real battle begins! Hopefully
       you still have enough strength left...
     dialogEvent:
     - {fileID: 0}
     autoPlayInterval: 0
-  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
-    characterName: Player
-    dialogText: Isch mach disch fertig!!!!!!!!!!!!!!!!!!111elf
+  - characterSprite: {fileID: 9009851264869320688, guid: ced99b55d8f75fb458e1bc95967b18a6, type: 3}
+    characterName: Bernhard
+    dialogText: I will see you at Oktoberfest!
     dialogEvent:
     - {fileID: 0}
     autoPlayInterval: 0
