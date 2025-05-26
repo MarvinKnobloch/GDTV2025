@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,6 +37,10 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     [Header("BossDefeat")]
     [SerializeField] private DialogObj boss2EndDialog;
     [SerializeField] private VoidEventChannel boss2EndEvent;
+
+    [Header("HitEffect")]
+    [SerializeField] private SpriteRenderer[] bossSprites;
+    [SerializeField] private float hitEffectDuration;
 
     private Collider2D bossCollider;
     private Health health;
@@ -94,11 +99,13 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
     }
     private void OnEnable()
     {
+        health.hitEvent.AddListener(HitEffect);
         health.dieEvent.AddListener(OnDeath);
         boss2EndEvent.OnEventRaised += Boss2EndEvent;
     }
     private void OnDisable()
     {
+        health.hitEvent.RemoveAllListeners();
         health.dieEvent.RemoveAllListeners();
         boss2EndEvent.OnEventRaised -= Boss2EndEvent;
     }
@@ -293,7 +300,26 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
         gunAnimator.CrossFadeInFixedTime(newstate, 0.1f);
     }
 
+    private void HitEffect()
+    {
+        StartCoroutine(ChangeColor());
+    }
+    IEnumerator ChangeColor()
+    {
+        foreach (SpriteRenderer sprite in bossSprites)
+        {
+            sprite.color = Color.red;
+        }
+        yield return new WaitForSeconds(hitEffectDuration);
+
+        foreach (SpriteRenderer sprite in bossSprites)
+        {
+            sprite.color = Color.white;
+        }
+    }
+
     public void AttackAnimation() => ChangeAnimationState(attackState);
     public void IdleAnimation() => ChangeAnimationState(idleState);
+
 
 }

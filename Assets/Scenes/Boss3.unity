@@ -2518,7 +2518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3181496962940266218, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.6333663
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 3181496962940266218, guid: 686dac6abd113b842ad1b7219d7b22f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4691,6 +4691,9 @@ MonoBehaviour:
   phase2ShootAngle: 120
   boss3EndDialog: {fileID: 11400000, guid: 9b6e0e328c929d84f9c59c4959f0ed9d, type: 2}
   boss3EndEvent: {fileID: 11400000, guid: 7896bf8855010a149aa1e9beb6a8ee16, type: 2}
+  bossSprites:
+  - {fileID: 1879126770482684834}
+  hitEffectDuration: 0.08
   gunAnimator: {fileID: 6619473267192333968}
   state: 0
 --- !u!114 &1254259303

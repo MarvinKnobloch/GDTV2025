@@ -376,6 +376,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &72744703 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3986872521060821155, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+  m_PrefabInstance: {fileID: 8815470795686626885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &191558107
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,6 +5276,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1563830556 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1874321565838547189, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+  m_PrefabInstance: {fileID: 8815470795686626885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1590541558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8165,6 +8175,10 @@ PrefabInstance:
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: bossSprite
+      value: 
+      objectReference: {fileID: 1563830556}
+    - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: flyInStart
       value: 
       objectReference: {fileID: 1839919107}
@@ -8177,6 +8191,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744785210}
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: hitEffectDuration
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: leftArenaPosition
       value: 
       objectReference: {fileID: 828016260}
@@ -8184,6 +8202,18 @@ PrefabInstance:
       propertyPath: rightArenaPosition
       value: 
       objectReference: {fileID: 951715196}
+    - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: bossSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: 'bossSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1563830556}
+    - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
+      propertyPath: 'bossSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 72744703}
     - target: {fileID: 2716063967168807904, guid: abe8a40a553e1354e990fd6bf2d2583d, type: 3}
       propertyPath: 'beesSpawnPoints.Array.data[0]'
       value: 

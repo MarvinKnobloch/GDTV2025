@@ -30,6 +30,10 @@ public class CaterpillarManager : MonoBehaviour
     [SerializeField] private DialogObj boss1EndDialog;
     [SerializeField] private VoidEventChannel boss1EndEvent;
 
+    [Header("HitEffect")]
+    [SerializeField] private SpriteRenderer[] bossSprites;
+    [SerializeField] private float hitEffectDuration;
+
     [Header("Animation")]
     public Animator HeadAnimator;
     public Animator TailAnimator;
@@ -39,6 +43,7 @@ public class CaterpillarManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(ExecuteAI());
+        Health.hitEvent.AddListener(HitEffect);
         Health.dieEvent.AddListener(OnDeath);
         boss1EndEvent.OnEventRaised += Boss1EndEvent;
 
@@ -49,35 +54,9 @@ public class CaterpillarManager : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
+        Health.hitEvent.RemoveAllListeners();
         Health.dieEvent.RemoveListener(OnDeath);
         boss1EndEvent.OnEventRaised -= Boss1EndEvent;
-    }
-
-    private void OnDeath()
-    {
-        if (Player.Instance.playerIsDead) return;
-
-        Player.Instance.bossDefeated = true;
-        GameManager.Instance.menuController.gameIsPaused = true;
-        Time.timeScale = 0;
-        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss1EndDialog);
-        GameManager.Instance.playerUI.dialogBox.SetActive(true);
-        GameManager.Instance.playerUI.ToggleBossHealth(false);
-    }
-    private void Boss1EndEvent()
-    {
-        int playerPref = 1;
-        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
-        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
-
-        GameManager.Instance.menuController.gameIsPaused = false;
-        Time.timeScale = 1;
-
-        GameManager.Instance.ShowVictoryScreen();
-
-        StopAllCoroutines();
-        CancelInvoke();
-        gameObject.SetActive(false);
     }
 
     public IEnumerator ExecuteAI()
@@ -201,5 +180,48 @@ public class CaterpillarManager : MonoBehaviour
 
         Head.transform.position = headSlot.position;
         Tail.transform.position = tailSlot.position;
+    }
+    private void OnDeath()
+    {
+        if (Player.Instance.playerIsDead) return;
+
+        Player.Instance.bossDefeated = true;
+        GameManager.Instance.menuController.gameIsPaused = true;
+        Time.timeScale = 0;
+        GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(boss1EndDialog);
+        GameManager.Instance.playerUI.dialogBox.SetActive(true);
+        GameManager.Instance.playerUI.ToggleBossHealth(false);
+    }
+    private void Boss1EndEvent()
+    {
+        int playerPref = 1;
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.BossDefeated.ToString(), playerPref);
+        PlayerPrefs.SetInt(GameManager.SaveFilePlayerPrefs.ArenaEntranceDialog.ToString(), playerPref);
+
+        GameManager.Instance.menuController.gameIsPaused = false;
+        Time.timeScale = 1;
+
+        GameManager.Instance.ShowVictoryScreen();
+
+        StopAllCoroutines();
+        CancelInvoke();
+        gameObject.SetActive(false);
+    }
+    private void HitEffect()
+    {
+        StartCoroutine(ChangeColor());
+    }
+    IEnumerator ChangeColor()
+    {
+        foreach (SpriteRenderer sprite in bossSprites)
+        {
+            sprite.color = Color.red;
+        }
+        yield return new WaitForSeconds(hitEffectDuration);
+
+        foreach (SpriteRenderer sprite in bossSprites)
+        {
+            sprite.color = Color.white;
+        }
     }
 }

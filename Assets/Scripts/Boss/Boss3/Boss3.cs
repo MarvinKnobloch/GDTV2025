@@ -69,6 +69,10 @@ public class Boss3 : MonoBehaviour, IGunAnimation
     [SerializeField] private DialogObj boss3EndDialog;
     [SerializeField] private VoidEventChannel boss3EndEvent;
 
+    [Header("HitEffect")]
+    [SerializeField] private SpriteRenderer[] bossSprites;
+    [SerializeField] private float hitEffectDuration;
+
     //Animations
     [Header("Animation")]
     [SerializeField] private Animator gunAnimator;
@@ -119,11 +123,13 @@ public class Boss3 : MonoBehaviour, IGunAnimation
     }
     private void OnEnable()
     {
+        health.hitEvent.AddListener(HitEffect);
         health.dieEvent.AddListener(OnDeath);
         boss3EndEvent.OnEventRaised += Boss3EndEvent;
     }
     private void OnDisable()
     {
+        health.hitEvent.RemoveAllListeners();
         health.dieEvent.RemoveListener(OnDeath);
         boss3EndEvent.OnEventRaised -= Boss3EndEvent;
     }
@@ -563,6 +569,24 @@ public class Boss3 : MonoBehaviour, IGunAnimation
         if (gunAnimator == null) return;
 
         gunAnimator.CrossFadeInFixedTime(newstate, 0.1f);
+    }
+
+    private void HitEffect()
+    {
+        StartCoroutine(ChangeColor());
+    }
+    IEnumerator ChangeColor()
+    {
+        foreach (SpriteRenderer sprite in bossSprites)
+        {
+            sprite.color = Color.red;
+        }
+        yield return new WaitForSeconds(hitEffectDuration);
+
+        foreach (SpriteRenderer sprite in bossSprites)
+        {
+            sprite.color = Color.white;
+        }
     }
     public void AttackAnimation() => ChangeAnimationState(attackState);
     public void IdleAnimation() => ChangeAnimationState(idleState);

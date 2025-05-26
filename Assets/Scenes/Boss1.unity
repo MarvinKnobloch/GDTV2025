@@ -2932,6 +2932,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1833803063}
     - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: hitEffectDuration
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: HeadSpriteRenderer
       value: 
       objectReference: {fileID: 84186895}
@@ -2939,6 +2943,10 @@ PrefabInstance:
       propertyPath: TailSpriteRenderer
       value: 
       objectReference: {fileID: 91442398}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: bossSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
       propertyPath: 'LeftSlots.Array.data[0]'
       value: 
@@ -2963,6 +2971,10 @@ PrefabInstance:
       propertyPath: 'RightSlots.Array.data[2]'
       value: 
       objectReference: {fileID: 1648523261}
+    - target: {fileID: 8076880314114945394, guid: 289c71f9a028f904c8931d83f66b0250, type: 3}
+      propertyPath: 'bossSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 84186895}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
