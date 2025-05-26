@@ -94,7 +94,7 @@ public class CaterpillarManager : MonoBehaviour
                 yield return new WaitForSeconds(0.25f);
             }
 
-            yield return StartCoroutine(phaseReferences.Attack(this, _headAttackFromLeft, _tailAttackFromLeft));
+            yield return phaseReferences.Attack(this, _headAttackFromLeft, _tailAttackFromLeft);
             SpawnGoon();
 
             yield return new WaitForSeconds(TimeBetweenAI);
