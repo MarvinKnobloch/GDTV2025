@@ -313,12 +313,12 @@ MonoBehaviour:
   musicFiles:
   - audioClip: {fileID: 0}
     volume: 0
-  - audioClip: {fileID: 0}
-    volume: 0
-  - audioClip: {fileID: 0}
-    volume: 0.519
-  - audioClip: {fileID: 8300000, guid: 56b68f78b4fa51c4c8d1494efe42d0f7, type: 3}
+  - audioClip: {fileID: 8300000, guid: 4d27b3a71642619448b4e5612b7dcc2a, type: 3}
     volume: 0.2
+  - audioClip: {fileID: 8300000, guid: 5c01b0db19bcb5a42b8233a058f083b2, type: 3}
+    volume: 0.3
+  - audioClip: {fileID: 8300000, guid: 56b68f78b4fa51c4c8d1494efe42d0f7, type: 3}
+    volume: 0.15
   - audioClip: {fileID: 8300000, guid: da8cbec02ffe6ae4db4b647ec429428a, type: 3}
     volume: 0.3
   utilityFiles:
@@ -328,15 +328,15 @@ MonoBehaviour:
     volume: 0.5
   playerSounds:
   - audioClip: {fileID: 8300000, guid: 8fb9a43120a200f4f9e0a234c5dbd24c, type: 3}
-    volume: 0.313
+    volume: 0.5
   - audioClip: {fileID: 8300000, guid: f911005c19b63b04fb57315225bedad7, type: 3}
-    volume: 0.313
-  - audioClip: {fileID: 8300000, guid: 2ef425fa5baf9e44bbdef1c292b69a66, type: 3}
     volume: 0.1
+  - audioClip: {fileID: 8300000, guid: 2ef425fa5baf9e44bbdef1c292b69a66, type: 3}
+    volume: 0.05
   - audioClip: {fileID: 8300000, guid: d4a82fdff91a2e5409a016b41bfab29b, type: 3}
     volume: 0.313
-  - audioClip: {fileID: 8300000, guid: 6d16eae9b91d1ae4dbe4a26c09161578, type: 3}
-    volume: 0.313
+  - audioClip: {fileID: 8300000, guid: ec3ef9cf54710ef4b9967013d969b9f5, type: 3}
+    volume: 0.2
   enemySounds: []
   minPitch: 0
   maxPitch: 0

@@ -2883,8 +2883,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6547,6 +6547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e63a0a64c1ada8418c0c17c3e378fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yOffset: 1.8
 --- !u!1 &2948698142972587075
 GameObject:
   m_ObjectHideFlags: 0
@@ -9894,7 +9895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RMB
+  m_text: Umschalt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14669,7 +14670,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &298127998681314939
 CanvasRenderer:
@@ -15754,7 +15755,7 @@ MonoBehaviour:
   inputBinding:
     m_Name: 
     m_Id: 73d026fb-2f40-4933-a56b-c82b20947d7b
-    m_Path: <Mouse>/rightButton
+    m_Path: <Keyboard>/leftShift
     m_Interactions: 
     m_Processors: 
     m_Groups: 

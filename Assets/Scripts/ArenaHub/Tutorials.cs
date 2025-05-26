@@ -25,6 +25,7 @@ public class Tutorials : MonoBehaviour
     public void MoveTutorial()
     {
         moveText.text = "Use <color=green>" + controls.Player.Move.GetBindingDisplayString(0) + "</color> to move.\n" +
+                        "Press <color=green>" + controls.Player.Attack.GetBindingDisplayString(0) + "</color> to attack.\n" +
                         "Hotkeys can be changed in the Menu(<color=green>" + controls.Menu.MenuEsc.GetBindingDisplayString(0) + "</color>) -> Settings.";
     }
     public void JumpTutorial()
@@ -40,6 +41,6 @@ public class Tutorials : MonoBehaviour
     }
     public void DropDownTutorial()
     {
-        dropDownText.text = "Press <color=green>" + controls.Player.Move.GetBindingDisplayString(2) + "</color> to drop down from small plaforms.";
+        dropDownText.text = "Press <color=green>" + controls.Player.Move.GetBindingDisplayString(2) + "</color> to drop down from plaforms.";
     }
 }

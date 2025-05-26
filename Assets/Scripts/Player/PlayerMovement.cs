@@ -122,6 +122,7 @@ public class PlayerMovement
 
         if (player.state != Player.States.Air) player.SwitchGroundIntoAir();
 
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.PlayerJump]);
     }
     public void JumpIsPressed()
     {
@@ -183,6 +184,8 @@ public class PlayerMovement
         player.ChangeAnimationState(dashState);
         dashTimer = 0;
         player.state = Player.States.Dash;
+
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.PlayerDash]);
     }
     public void DashMovement()
     {

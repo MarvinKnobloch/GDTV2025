@@ -48,8 +48,7 @@ public class GameManager : MonoBehaviour
         {
             AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.TitleScreen, false, 0.1f, 1);
         }
-
-        if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.AreaHub)
+        else if (SceneManager.GetActiveScene().buildIndex == (int)GameScenes.AreaHub)
         {
             //AudioManager.Instance.SetSong((int)AudioManager.MusicSongs.Tutorial);
             AudioManager.Instance.StartMusicFadeOut((int)AudioManager.MusicSongs.ArenaHub, false, 0.1f, 1);

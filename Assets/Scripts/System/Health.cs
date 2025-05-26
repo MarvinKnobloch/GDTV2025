@@ -90,7 +90,7 @@ public class Health : MonoBehaviour
         if (Value > 0)
             Player.Instance.IFramesStart();
 
-        //AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerGetHitSounds[Player.Instance.currentElementNumber]);
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.playerSounds[(int)AudioManager.PlayerSounds.PlayerHit]);
 
         CheckForDeath();
     }

@@ -19,6 +19,7 @@ public class TriggerZoneDialog : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerPrefs.SetInt("NewGame", 1);
             PlayerPrefs.SetInt(secondPlayerPrefCondition, PlayerPrefs.GetInt(secondPlayerPrefCondition) + 1);
             GameManager.Instance.playerUI.dialogBox.GetComponent<DialogBox>().DialogStart(dialog[PlayerPrefs.GetInt(firstPlayerPrefCondition)]);
             GameManager.Instance.playerUI.dialogBox.SetActive(true);
