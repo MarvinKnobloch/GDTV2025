@@ -8,6 +8,7 @@ public class PlayerMovement
 
     const string idleState = "Idle";
     const string runState = "Run";
+    const string runBackWardsstate = "RunBackwards";
     const string jumpState = "Jump";
     const string fallState = "Fall";
     const string dashState = "Dash";
@@ -29,7 +30,9 @@ public class PlayerMovement
             }
             else
             {
-                player.ChangeAnimationState(runState);
+                if(player.mousePosition.x > player.transform.position.x && player.moveDirection.x < 0) player.ChangeAnimationState(runBackWardsstate);
+                else if(player.mousePosition.x < player.transform.position.x && player.moveDirection.x > 0) player.ChangeAnimationState(runBackWardsstate);
+                else player.ChangeAnimationState(runState);
             }
         }
     }
@@ -51,7 +54,7 @@ public class PlayerMovement
         if (player.rb.linearVelocity.y < player.maxFallSpeed) PlayerMove(player.maxFallSpeed);
         else PlayerMove(player.rb.linearVelocity.y);
 
-        if (player.rb.linearVelocity.y < 2)
+        if (player.rb.linearVelocity.y < -0.5f)
         {
             player.ChangeAnimationState(fallState);
         }
