@@ -16,14 +16,24 @@ MonoBehaviour:
   disableInputs: 1
   pauseGame: 0
   dialogs:
-  - characterSprite: {fileID: 0}
-    characterName: ggg
-    dialogText: a new challenger i guess
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant10801
+    dialogText: What have we here? A new Challenger.
     dialogEvent: []
     autoPlayInterval: 0
-  - characterSprite: {fileID: 0}
-    characterName: player
-    dialogText: Yes
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant13
+    dialogText: "He looks kind of weak doesn\xB4t he."
+    dialogEvent: []
+    autoPlayInterval: 0
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant13
+    dialogText: Yeah, you realy think you can bet one of our gladiators.
+    dialogEvent: []
+    autoPlayInterval: 0
+  - characterSprite: {fileID: 21300000, guid: 65fe90436fd1f5a42848e19b808d95cc, type: 3}
+    characterName: Ant13
+    dialogText: Yeah, you realy think you can bet one of our gladiators.
     dialogEvent: []
     autoPlayInterval: 0
   eventAfterDialogEnd: []
