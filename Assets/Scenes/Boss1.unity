@@ -1669,6 +1669,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5175759210694377266, guid: b764dd995223f9d478fc2d98fc90fc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.300049
+      objectReference: {fileID: 0}
     - target: {fileID: 5470909763757279689, guid: b764dd995223f9d478fc2d98fc90fc15, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3115,6 +3119,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 183900303274816556, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: m_Radius
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 183900303274816556, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 183900303274816556, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 1728142453687198354, guid: c5cf5edefd646024686f18b29e0b79b2, type: 3}
       propertyPath: 'Phases.Array.data[0]'
       value: 
