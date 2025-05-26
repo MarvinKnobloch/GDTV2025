@@ -426,7 +426,7 @@ public class Boss3 : MonoBehaviour, IGunAnimation
                 }
                 else
                 {
-                    Invoke("ChargeBeesDelay", chargeBeesDelay);
+                    //Invoke("ChargeBeesDelay", chargeBeesDelay);
                     StartCoroutine(Phase2ChargeBees());
                     StartCoroutine(Phase2Shoot());
                 }

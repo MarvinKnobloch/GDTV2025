@@ -4703,7 +4703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1254259299
 Transform:
   m_ObjectHideFlags: 0
@@ -4771,7 +4771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phase1IdleTime: 2
   phase2IdleTime: 5
-  phaseTreshold: 100
+  phaseTreshold: 10
   boss3Controller: {fileID: 174624513}
   projectileSpawn: {fileID: 462097564}
   attackDuration: 2
