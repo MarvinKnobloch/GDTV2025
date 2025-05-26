@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b2c17535cbd4f90408f4ef0c6fef84bf
+guid: 5a9aab187afdea146b43162e8ad08199
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7880359415758096450
-    second: Plattform1_0
+      213: -7436643183165199626
+    second: Steg_0
+  - first:
+      213: -4333526900292172644
+    second: Steg_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plattform1_0
+      name: Steg_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 234
-        height: 278
+        y: 498
+        width: 1500
+        height: 195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb775510dd653a290800000000000000
-      internalID: -7880359415758096450
+      spriteID: 6faab1a0d6cbbc890800000000000000
+      internalID: -7436643183165199626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steg_1
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 306
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c944c738e383cd3c0800000000000000
+      internalID: -4333526900292172644
       vertices: []
       indices: 
       edges: []
@@ -147,8 +172,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Plattform1_0: -7880359415758096450
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
