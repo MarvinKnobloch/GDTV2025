@@ -236,6 +236,7 @@ public class BeeBoss : MonoBehaviour, IGunAnimation
                     isLeft = !isLeft;
 
                     ChangeAnimationState(chargeState);
+                    AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.GunFire]);
                     state = State.Attack;
                     break;
             }

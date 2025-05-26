@@ -37,6 +37,7 @@ public class BeeHive : MonoBehaviour
         {
             GameObject prefab = PoolingSystem.SpawnObject(beePrefab, spawnPositions[i].position, Quaternion.identity, PoolingSystem.ProjectileType.Enemy);
         }
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Bee]);
     }
     private void HitEffect()
     {

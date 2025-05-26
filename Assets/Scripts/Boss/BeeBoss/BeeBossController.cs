@@ -66,6 +66,8 @@ public class BeeBossController : MonoBehaviour
         beeGun.BulletSpawnInterval();
         beeGun.gameObject.transform.parent.transform.position = beeGunSpawns[spawn].position;
         beeGun.gameObject.SetActive(true);
+
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.GunFire2]);
     }
     public void TriggerBossAndHoney(int number)
     {

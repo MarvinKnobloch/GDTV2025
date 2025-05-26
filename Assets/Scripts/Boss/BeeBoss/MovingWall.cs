@@ -28,6 +28,8 @@ public class MovingWall : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
         gameObject.SetActive(true);
+
+        AudioManager.Instance.PlayAudioFileOneShot(AudioManager.Instance.enemySounds[(int)AudioManager.EnemySounds.Bee]);
     }
     void Update()
     {
