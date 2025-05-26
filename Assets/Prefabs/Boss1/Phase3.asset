@@ -34,7 +34,7 @@ MonoBehaviour:
   TailAttacks:
   - ProjectilesToShoot: 8
     SecondsBetweenProjectiles: 0
-    ProjectilePrefab: {fileID: 5324997864933902000, guid: 77dc181d40ea6bf4381fd69515179db8, type: 3}
+    ProjectilePrefab: {fileID: 5324997864933902000, guid: 6b1f130a379998c4ba0482172265c7dd, type: 3}
     ProjectileSpeed: 10
     ProjectileGravity: 0
     attackFunction: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
     endAngle: 30
   - ProjectilesToShoot: 8
     SecondsBetweenProjectiles: 0
-    ProjectilePrefab: {fileID: 5324997864933902000, guid: 77dc181d40ea6bf4381fd69515179db8, type: 3}
+    ProjectilePrefab: {fileID: 5324997864933902000, guid: 6b1f130a379998c4ba0482172265c7dd, type: 3}
     ProjectileSpeed: 10
     ProjectileGravity: 0
     attackFunction: 1
